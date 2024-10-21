@@ -23,7 +23,7 @@ struct NewsView: View {
                 }
                 .padding()
                 .onChange(of: selectedCategory) { newCategory in
-                    viewModel.loadTopHeadlines(category: newCategory)
+                    viewModel.loadCategory(category: newCategory)
                 }
                 
                 // Поле поиска
@@ -67,7 +67,7 @@ struct NewsView: View {
             }
             .navigationTitle("Новости")
             .onAppear {
-                viewModel.loadTopHeadlines(category: selectedCategory)
+                viewModel.loadCategory(category: selectedCategory)
             }
         }
     }
