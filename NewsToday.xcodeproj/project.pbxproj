@@ -11,8 +11,10 @@
 		22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22020CDE2CC54AFA00A76887 /* ContentView.swift */; };
 		22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE02CC54AFF00A76887 /* Assets.xcassets */; };
 		22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */; };
-		22020CE62CC54AFF00A76887 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22020CE52CC54AFF00A76887 /* Persistence.swift */; };
-		22020CE92CC54AFF00A76887 /* NewsToday.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22020CE72CC54AFF00A76887 /* NewsToday.xcdatamodeld */; };
+		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
+		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
+		484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3712CC6356900D94D3D /* View+Ex.swift */; };
+		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +23,11 @@
 		22020CDE2CC54AFA00A76887 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22020CE02CC54AFF00A76887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		22020CE52CC54AFF00A76887 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		22020CE82CC54AFF00A76887 /* NewsToday.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsToday.xcdatamodel; sourceTree = "<group>"; };
+		484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont.ttf"; sourceTree = "<group>"; };
+		484AD36D2CC6302400D94D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		484AD36E2CC634CB00D94D3D /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		484AD3712CC6356900D94D3D /* View+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ex.swift"; sourceTree = "<group>"; };
+		484AD3742CC63A5000D94D3D /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +60,11 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
-				22020CDC2CC54AFA00A76887 /* NewsTodayApp.swift */,
+				484AD3732CC6369800D94D3D /* App */,
+				484AD36A2CC62FB400D94D3D /* Font */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
+				484AD3702CC6355A00D94D3D /* Extensions */,
 				22020CE02CC54AFF00A76887 /* Assets.xcassets */,
-				22020CE52CC54AFF00A76887 /* Persistence.swift */,
-				22020CE72CC54AFF00A76887 /* NewsToday.xcdatamodeld */,
-				22020CE22CC54AFF00A76887 /* Preview Content */,
 			);
 			path = NewsToday;
 			sourceTree = "<group>";
@@ -71,6 +75,34 @@
 				22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		484AD36A2CC62FB400D94D3D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */,
+				484AD36E2CC634CB00D94D3D /* FontManager.swift */,
+				484AD3742CC63A5000D94D3D /* FontModifier.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		484AD3702CC6355A00D94D3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				484AD3712CC6356900D94D3D /* View+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		484AD3732CC6369800D94D3D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				484AD36D2CC6302400D94D3D /* Info.plist */,
+				22020CDC2CC54AFA00A76887 /* NewsTodayApp.swift */,
+				22020CE22CC54AFF00A76887 /* Preview Content */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */,
+				484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */,
 				22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,10 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22020CE92CC54AFF00A76887 /* NewsToday.xcdatamodeld in Sources */,
-				22020CE62CC54AFF00A76887 /* Persistence.swift in Sources */,
 				22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */,
+				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
+				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
+				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,10 +313,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 689Q9C7S84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsToday/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,10 +348,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 689Q9C7S84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsToday/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -362,19 +398,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		22020CE72CC54AFF00A76887 /* NewsToday.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				22020CE82CC54AFF00A76887 /* NewsToday.xcdatamodel */,
-			);
-			currentVersion = 22020CE82CC54AFF00A76887 /* NewsToday.xcdatamodel */;
-			path = NewsToday.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 22020CD12CC54AFA00A76887 /* Project object */;
 }
