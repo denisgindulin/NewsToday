@@ -17,13 +17,13 @@ class NewsViewModel: ObservableObject {
     
     func loadTopHeadlines(category: Categories) {
         Task {
-            await fetchArticles(endpoint: .topHeadlines(category: category.rawValue))
+            await fetchArticles(endpoint: .latest(category: category))
         }
     }
     
     func searchNews(query: String) {
         Task {
-            await fetchArticles(endpoint: .everything(request: query))
+            await fetchArticles(endpoint: .search(request: query))
         }
     }
     

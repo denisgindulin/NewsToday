@@ -7,53 +7,54 @@
 
 import Foundation
 
-enum Categories: String {
-    case general
+enum Categories: String, CaseIterable {
+    case crime
     case business
-    case technology
+    case domestic
+    case education
     case entertainment
-    case science
+    case environment
+    case food
     case health
+    case lifestyle
+    case other
+    case politics
+    case science
     case sports
+    case technology
+    case top
+    case world
 }
 
 enum Endpoint {
-    case everything(request: String)
-    case topHeadlines(category: String)
-    
-    var path: String {
-        switch self {
-        case .everything: return "/v2/everything"
-        case .topHeadlines: return "/v2/top-headlines"
-        }
-    }
+    case search(request: String)
+    case latest(category: Categories)
 }
 
 final class NetworkManager {
-    private let apiKey = "e30d6cfafc85469eb6f14e2f35443c88"
+    private let apiKey = "pub_568854a7fb181713bae23f68d4a833dcaf42a"
     
     private func createQueryItems(_ endpoint: Endpoint, language: String) -> [URLQueryItem] {
         var queryItems: [URLQueryItem] = [
             URLQueryItem(name: "apiKey", value: apiKey),
             URLQueryItem(name: "language", value: language),
-            URLQueryItem(name: "pageSize", value: "20"),
         ]
         
         switch endpoint {
-        case .everything(request: let request):
-            queryItems.append(URLQueryItem(name: "q", value: request))
-        case .topHeadlines(category: let category):
-            queryItems.append(URLQueryItem(name: "category", value: category))
+        case .search(let query):
+            queryItems.append(URLQueryItem(name: "q", value: query))
+        case .latest(let category):
+            queryItems.append(URLQueryItem(name: "category", value: category.rawValue))
         }
         
-        return queryItems
+        return queryItems.compactMap { $0.value != nil ? $0 : nil }
     }
     
-    func fetchNews(endpoint: Endpoint, language: String = "en") async throws -> [Article] {
+    func fetchNews(endpoint: Endpoint, language: String = "ru") async throws -> [Article] {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "newsapi.org"
-        components.path = endpoint.path
+        components.host = "newsdata.io"
+        components.path = "/api/1/news"
         components.queryItems = createQueryItems(endpoint, language: language)
         
         guard let url = components.url else { throw URLError(.badURL)}
@@ -70,7 +71,7 @@ final class NetworkManager {
         
         do {
             let decoder = try JSONDecoder().decode(News.self, from: data)
-            return decoder.articles
+            return decoder.results
         } catch {
             throw error
         }

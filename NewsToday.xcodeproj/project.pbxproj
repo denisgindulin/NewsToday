@@ -12,6 +12,7 @@
 		22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE02CC54AFF00A76887 /* Assets.xcassets */; };
 		22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
+		482893462CC669040075C778 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
 		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
 		484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3712CC6356900D94D3D /* View+Ex.swift */; };
@@ -27,6 +28,7 @@
 		22020CE02CC54AFF00A76887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		482893452CC669040075C778 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont.ttf"; sourceTree = "<group>"; };
 		484AD36D2CC6302400D94D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		484AD36E2CC634CB00D94D3D /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
+				482893452CC669040075C778 /* NewsView.swift */,
 				481102F22CC658E4005C9999 /* NewsViewModel.swift */,
 				484AD3702CC6355A00D94D3D /* Extensions */,
 				22020CE02CC54AFF00A76887 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 				484AD3782CC643BB00D94D3D /* News.swift in Sources */,
 				22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
+				482893462CC669040075C778 /* NewsView.swift in Sources */,
 				484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */,
 				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
