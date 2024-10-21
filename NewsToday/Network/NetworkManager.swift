@@ -70,7 +70,7 @@ final class NetworkManager {
         print(json ?? "")
         
         do {
-            let decoder = try JSONDecoder().decode(News.self, from: data)
+            let decoder = try JSONDecoder().decode(NewsResponse.self, from: data)
             return decoder.results
         } catch {
             throw error

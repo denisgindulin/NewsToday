@@ -17,7 +17,7 @@
 		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
 		484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3712CC6356900D94D3D /* View+Ex.swift */; };
 		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
-		484AD3782CC643BB00D94D3D /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* News.swift */; };
+		484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* NewsResponse.swift */; };
 		484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		484AD36E2CC634CB00D94D3D /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		484AD3712CC6356900D94D3D /* View+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ex.swift"; sourceTree = "<group>"; };
 		484AD3742CC63A5000D94D3D /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
-		484AD3772CC643BB00D94D3D /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		484AD3772CC643BB00D94D3D /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		484AD3792CC6468000D94D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 		484AD3762CC6436900D94D3D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				484AD3772CC643BB00D94D3D /* News.swift */,
+				484AD3772CC643BB00D94D3D /* NewsResponse.swift */,
 				484AD3792CC6468000D94D3D /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -196,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				484AD3782CC643BB00D94D3D /* News.swift in Sources */,
+				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
 				22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				482893462CC669040075C778 /* NewsView.swift in Sources */,

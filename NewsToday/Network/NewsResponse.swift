@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct News: Codable {
+struct NewsResponse: Codable {
     let status: String
     let totalResults: Int
     let results: [Article]
@@ -21,11 +21,12 @@ struct Article: Codable, Identifiable {
     let description: String?
     let pubDate: String?
     let imageURL: String?
-    let country, category: [String]
+    let country, category: [String]?
     let duplicate: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id = "article_id"
-        case title, link, keywords, creator, description, pubDate, imageURL, country, category, duplicate
+        case imageURL = "image_url"
+        case title, link, keywords, creator, description, pubDate, country, category, duplicate
     }
 }
