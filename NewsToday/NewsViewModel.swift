@@ -15,7 +15,7 @@ class NewsViewModel: ObservableObject {
     
     let networkManager = NetworkManager()
     
-    func loadTopHeadlines(category: Categories) {
+    func loadCategory(category: Categories) {
         Task {
             await fetchArticles(endpoint: .latest(category: category))
         }
