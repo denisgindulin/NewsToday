@@ -15,6 +15,7 @@ enum Field {
 }
 
 struct SignUpView: View {
+    @StateObject var viewModel = SignUpViewModel()
     @FocusState private var focusedField: Field?
     
     var body: some View {
@@ -22,17 +23,13 @@ struct SignUpView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Welcome to NewsToDay")
                     .interFont(size: 24)
+                    .foregroundStyle(.blackPrimary)
                 Text("Hello, I guess you are new around here. You can start using the application after sign up.")
                     .interFont(type: .regular)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.greyPrimary)
             }
             VStack(spacing: 16) {
-                SignUpTextFields(focusedField: $focusedField)
-                
-                Button("Sign Up") {
-                    //
-                }
-                .authButton()
+                SignUpTextFields(viewModel: viewModel, focusedField: $focusedField)
             }
             Spacer()
             HStack {
@@ -50,7 +47,6 @@ struct SignUpView: View {
         .onTapGesture {
             focusedField = nil
         }
-        
     }
 }
 

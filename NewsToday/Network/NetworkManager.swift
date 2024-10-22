@@ -7,36 +7,15 @@
 
 import Foundation
 
-enum Categories: String, CaseIterable {
-    case crime
-    case business
-    case domestic
-    case education
-    case entertainment
-    case environment
-    case food
-    case health
-    case lifestyle
-    case other
-    case politics
-    case science
-    case sports
-    case technology
-    case top
-    case world
-}
-
 enum Endpoint {
     case search(request: String)
     case latest(category: Categories)
 }
 
 final class NetworkManager {
-    private let apiKey = "pub_568854a7fb181713bae23f68d4a833dcaf42a"
-    
     private func createQueryItems(_ endpoint: Endpoint, language: String) -> [URLQueryItem] {
         var queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "apiKey", value: apiKey),
+            URLQueryItem(name: "apiKey", value: ApiKey.first),
             URLQueryItem(name: "language", value: language),
         ]
         

@@ -12,7 +12,7 @@ struct AuthButton: ViewModifier {
         content
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
+            .background(.purplePrimary)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 12))
     }
