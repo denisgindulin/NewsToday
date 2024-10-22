@@ -20,23 +20,24 @@ struct CustomTabBarView: View {
     var body: some View {
         HStack {
             Button(action: { selectedTab = .home   }) { //switch to HomeView
-                Image(systemName: "house")
-                    .foregroundStyle(selectedTab != .home ? .gray : .green)
+                Image("Home")
+                    .foregroundColor(.blue)
+//                    .foregroundStyle(selectedTab != .home ? .green : .red)
             }
             
             Button(action: { selectedTab = .categories }) { //switch to CategoriesView
-                Image(systemName: "square.grid.2x2")
-                    .foregroundStyle(selectedTab != .categories ? .gray : .green)
+                Image("categoriesIcon")
+                    .foregroundStyle(selectedTab != .categories ? .green : .red)
             }
             
             Button(action: { selectedTab = .bookmark }) { //switch to BookmarksView
-                Image(systemName: "bookmark")
-                    .foregroundStyle(selectedTab != .bookmark ? .gray : .green)
+                Image("bookmarkIcon")
+                    .foregroundStyle(selectedTab != .bookmark ? .green : .red)
             }
             
             Button(action: { selectedTab = .profile }) { //switch to ProfileView
-                Image(systemName: "person")
-                    .foregroundStyle(selectedTab != .profile ? .gray : .green)
+                Image("profileIcon")
+                    .foregroundStyle(selectedTab != .profile ? .green : .red)
             }
             
             /*
@@ -52,5 +53,5 @@ struct CustomTabBarView: View {
 }
 
 #Preview {
-    CustomTabBarView(selectedTab: .constant(.categories))
+    CustomTabBarView(selectedTab: .constant(.home))
 }
