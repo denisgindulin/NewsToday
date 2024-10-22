@@ -21,23 +21,23 @@ struct CustomTabBarView: View {
         HStack {
             Button(action: { selectedTab = .home   }) { //switch to HomeView
                 Image("Home")
-                    .foregroundColor(.blue)
-//                    .foregroundStyle(selectedTab != .home ? .green : .red)
+//                    .foregroundColor(.blue)
+                    .foregroundStyle(selectedTab != .home ? .greyLight : .purplePrimary)
             }
             
             Button(action: { selectedTab = .categories }) { //switch to CategoriesView
                 Image("categoriesIcon")
-                    .foregroundStyle(selectedTab != .categories ? .green : .red)
+                    .foregroundStyle(selectedTab != .categories ? .greyLight : .purplePrimary)
             }
             
             Button(action: { selectedTab = .bookmark }) { //switch to BookmarksView
                 Image("bookmarkIcon")
-                    .foregroundStyle(selectedTab != .bookmark ? .green : .red)
+                    .foregroundStyle(selectedTab != .bookmark ? .greyLight : .purplePrimary)
             }
             
             Button(action: { selectedTab = .profile }) { //switch to ProfileView
                 Image("profileIcon")
-                    .foregroundStyle(selectedTab != .profile ? .green : .red)
+                    .foregroundStyle(selectedTab != .profile ? .greyLight : .purplePrimary)
             }
             
             /*
