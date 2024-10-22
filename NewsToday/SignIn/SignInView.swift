@@ -22,8 +22,8 @@ struct SignInView: View {
             
             VStack(spacing: 64) {
                 VStack(spacing: 16) {
-                    AuthTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
-                    AuthTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
+                    AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
+                    AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
                 }
                 Button("Sign Up") {
                     //

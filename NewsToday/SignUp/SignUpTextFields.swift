@@ -16,13 +16,13 @@ struct SignUpTextFields: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            AuthTextField(textFieldText: $userName, placeholder: "Username", imageName: "person", isSecure: false)
+            AppTextField(textFieldText: $userName, placeholder: "Username", imageName: "person")
                 .focused(focusedField, equals: .username)
-            AuthTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
+            AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope")
                 .focused(focusedField, equals: .email)
-            AuthTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
+            AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
                 .focused(focusedField, equals: .password)
-            AuthTextField(textFieldText: $repeatPassword, placeholder: "Repeat Password", imageName: "exclamationmark.lock", isSecure: true)
+            AppTextField(textFieldText: $repeatPassword, placeholder: "Repeat Password", imageName: "exclamationmark.lock", isSecure: true)
                 .focused(focusedField, equals: .repeatPassword)
         }
         .onSubmit {

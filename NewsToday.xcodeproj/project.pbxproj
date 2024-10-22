@@ -20,6 +20,7 @@
 		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
 		484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* NewsResponse.swift */; };
 		484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
+		484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E93402CC7B0C1000C531A /* AppTextField.swift */; };
 		485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */; };
 		48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */; };
 		48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036C2CC6ABA200E1AFFA /* FirebaseAuth */; };
@@ -44,6 +45,7 @@
 		484AD3742CC63A5000D94D3D /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
 		484AD3772CC643BB00D94D3D /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		484AD3792CC6468000D94D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		484E93402CC7B0C1000C531A /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFields.swift; sourceTree = "<group>"; };
 		48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48A703722CC6ADE400E1AFFA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
+				484E93402CC7B0C1000C531A /* AppTextField.swift */,
 				482893452CC669040075C778 /* NewsView.swift */,
 				481102F22CC658E4005C9999 /* NewsViewModel.swift */,
 				481AA6D82CC7835C009982DB /* Modifiers */,
@@ -254,6 +257,7 @@
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
+				484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */,
 				48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */,
 				481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */,
 			);
