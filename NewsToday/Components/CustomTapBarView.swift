@@ -23,7 +23,6 @@ struct CustomTabBarView: View {
 
             Button(action: { selectedTab = .home /* switch to HomeView */}) {
                 Image("Home")
-//                    .foregroundColor(.blue)
                     .foregroundStyle(selectedTab != .home ? .greyLight : .purplePrimary)
             }
             
@@ -52,16 +51,6 @@ struct CustomTabBarView: View {
             }
             
             Spacer()
-
-            
-            /*
-            Button{
-                // switch to BookmarkView
-                selectedTab = .bookmark
-            } label: {
-                Image(selectedTab != .bookmark ? "bell" : "bellRed")
-            }
-            */
         }
     }
 }
