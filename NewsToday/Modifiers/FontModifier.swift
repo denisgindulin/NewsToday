@@ -12,6 +12,7 @@ struct InterFontModifier: ViewModifier {
     let size: CGFloat
     
     func body(content: Content) -> some View {
-        content.font(.custom(type.rawValue, size: size))
+        content
+            .font(.custom(type.rawValue, size: size))
     }
 }

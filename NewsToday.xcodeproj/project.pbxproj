@@ -12,6 +12,7 @@
 		22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE02CC54AFF00A76887 /* Assets.xcassets */; };
 		22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
+		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
 		482893462CC669040075C778 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
 		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
@@ -19,9 +20,12 @@
 		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
 		484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* NewsResponse.swift */; };
 		484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
+		485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */; };
 		48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */; };
 		48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036C2CC6ABA200E1AFFA /* FirebaseAuth */; };
 		48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036E2CC6ABA200E1AFFA /* FirebaseDatabase */; };
+		48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703722CC6ADE400E1AFFA /* SignUpView.swift */; };
+		48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703742CC6ADF200E1AFFA /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,7 @@
 		22020CE02CC54AFF00A76887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		482893452CC669040075C778 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont.ttf"; sourceTree = "<group>"; };
 		484AD36D2CC6302400D94D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,7 +44,10 @@
 		484AD3742CC63A5000D94D3D /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
 		484AD3772CC643BB00D94D3D /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		484AD3792CC6468000D94D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFields.swift; sourceTree = "<group>"; };
 		48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48A703722CC6ADE400E1AFFA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		48A703742CC6ADF200E1AFFA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +82,15 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
+				48A703712CC6ADAA00E1AFFA /* SignUp */,
+				48A703702CC6ADA000E1AFFA /* SignIn */,
 				484AD3732CC6369800D94D3D /* App */,
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
 				482893452CC669040075C778 /* NewsView.swift */,
 				481102F22CC658E4005C9999 /* NewsViewModel.swift */,
+				481AA6D82CC7835C009982DB /* Modifiers */,
 				484AD3702CC6355A00D94D3D /* Extensions */,
 				22020CE02CC54AFF00A76887 /* Assets.xcassets */,
 			);
@@ -94,12 +105,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		481AA6D82CC7835C009982DB /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				484AD3742CC63A5000D94D3D /* FontModifier.swift */,
+				481AA6D92CC78394009982DB /* AuthButton.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		484AD36A2CC62FB400D94D3D /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */,
 				484AD36E2CC634CB00D94D3D /* FontManager.swift */,
-				484AD3742CC63A5000D94D3D /* FontModifier.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -130,6 +149,23 @@
 				484AD3792CC6468000D94D3D /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		48A703702CC6ADA000E1AFFA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				48A703742CC6ADF200E1AFFA /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		48A703712CC6ADAA00E1AFFA /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				48A703722CC6ADE400E1AFFA /* SignUpView.swift */,
+				485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,13 +244,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
+				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				482893462CC669040075C778 /* NewsView.swift in Sources */,
 				484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */,
+				485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */,
 				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
+				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
+				48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */,
 				481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
