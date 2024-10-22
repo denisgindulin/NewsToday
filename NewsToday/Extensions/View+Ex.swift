@@ -9,6 +9,10 @@ import SwiftUI
 
 extension View {
     func interFont(type: InterFont = .semiBold, size: CGFloat = 16) -> some View {
-        modifier(InterFontModifier(type: type, size: 16))
+        modifier(InterFontModifier(type: type, size: size))
+    }
+    
+    func authButton() -> some View {
+        modifier(AuthButton())
     }
 }
