@@ -24,6 +24,8 @@
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
 		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
 		482893462CC669040075C778 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
+		483199452CC81AAA00655F90 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199442CC81AAA00655F90 /* Categories.swift */; };
+		483199472CC81B2F00655F90 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199462CC81B2F00655F90 /* ApiKey.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
 		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
 		484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3712CC6356900D94D3D /* View+Ex.swift */; };
@@ -37,6 +39,8 @@
 		48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036E2CC6ABA200E1AFFA /* FirebaseDatabase */; };
 		48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703722CC6ADE400E1AFFA /* SignUpView.swift */; };
 		48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703742CC6ADF200E1AFFA /* SignInView.swift */; };
+		48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1D4C22CC7C5D800F64081 /* SignUpViewModel.swift */; };
+		48F1D4C62CC7C7E900F64081 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 48F1D4C52CC7C7E900F64081 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,8 @@
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		482893452CC669040075C778 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		483199442CC81AAA00655F90 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		483199462CC81B2F00655F90 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont.ttf"; sourceTree = "<group>"; };
 		484AD36D2CC6302400D94D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		484AD36E2CC634CB00D94D3D /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48A703722CC6ADE400E1AFFA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		48A703742CC6ADF200E1AFFA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		48F1D4C22CC7C5D800F64081 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 			files = (
 				48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */,
 				48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */,
+				48F1D4C62CC7C7E900F64081 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				22020CDB2CC54AFA00A76887 /* NewsToday */,
+				48F1D4C42CC7C7E900F64081 /* Frameworks */,
 				22020CDA2CC54AFA00A76887 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,13 +113,13 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
-				48A703712CC6ADAA00E1AFFA /* SignUp */,
-				48A703702CC6ADA000E1AFFA /* SignIn */,
 				484AD3732CC6369800D94D3D /* App */,
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
+				48A703702CC6ADA000E1AFFA /* SignIn */,
+				48A703712CC6ADAA00E1AFFA /* SignUp */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
-				484E93402CC7B0C1000C531A /* AppTextField.swift */,
+				22AE0B672CC798FF00BBBDD5 /* CustomTapBarView.swift */,
 				22AE0B802CC7FDE500BBBDD5 /* Components */,
 				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
 				22AE0B7E2CC7FDA400BBBDD5 /* Home */,
@@ -181,7 +190,7 @@
 		22AE0B802CC7FDE500BBBDD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				22AE0B672CC798FF00BBBDD5 /* CustomTapBarView.swift */,
+				484E93402CC7B0C1000C531A /* AppTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -226,6 +235,8 @@
 		484AD3762CC6436900D94D3D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				483199442CC81AAA00655F90 /* Categories.swift */,
+				483199462CC81B2F00655F90 /* ApiKey.swift */,
 				484AD3772CC643BB00D94D3D /* NewsResponse.swift */,
 				484AD3792CC6468000D94D3D /* NetworkManager.swift */,
 			);
@@ -243,10 +254,34 @@
 		48A703712CC6ADAA00E1AFFA /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				48F1D4C12CC7C5C600F64081 /* View */,
+				48F1D4C02CC7C5BE00F64081 /* ViewModel */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		48F1D4C02CC7C5BE00F64081 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48F1D4C22CC7C5D800F64081 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48F1D4C12CC7C5C600F64081 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				48A703722CC6ADE400E1AFFA /* SignUpView.swift */,
 				485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */,
 			);
-			path = SignUp;
+			path = View;
+			sourceTree = "<group>";
+		};
+		48F1D4C42CC7C7E900F64081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +361,7 @@
 			files = (
 				22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */,
 				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
+				483199452CC81AAA00655F90 /* Categories.swift in Sources */,
 				22AE0B6E2CC7FCB300BBBDD5 /* HomeViewModel.swift in Sources */,
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
@@ -333,6 +369,10 @@
 				22AE0B7A2CC7FD4900BBBDD5 /* ProfileViewModel.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				22AE0B682CC798FF00BBBDD5 /* CustomTapBarView.swift in Sources */,
+				482893462CC669040075C778 /* NewsView.swift in Sources */,
+				484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */,
+				485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */,
+				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
 				22AE0B6C2CC7FC8900BBBDD5 /* HomeView.swift in Sources */,
 				22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */,
 				482893462CC669040075C778 /* NewsView.swift in Sources */,
@@ -341,6 +381,7 @@
 				22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */,
 				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
+				483199472CC81B2F00655F90 /* ApiKey.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */,
 				22AE0B742CC7FD0700BBBDD5 /* BookmarksView.swift in Sources */,
@@ -587,6 +628,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 48A7036B2CC6ABA200E1AFFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		48F1D4C52CC7C7E900F64081 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48A7036B2CC6ABA200E1AFFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

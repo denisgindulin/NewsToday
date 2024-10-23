@@ -15,9 +15,10 @@ struct SignInView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Welcome Back 👋")
                     .interFont(size: 24)
+                    .foregroundStyle(.blackPrimary)
                 Text("I am happy to see you again. You can continue where you left off by logging in")
                     .interFont(type: .regular)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.greyPrimary)
             }
             
             VStack(spacing: 64) {
