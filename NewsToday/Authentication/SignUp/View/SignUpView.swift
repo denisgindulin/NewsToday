@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Field {
+enum SignUpField {
     case username
     case email
     case password
@@ -16,7 +16,7 @@ enum Field {
 
 struct SignUpView: View {
     @StateObject var viewModel = SignUpViewModel()
-    @FocusState private var focusedField: Field?
+    @FocusState private var focusedField: SignUpField?
     
     var body: some View {
         VStack(spacing: 32) {
@@ -30,14 +30,6 @@ struct SignUpView: View {
             }
             VStack(spacing: 16) {
                 SignUpTextFields(viewModel: viewModel, focusedField: $focusedField)
-            }
-            Spacer()
-            HStack {
-                Text("Already have an account?")
-                    .interFont(type: .medium)
-                Button("Sign In") {
-                    //
-                }
             }
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)

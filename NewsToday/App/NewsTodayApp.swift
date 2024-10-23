@@ -20,16 +20,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct NewsTodayApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+    
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-//            if Auth.auth().currentUser != nil {
-//                NewsView()
-//            } else {
-                SignUpView()
-//            }
+            ContentView()
+                .environmentObject(authViewModel)
         }
     }
 }
