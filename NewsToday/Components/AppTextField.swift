@@ -23,6 +23,7 @@ struct AppTextField: View {
                 .foregroundColor(isFocused ? .purplePrimary : .greyPrimary)
             if isSecure {
                 SecureTextField(textFieldText: $textFieldText, placeholder: placeholder)
+                    .focused($isFocused)
             } else {
                 TextField(placeholder, text: $textFieldText)
                     .focused($isFocused)

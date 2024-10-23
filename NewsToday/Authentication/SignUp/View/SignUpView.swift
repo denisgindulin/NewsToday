@@ -31,10 +31,13 @@ struct SignUpView: View {
             VStack(spacing: 16) {
                 SignUpTextFields(viewModel: viewModel, focusedField: $focusedField)
             }
+            
+            Spacer()
         }
-        .ignoresSafeArea(.keyboard, edges: .bottom)
+//        .ignoresSafeArea(.keyboard, edges: .bottom)
         .padding(.horizontal, 20)
         .padding(.top, 28)
+        .frame(maxHeight: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
             focusedField = nil

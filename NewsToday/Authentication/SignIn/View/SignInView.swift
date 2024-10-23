@@ -26,12 +26,15 @@ struct SignInView: View {
                     .foregroundStyle(.greyPrimary)
             }
             SignInTextFields(viewModel: viewModel, focusedField: $focusedField)
+            Spacer()
         }
-        .ignoresSafeArea(.keyboard, edges: .bottom)
+//        .ignoresSafeArea(.keyboard, edges: .bottom)
         .padding(.horizontal, 20)
         .padding(.top, 28)
+        .frame(maxHeight: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
+            print("gjgjg")
             focusedField = nil
         }
     }
