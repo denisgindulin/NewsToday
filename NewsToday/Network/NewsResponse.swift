@@ -19,6 +19,7 @@ struct Article: Codable, Identifiable {
     let link: String?
     let keywords, creator: [String]?
     let description: String?
+    let content: String?
     let pubDate: String?
     let imageURL: String?
     let country, category: [String]?
@@ -27,6 +28,6 @@ struct Article: Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case id = "article_id"
         case imageURL = "image_url"
-        case title, link, keywords, creator, description, pubDate, country, category, duplicate
+        case title, link, keywords, creator, description, content, pubDate, country, category, duplicate
     }
 }
