@@ -11,7 +11,6 @@
 		22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22020CDE2CC54AFA00A76887 /* ContentView.swift */; };
 		22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE02CC54AFF00A76887 /* Assets.xcassets */; };
 		22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */; };
-		22AE0B682CC798FF00BBBDD5 /* CustomTapBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B672CC798FF00BBBDD5 /* CustomTapBarView.swift */; };
 		22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B692CC7E70300BBBDD5 /* RootView.swift */; };
 		22AE0B6C2CC7FC8900BBBDD5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6B2CC7FC8900BBBDD5 /* HomeView.swift */; };
 		22AE0B6E2CC7FCB300BBBDD5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6D2CC7FCB300BBBDD5 /* HomeViewModel.swift */; };
@@ -26,6 +25,7 @@
 		48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
 		48241F352CC8D37C00DD3156 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
 		48241F362CC8D38D00DD3156 /* SignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */; };
+		48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */; };
 		483199452CC81AAA00655F90 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199442CC81AAA00655F90 /* Categories.swift */; };
 		483199472CC81B2F00655F90 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199462CC81B2F00655F90 /* ApiKey.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
@@ -49,7 +49,6 @@
 		22020CDE2CC54AFA00A76887 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22020CE02CC54AFF00A76887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		22AE0B672CC798FF00BBBDD5 /* CustomTapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarView.swift; sourceTree = "<group>"; };
 		22AE0B692CC7E70300BBBDD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		22AE0B6B2CC7FC8900BBBDD5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		22AE0B6D2CC7FCB300BBBDD5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		22AE0B792CC7FD4900BBBDD5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarView.swift; sourceTree = "<group>"; };
 		482893452CC669040075C778 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		483199442CC81AAA00655F90 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		483199462CC81B2F00655F90 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 				48A703702CC6ADA000E1AFFA /* SignIn */,
 				48A703712CC6ADAA00E1AFFA /* SignUp */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
-				22AE0B672CC798FF00BBBDD5 /* CustomTapBarView.swift */,
 				22AE0B802CC7FDE500BBBDD5 /* Components */,
 				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
 				22AE0B7E2CC7FDA400BBBDD5 /* Home */,
@@ -191,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				484E93402CC7B0C1000C531A /* AppTextField.swift */,
+				48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					22020CD82CC54AFA00A76887 = {
 						CreatedOnToolsVersion = 15.4;
@@ -371,7 +371,6 @@
 				22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */,
 				22AE0B7A2CC7FD4900BBBDD5 /* ProfileViewModel.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
-				22AE0B682CC798FF00BBBDD5 /* CustomTapBarView.swift in Sources */,
 				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
 				22AE0B6C2CC7FC8900BBBDD5 /* HomeView.swift in Sources */,
 				22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */,
@@ -380,6 +379,7 @@
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
 				483199472CC81B2F00655F90 /* ApiKey.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
+				48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */,
 				22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */,
 				22AE0B742CC7FD0700BBBDD5 /* BookmarksView.swift in Sources */,
 				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
