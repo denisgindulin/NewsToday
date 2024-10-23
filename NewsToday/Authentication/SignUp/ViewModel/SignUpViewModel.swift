@@ -15,7 +15,7 @@ class SignUpViewModel: ObservableObject {
     @Published var passwordError: String?
     @Published var repeatPasswordError: String?
     @Published var registrationError: String?
-    @Published var isRegistered: Bool = false
+    @Published var isLoading: Bool = false
     
     func createUser(name: String, email: String, password: String, repeatPassword: String) {
         guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
@@ -40,7 +40,6 @@ class SignUpViewModel: ObservableObject {
             repeatPasswordError = "Fill the Password"
             return
         }
-        repeatPasswordError = nil
         
         guard !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
                 !repeatPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
@@ -49,19 +48,21 @@ class SignUpViewModel: ObservableObject {
             return
         }
         
+        repeatPasswordError = nil
+        registrationError = nil
+        
+        isLoading = true
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            self?.isLoading = false
             guard error == nil else {
                 print(error!.localizedDescription)
                 self?.registrationError = error!.localizedDescription
                 return
             }
-            result?.user.sendEmailVerification()
             
             if let userId = result?.user.uid {
+                result?.user.sendEmailVerification()
                 self?.saveUserData(userId: userId, name: name, email: email)
-                DispatchQueue.main.async {
-                    self?.isRegistered = true
-                }
             }
         }
     }
