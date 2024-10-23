@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewsView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = NewsViewModel()
     @State private var selectedCategory: Categories = .top
     @State private var searchText: String = ""
@@ -63,6 +64,9 @@ struct NewsView: View {
                         .padding(.vertical, 4)
                     }
                     .listStyle(PlainListStyle())
+                }
+                Button("Sign Out") {
+                    authViewModel.signOut()
                 }
             }
             .navigationTitle("Новости")
