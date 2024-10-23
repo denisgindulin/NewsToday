@@ -26,9 +26,7 @@ struct RootView: View {
             Circle().frame(width: 200).foregroundStyle(.green)
             Spacer() // заглушка для экрана BookmarksView
         case .profile:
-//            ProfileView() // здесь указать на Экран с личным кабинетом
-            Circle().frame(width: 300).foregroundStyle(.blue)
-            Spacer() // заглушка для экрана ProfileView
+            ProfileView()
         }
         
         CustomTabBarView(selectedTab: $selectedTab)

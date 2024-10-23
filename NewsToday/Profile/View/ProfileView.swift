@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     var body: some View {
         NavigationView {
             VStack (spacing: 24) {
@@ -21,8 +22,6 @@ struct ProfileView: View {
                     Spacer()
                 }
                 .padding()
-                
-                Spacer()
 
                 // Language Button with NavigationLink
                 NavigationLink(destination: LanguageView()) {
@@ -35,6 +34,7 @@ struct ProfileView: View {
                     )
                 }
                 .buttonStyle(PlainButtonStyle())  // To avoid the default button styling
+                Spacer()
                 
                 // Terms & Conditions Button
                 NavigationLink(destination: TermsAndConditionsView()) {
@@ -60,9 +60,9 @@ struct ProfileView: View {
                     }
                 )
             }
-            .padding(.top, 24)
+            .padding(.vertical, 24)
             .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
