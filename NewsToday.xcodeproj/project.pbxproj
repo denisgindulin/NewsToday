@@ -23,7 +23,9 @@
 		22AE0B7A2CC7FD4900BBBDD5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B792CC7FD4900BBBDD5 /* ProfileViewModel.swift */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
 		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
-		482893462CC669040075C778 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
+		48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
+		48241F352CC8D37C00DD3156 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482893452CC669040075C778 /* NewsView.swift */; };
+		48241F362CC8D38D00DD3156 /* SignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */; };
 		483199452CC81AAA00655F90 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199442CC81AAA00655F90 /* Categories.swift */; };
 		483199472CC81B2F00655F90 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199462CC81B2F00655F90 /* ApiKey.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
@@ -31,9 +33,7 @@
 		484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3712CC6356900D94D3D /* View+Ex.swift */; };
 		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
 		484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* NewsResponse.swift */; };
-		484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
 		484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E93402CC7B0C1000C531A /* AppTextField.swift */; };
-		485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */; };
 		48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */; };
 		48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036C2CC6ABA200E1AFFA /* FirebaseAuth */; };
 		48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036E2CC6ABA200E1AFFA /* FirebaseDatabase */; };
@@ -359,6 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48241F362CC8D38D00DD3156 /* SignUpTextFields.swift in Sources */,
+				48241F352CC8D37C00DD3156 /* NewsView.swift in Sources */,
+				48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */,
 				22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */,
 				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
 				483199452CC81AAA00655F90 /* Categories.swift in Sources */,
@@ -369,15 +372,9 @@
 				22AE0B7A2CC7FD4900BBBDD5 /* ProfileViewModel.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				22AE0B682CC798FF00BBBDD5 /* CustomTapBarView.swift in Sources */,
-				482893462CC669040075C778 /* NewsView.swift in Sources */,
-				484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */,
-				485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */,
 				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
 				22AE0B6C2CC7FC8900BBBDD5 /* HomeView.swift in Sources */,
 				22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */,
-				482893462CC669040075C778 /* NewsView.swift in Sources */,
-				484AD37A2CC6468000D94D3D /* NetworkManager.swift in Sources */,
-				485D51DB2CC7926600A59FE6 /* SignUpTextFields.swift in Sources */,
 				22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */,
 				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
