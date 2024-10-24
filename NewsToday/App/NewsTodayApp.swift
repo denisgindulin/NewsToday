@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     
+    @State private var onboardingViewsIsOn = UserDefaults.standard.bool(forKey: "onboardingViewsIsOn")
+    
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
@@ -29,6 +31,13 @@ struct NewsTodayApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
+//            if !onboardingViewsIsOn {
+//                StartView()
+//                    .environmentObject(authViewModel)
+//            } else {
+//                RootView()
+//                    .environmentObject(authViewModel)
+//            }
         }
     }
 }

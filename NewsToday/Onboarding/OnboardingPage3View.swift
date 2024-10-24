@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingPage3View: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     
-    @AppStorage("isOnboardingShown") var isOnboardingShown = false
+//    @AppStorage("isOnboardingShown") var isOnboardingShown = false
     
     @State private var rootViewIsOn = false
     
@@ -31,7 +31,7 @@ struct OnboardingPage3View: View {
             } label: {
                 NextButton(title: "Get Started", titleFontSize: 24) {
                     rootViewIsOn.toggle()
-                    isOnboardingShown = true
+                    UserDefaults.standard.setValue(true, forKey: "isOnboardingShown")
                 }
             }
             
