@@ -10,8 +10,9 @@ import FirebaseAuth
 import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
-    @Published var user: User?
+    @Published var user: UserData?
     
+    private let firestoreManager = FirestoreManager()
     private var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     init() {
@@ -20,7 +21,20 @@ class AuthViewModel: ObservableObject {
     
     private func listenToAuthState() {
         authStateListenerHandle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
-            self?.user = user
+            if let user {
+                self?.loadUserData(userId: user.uid)
+            } else {
+                self?.user = nil
+            }
+        }
+    }
+    
+    func loadUserData(userId: String) {
+        Task {
+            guard let user = try? await firestoreManager.getUserData(userId: userId) else { return }
+            DispatchQueue.main.async {
+                self.user = user
+            }
         }
     }
     

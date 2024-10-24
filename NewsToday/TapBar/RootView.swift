@@ -12,7 +12,7 @@ struct RootView: View {
     @State var selectedTab: Tab = .home
     
     var body: some View {
-        if let _ = authViewModel.user {
+        if authViewModel.user != nil {
             
             switch selectedTab {
             case .home:

@@ -17,8 +17,7 @@ struct LanguageView: View {
                 text: "English",
                 textColor: selectedLanguage == "English" ? .white : Color("GreyDarker"),
                 backgroundColor: selectedLanguage == "English" ? Color("PurplePrimary") : Color("GreyLighter"),
-                icon: selectedLanguage == "English" ? "checkmark" : "",
-                font: .headline
+                icon: selectedLanguage == "English" ? "checkmark" : ""
             ) {
                 selectedLanguage = "English"  // Set the selected language to English
                 print("Selected language: English")
@@ -29,8 +28,7 @@ struct LanguageView: View {
                 text: "Russian",
                 textColor: selectedLanguage == "Russian" ? .white : Color("GreyDarker"),
                 backgroundColor: selectedLanguage == "Russian" ? Color("PurplePrimary") : Color("GreyLighter"),
-                icon: selectedLanguage == "Russian" ? "checkmark" : "",
-                font: .headline
+                icon: selectedLanguage == "Russian" ? "checkmark" : ""
             ) {
                 selectedLanguage = "Russian"  // Set the selected language to Russian
                 print("Selected language: Russian")
