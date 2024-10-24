@@ -52,18 +52,18 @@ class SignUpViewModel: ObservableObject {
         registrationError = nil
         
         isLoading = true
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            self?.isLoading = false
-            guard error == nil else {
-                print(error!.localizedDescription)
-                self?.registrationError = error!.localizedDescription
-                return
+        Task {
+            do {
+                let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
+                try await authResult.user.sendEmailVerification()
+                print("Подтверждение электронной почты отправлено.")
+                saveUserData(userId: authResult.user.uid, name: name, email: email)
+            } catch {
+                registrationError = error.localizedDescription
+                print("Ошибка при регистрации: \(error.localizedDescription)")
             }
             
-            if let userId = result?.user.uid {
-                result?.user.sendEmailVerification()
-                self?.saveUserData(userId: userId, name: name, email: email)
-            }
+            self.isLoading = false
         }
     }
     

@@ -39,6 +39,7 @@
 		484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3742CC63A5000D94D3D /* FontModifier.swift */; };
 		484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3772CC643BB00D94D3D /* NewsResponse.swift */; };
 		484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E93402CC7B0C1000C531A /* AppTextField.swift */; };
+		48863E492CCA22600058D669 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48863E482CCA22600058D669 /* SecureTextField.swift */; };
 		48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */; };
 		48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036C2CC6ABA200E1AFFA /* FirebaseAuth */; };
 		48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036E2CC6ABA200E1AFFA /* FirebaseDatabase */; };
@@ -86,6 +87,7 @@
 		484AD3792CC6468000D94D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		484E93402CC7B0C1000C531A /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		485D51DA2CC7926600A59FE6 /* SignUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFields.swift; sourceTree = "<group>"; };
+		48863E482CCA22600058D669 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48A703722CC6ADE400E1AFFA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		48A703742CC6ADF200E1AFFA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				484E93402CC7B0C1000C531A /* AppTextField.swift */,
+				48863E482CCA22600058D669 /* SecureTextField.swift */,
 				48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */,
 				48241F422CC8E47900DD3156 /* ErrorText.swift */,
 				93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */,
@@ -429,6 +432,7 @@
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
+				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				93E92B022CC8D726004FEB0F /* TermsAndConditionsView.swift in Sources */,
 				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
