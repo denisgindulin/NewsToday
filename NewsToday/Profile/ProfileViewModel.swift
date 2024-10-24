@@ -10,26 +10,16 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class ProfileViewModel: ObservableObject {
-    @Published var displayName: String = ""
-    @Published var email: String = (Auth.auth().currentUser?.email ?? "no email")
+    private let firestoreManager = FirestoreManager()
+    @Published var user: UserData?
     @Published var isLoggedOut: Bool = false  // Для контроля состояния выхода
-
-    func getUserData() {
-        guard let userId = Auth.auth().currentUser?.uid else {return}
-            
-            Firestore.firestore()
-                .collection("users")
-                .document(userId)
-                .getDocument { snapshot, error in
-                    guard error == nil else {
-                        return
-                    }
-                    if let document = snapshot {
-                        let name = document["name"] as? String
-                        self.displayName = name ?? "No name"
-                    }
-                }
+    
+    func setUserData() async {
+        let user = try? await firestoreManager.getUserData()
+        DispatchQueue.main.async { [weak self] in
+            self?.user = user
         }
+    }
 
     // Выход из аккаунта
     func signOut() {

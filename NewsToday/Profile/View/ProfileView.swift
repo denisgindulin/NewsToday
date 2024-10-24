@@ -39,9 +39,9 @@ struct ProfileView: View {
                             }
                     }
                     VStack(alignment: .leading) {
-                        Text(viewModel.displayName.isEmpty ? "No Name" : viewModel.displayName)
+                        Text(viewModel.user?.name ?? "No Name")
                             .font(.headline)
-                        Text(viewModel.email.isEmpty ? "No Email" : viewModel.email)
+                        Text(viewModel.user?.email ?? "No Email")
                             .font(.subheadline)
                     }
                     Spacer()
@@ -96,8 +96,8 @@ struct ProfileView: View {
                     // Переход на экран авторизации после выхода
                     AuthView()
                 }
-        .onAppear{
-            viewModel.getUserData()
+        .task {
+            await viewModel.setUserData()
         }
     }
 }
