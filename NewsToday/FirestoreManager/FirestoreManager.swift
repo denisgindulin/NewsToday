@@ -10,11 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class FirestoreManager: ObservableObject {
-    func getUserData() async throws -> UserData {
-        guard let userId = Auth.auth().currentUser?.uid else {
-            throw FirestoreError.userNotAuthenticated
-        }
-        
+    func getUserData(userId: String) async throws -> UserData {
         let document = try await Firestore.firestore()
             .collection("users")
             .document(userId)
