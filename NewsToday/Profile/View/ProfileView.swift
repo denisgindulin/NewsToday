@@ -9,15 +9,40 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @StateObject private var viewModel = ProfileViewModel()
+    @State private var showingImagePicker = false  // Для отображения модального окна выбора изображения
+    @State private var avatarImage: UIImage? = nil // Хранение выбранного изображения
+    
     var body: some View {
         NavigationView {
             VStack (spacing: 24) {
                 HStack(spacing: 24) {
-                    Image("ProfileImage")
-                        .frame(width: 72, height: 72)
-                    VStack {
-                        Text("Name")
-                        Text("Email")
+//                    Image("ProfileImage")
+//                        .frame(width: 72, height: 72)
+//                        .clipShape(Circle())
+                    if let avatarImage = avatarImage {
+                        Image(uiImage: avatarImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 72, height: 72)
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                showingImagePicker = true
+                            }
+                    } else {
+                        Image("ProfileImage")  // Заглушка по умолчанию
+                            .resizable()
+                            .frame(width: 72, height: 72)
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                showingImagePicker = true
+                            }
+                    }
+                    VStack(alignment: .leading) {
+                        Text(viewModel.displayName.isEmpty ? "No Name" : viewModel.displayName)
+                            .font(.headline)
+                        Text(viewModel.email.isEmpty ? "No Email" : viewModel.email)
+                            .font(.subheadline)
                     }
                     Spacer()
                 }
@@ -56,13 +81,23 @@ struct ProfileView: View {
                     icon: "rectangle.portrait.and.arrow.right",
                     font: .headline,
                     action: {
-                        print("Sign Out tapped!")
+                        viewModel.signOut()
                     }
                 )
             }
             .padding(.vertical, 24)
             .navigationTitle("Profile")
 //            .navigationBarTitleDisplayMode(.inline)
+        }
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
+        }
+        .fullScreenCover(isPresented: $viewModel.isLoggedOut) {
+                    // Переход на экран авторизации после выхода
+                    AuthView()
+                }
+        .onAppear{
+            viewModel.getUserData()
         }
     }
 }
