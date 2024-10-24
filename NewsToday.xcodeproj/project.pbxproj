@@ -11,6 +11,8 @@
 		22020CDF2CC54AFA00A76887 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22020CDE2CC54AFA00A76887 /* ContentView.swift */; };
 		22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE02CC54AFF00A76887 /* Assets.xcassets */; };
 		22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */; };
+		22889E1A2CC9921800FFE525 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22889E192CC9921800FFE525 /* StartView.swift */; };
+		22889E1D2CC99BFD00FFE525 /* Adamina-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22889E1C2CC99BFD00FFE525 /* Adamina-Regular.ttf */; };
 		22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B692CC7E70300BBBDD5 /* RootView.swift */; };
 		22AE0B6C2CC7FC8900BBBDD5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6B2CC7FC8900BBBDD5 /* HomeView.swift */; };
 		22AE0B6E2CC7FCB300BBBDD5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6D2CC7FCB300BBBDD5 /* HomeViewModel.swift */; };
@@ -58,6 +60,8 @@
 		22020CDE2CC54AFA00A76887 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22020CE02CC54AFF00A76887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22889E192CC9921800FFE525 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		22889E1C2CC99BFD00FFE525 /* Adamina-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-Regular.ttf"; sourceTree = "<group>"; };
 		22AE0B692CC7E70300BBBDD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		22AE0B6B2CC7FC8900BBBDD5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		22AE0B6D2CC7FCB300BBBDD5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				48241F3F2CC8E1F100DD3156 /* Authentication */,
 				22020CDE2CC54AFA00A76887 /* ContentView.swift */,
 				22AE0B802CC7FDE500BBBDD5 /* Components */,
+				22889E1B2CC9922100FFE525 /* Start */,
 				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
 				22AE0B7E2CC7FDA400BBBDD5 /* Home */,
 				482893452CC669040075C778 /* NewsView.swift */,
@@ -157,6 +162,14 @@
 				22020CE32CC54AFF00A76887 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22889E1B2CC9922100FFE525 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				22889E192CC9921800FFE525 /* StartView.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 		22AE0B7B2CC7FD6A00BBBDD5 /* Profile */ = {
@@ -255,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */,
+				22889E1C2CC99BFD00FFE525 /* Adamina-Regular.ttf */,
 				484AD36E2CC634CB00D94D3D /* FontManager.swift */,
 			);
 			path = Font;
@@ -406,6 +420,7 @@
 				22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */,
 				48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */,
 				484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */,
+				22889E1D2CC99BFD00FFE525 /* Adamina-Regular.ttf in Resources */,
 				22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +459,7 @@
 				48241F472CC8ECB200DD3156 /* AuthView.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */,
+				22889E1A2CC9921800FFE525 /* StartView.swift in Sources */,
 				22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */,
 				22AE0B742CC7FD0700BBBDD5 /* BookmarksView.swift in Sources */,
 				48241F492CC90A9400DD3156 /* ProfileViewModel.swift in Sources */,
