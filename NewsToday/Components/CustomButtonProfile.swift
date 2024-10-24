@@ -12,7 +12,6 @@ struct CustomButtonProfile: View {
     var textColor: Color
     var backgroundColor: Color
     var icon: String
-    var font: Font
     var action: (() -> Void)? = nil  // Optional action for buttons without NavigationLink
 
     var body: some View {
@@ -21,7 +20,7 @@ struct CustomButtonProfile: View {
         }) {
             HStack {
                 Text(text)
-                    .font(font)
+                    .interFont()
                     .foregroundColor(textColor)
                 Spacer()
                 if !icon.isEmpty {
