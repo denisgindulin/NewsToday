@@ -20,6 +20,11 @@
 		22AE0B742CC7FD0700BBBDD5 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */; };
 		22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */; };
 		22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B772CC7FD3800BBBDD5 /* ProfileView.swift */; };
+		22F7EDD42CCA7CBE0072847E /* OnboardingPage1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */; };
+		22F7EDD72CCA81C70072847E /* OnboardingPage2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */; };
+		22F7EDD92CCA81DB0072847E /* OnboardingPage3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */; };
+		22F7EDDB2CCA8A3E0072847E /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDDA2CCA8A3E0072847E /* NextButton.swift */; };
+		22F7EDDD2CCA96CC0072847E /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDDC2CCA96CC0072847E /* SkipButton.swift */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
 		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
 		48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
@@ -73,6 +78,11 @@
 		22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		22AE0B772CC7FD3800BBBDD5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1View.swift; sourceTree = "<group>"; };
+		22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2View.swift; sourceTree = "<group>"; };
+		22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3View.swift; sourceTree = "<group>"; };
+		22F7EDDA2CCA8A3E0072847E /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		22F7EDDC2CCA96CC0072847E /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarView.swift; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 				48241F3F2CC8E1F100DD3156 /* Authentication */,
 				22AE0B802CC7FDE500BBBDD5 /* Components */,
 				22889E1B2CC9922100FFE525 /* Start */,
+				22F7EDD52CCA7CE40072847E /* Onboarding */,
 				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
 				22AE0B7E2CC7FDA400BBBDD5 /* Home */,
 				482893452CC669040075C778 /* NewsView.swift */,
@@ -232,8 +243,20 @@
 				48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */,
 				48241F422CC8E47900DD3156 /* ErrorText.swift */,
 				93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */,
+				22F7EDDA2CCA8A3E0072847E /* NextButton.swift */,
+				22F7EDDC2CCA96CC0072847E /* SkipButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		22F7EDD52CCA7CE40072847E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */,
+				22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */,
+				22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		481AA6D82CC7835C009982DB /* Modifiers */ = {
@@ -458,6 +481,7 @@
 				482763D92CCA3B3A00491F26 /* FirestoreManager.swift in Sources */,
 				22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */,
 				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
+				22F7EDDB2CCA8A3E0072847E /* NextButton.swift in Sources */,
 				93E92B002CC8D6F5004FEB0F /* LanguageView.swift in Sources */,
 				93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */,
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
@@ -467,6 +491,8 @@
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,
+				22F7EDDD2CCA96CC0072847E /* SkipButton.swift in Sources */,
+				22F7EDD42CCA7CBE0072847E /* OnboardingPage1View.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				93E92B022CC8D726004FEB0F /* TermsAndConditionsView.swift in Sources */,
 				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
@@ -487,11 +513,13 @@
 				22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */,
 				22AE0B742CC7FD0700BBBDD5 /* BookmarksView.swift in Sources */,
 				48241F492CC90A9400DD3156 /* ProfileViewModel.swift in Sources */,
+				22F7EDD92CCA81DB0072847E /* OnboardingPage3View.swift in Sources */,
 				48241F3E2CC8DF6C00DD3156 /* SignInViewModel.swift in Sources */,
 				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
 				484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */,
 				48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */,
 				481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */,
+				22F7EDD72CCA81C70072847E /* OnboardingPage2View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

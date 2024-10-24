@@ -31,11 +31,12 @@ struct StartView: View {
             .shadow(radius: 2, y: 4)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.onboardingViewsIsOn = true
             }
         }
-        .fullScreenCover(isPresented: $onboardingViewsIsOn) { RootView() } // FIXME: заменить RootView на первый экран онбординга
+        .fullScreenCover(isPresented: $onboardingViewsIsOn) { OnboardingPage1View()
+        }
     }
 }
 
