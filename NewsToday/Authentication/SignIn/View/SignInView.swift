@@ -34,7 +34,6 @@ struct SignInView: View {
         .frame(maxHeight: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
-            print("gjgjg")
             focusedField = nil
         }
     }

@@ -33,39 +33,15 @@ struct AppTextField: View {
         }
         .padding()
         .background(isFocused ? .clear : .greyLighter)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay {
             if isFocused {
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color(.purplePrimary), lineWidth: 1)
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-    }
-}
-
-struct SecureTextField: View {
-    @State var isShowPassword: Bool = true
-    @Binding var textFieldText: String
-    
-    let placeholder: String
-    
-    var body: some View {
-        HStack {
-            if isShowPassword {
-                SecureField(placeholder, text: $textFieldText)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled(true)
-            } else {
-                TextField(placeholder, text: $textFieldText)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled(true)
-            }
-            
-            Button("", systemImage: "eye") {
-                isShowPassword.toggle()
-            }
-            .foregroundStyle(.greyPrimary)
-            
+        .onTapGesture {
+            isFocused = true
         }
     }
 }
