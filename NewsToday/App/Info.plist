@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Adamina-Regular.ttf</string>
 		<string>Inter-VariableFont.ttf</string>
 	</array>
 </dict>

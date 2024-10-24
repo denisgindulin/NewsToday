@@ -12,6 +12,10 @@ extension View {
         modifier(InterFontModifier(type: type, size: size))
     }
     
+    func adaminaFont(type: AdaminaFont = .regular, size: CGFloat = 16) -> some View {
+        modifier(AdaminaFontModifier(type: type, size: size))
+    }
+    
     func authButton() -> some View {
         modifier(AuthButton())
     }

@@ -17,6 +17,8 @@ class SignUpViewModel: ObservableObject {
     @Published var registrationError: String?
     @Published var isLoading: Bool = false
     
+    private let firestoreManager = FirestoreManager()
+    
     func createUser(name: String, email: String, password: String, repeatPassword: String) {
         guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             nameError = "Fill the Username"
@@ -57,7 +59,7 @@ class SignUpViewModel: ObservableObject {
                 let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
                 try await authResult.user.sendEmailVerification()
                 print("Подтверждение электронной почты отправлено.")
-                saveUserData(userId: authResult.user.uid, name: name, email: email)
+                firestoreManager.saveUserData(userId: authResult.user.uid, name: name, email: email)
             } catch {
                 registrationError = error.localizedDescription
                 print("Ошибка при регистрации: \(error.localizedDescription)")
@@ -65,15 +67,5 @@ class SignUpViewModel: ObservableObject {
             
             self.isLoading = false
         }
-    }
-    
-    func saveUserData(userId: String, name: String, email: String) {
-        Firestore.firestore()
-            .collection("users")
-            .document(userId)
-            .setData([
-                "name": name,
-                "email": email
-            ])
     }
 }

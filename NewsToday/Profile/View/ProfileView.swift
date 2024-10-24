@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showingImagePicker = false  // Для отображения модального окна выбора изображения
     @State private var avatarImage: UIImage? = nil // Хранение выбранного изображения
@@ -39,9 +39,9 @@ struct ProfileView: View {
                             }
                     }
                     VStack(alignment: .leading) {
-                        Text(viewModel.displayName.isEmpty ? "No Name" : viewModel.displayName)
+                        Text(authViewModel.user?.name ?? "No Name")
                             .font(.headline)
-                        Text(viewModel.email.isEmpty ? "No Email" : viewModel.email)
+                        Text(authViewModel.user?.email ?? "No Email")
                             .font(.subheadline)
                     }
                     Spacer()
@@ -54,8 +54,7 @@ struct ProfileView: View {
                         text: "Language",
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
-                        icon: "chevron.right",
-                        font: .headline
+                        icon: "chevron.right"
                     )
                 }
                 .buttonStyle(PlainButtonStyle())  // To avoid the default button styling
@@ -67,8 +66,7 @@ struct ProfileView: View {
                         text: "Terms & Conditions",
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
-                        icon: "chevron.right",
-                        font: .headline
+                        icon: "chevron.right"
                     )
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -79,9 +77,8 @@ struct ProfileView: View {
                     textColor: Color("GreyDarker"),
                     backgroundColor: Color("GreyLighter"),
                     icon: "rectangle.portrait.and.arrow.right",
-                    font: .headline,
                     action: {
-                        viewModel.signOut()
+                        viewModel.signOut(authViewModel: authViewModel)
                     }
                 )
             }
@@ -92,18 +89,7 @@ struct ProfileView: View {
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
         }
-        .fullScreenCover(isPresented: $viewModel.isLoggedOut) {
-                    // Переход на экран авторизации после выхода
-                    AuthView()
-                }
-        .onAppear{
-            viewModel.getUserData()
-        }
     }
-}
-
-#Preview {
-    ProfileView()
 }
 
 #Preview("Russian") {
