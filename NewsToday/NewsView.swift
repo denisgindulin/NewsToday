@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewsView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
-    @StateObject private var viewModel = NewsViewModel()
+    @EnvironmentObject var newsLoader: NewsViewModel
+    
     @State private var selectedCategory: Categories = .top
     @State private var searchText: String = ""
     
@@ -24,7 +24,7 @@ struct NewsView: View {
                 }
                 .padding()
                 .onChange(of: selectedCategory) { newCategory in
-                    viewModel.loadCategory(category: newCategory)
+                    newsLoader.loadCategory(category: newCategory)
                 }
                 
                 // Поле поиска
@@ -34,7 +34,7 @@ struct NewsView: View {
                     
                     Button(action: {
                         if !searchText.isEmpty {
-                            viewModel.searchNews(query: searchText)
+                            newsLoader.searchNews(query: searchText)
                         }
                     }) {
                         Image(systemName: "magnifyingglass")
@@ -43,15 +43,15 @@ struct NewsView: View {
                 .padding(.horizontal)
                 
                 // Список новостей
-                if viewModel.isLoading {
+                if newsLoader.isLoading {
                     ProgressView("Загрузка...")
                         .padding()
-                } else if let errorMessage = viewModel.errorMessage {
+                } else if let errorMessage = newsLoader.errorMessage {
                     Text("Ошибка: \(errorMessage)")
                         .foregroundColor(.red)
                         .padding()
                 } else {
-                    List(viewModel.articles) { article in
+                    List(newsLoader.articles) { article in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(article.title ?? "")
                                 .font(.headline)
@@ -65,14 +65,8 @@ struct NewsView: View {
                     }
                     .listStyle(PlainListStyle())
                 }
-                Button("Sign Out") {
-                    authViewModel.signOut()
-                }
             }
             .navigationTitle("Новости")
-            .onAppear {
-                viewModel.loadCategory(category: selectedCategory)
-            }
         }
     }
 }
