@@ -11,7 +11,6 @@ import FirebaseFirestore
 
 class SignUpViewModel: ObservableObject {    
     @Published var isLoading: Bool = false
-    @Published var isSuccess: Bool = false
     
     private let firestoreManager = FirestoreManager()
     
@@ -21,13 +20,8 @@ class SignUpViewModel: ObservableObject {
             do {
                 let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
                 try await authResult.user.sendEmailVerification()
-                print("Подтверждение электронной почты отправлено.")
                 firestoreManager.saveUserData(userId: authResult.user.uid, name: name, email: email)
-                DispatchQueue.main.async {
-                    self.isSuccess = true
-                }
             } catch {
-                //                registrationError = error.localizedDescription
                 print("Ошибка при регистрации: \(error.localizedDescription)")
             }
             
