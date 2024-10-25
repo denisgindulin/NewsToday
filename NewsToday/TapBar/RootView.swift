@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     
+    @StateObject var authViewModel = AuthViewModel()
     @State var selectedTab: Tab = .home
 
     var body: some View {
@@ -16,7 +17,8 @@ struct RootView: View {
         switch selectedTab {
         case .home:
 //            HomeView() // здесь указать на Главный экран
-            NewsView() // заглушка для экрана CategoriesView
+            ContentView() // заглушка для экрана CategoriesView
+                .environmentObject(authViewModel)
         case .categories:
 //            CategoriesView() // здесь указать на Экран выбора категорий новостей
             Circle().frame(width: 250).foregroundStyle(.red)

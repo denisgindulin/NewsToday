@@ -27,8 +27,7 @@ struct NewsTodayApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(authViewModel)
+            RootView()
         }
     }
 }
