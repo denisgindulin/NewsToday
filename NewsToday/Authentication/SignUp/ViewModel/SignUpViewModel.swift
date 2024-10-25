@@ -9,50 +9,13 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-class SignUpViewModel: ObservableObject {
-    @Published var nameError: String?
-    @Published var emailError: String?
-    @Published var passwordError: String?
-    @Published var repeatPasswordError: String?
-    @Published var registrationError: String?
+class SignUpViewModel: ObservableObject {    
     @Published var isLoading: Bool = false
+    @Published var isSuccess: Bool = false
     
     private let firestoreManager = FirestoreManager()
     
     func createUser(name: String, email: String, password: String, repeatPassword: String) {
-        guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            nameError = "Fill the Username"
-            return
-        }
-        nameError = nil
-        
-        guard !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            emailError = "Fill the Email"
-            return
-        }
-        emailError = nil
-        
-        guard !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            passwordError = "Fill the Password"
-            return
-        }
-        passwordError = nil
-        
-        guard !repeatPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            repeatPasswordError = "Fill the Password"
-            return
-        }
-        
-        guard !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-                !repeatPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-                password == repeatPassword else {
-            repeatPasswordError = "Passwords don't match"
-            return
-        }
-        
-        repeatPasswordError = nil
-        registrationError = nil
-        
         isLoading = true
         Task {
             do {
@@ -60,8 +23,11 @@ class SignUpViewModel: ObservableObject {
                 try await authResult.user.sendEmailVerification()
                 print("Подтверждение электронной почты отправлено.")
                 firestoreManager.saveUserData(userId: authResult.user.uid, name: name, email: email)
+                DispatchQueue.main.async {
+                    self.isSuccess = true
+                }
             } catch {
-                registrationError = error.localizedDescription
+                //                registrationError = error.localizedDescription
                 print("Ошибка при регистрации: \(error.localizedDescription)")
             }
             

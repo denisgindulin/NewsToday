@@ -29,7 +29,6 @@
 		48241F412CC8E24B00DD3156 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48241F402CC8E24B00DD3156 /* AuthViewModel.swift */; };
 		48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48241F422CC8E47900DD3156 /* ErrorText.swift */; };
 		48241F452CC8E6D600DD3156 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 48241F442CC8E6D600DD3156 /* FirebaseAuthCombine-Community */; };
-		48241F472CC8ECB200DD3156 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48241F462CC8ECB200DD3156 /* AuthView.swift */; };
 		48241F492CC90A9400DD3156 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48241F482CC90A9400DD3156 /* ProfileViewModel.swift */; };
 		482763D92CCA3B3A00491F26 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482763D82CCA3B3900491F26 /* FirestoreManager.swift */; };
 		482763DC2CCA415800491F26 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482763DB2CCA415800491F26 /* UserData.swift */; };
@@ -76,7 +75,6 @@
 		48241F3D2CC8DF6C00DD3156 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		48241F402CC8E24B00DD3156 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		48241F422CC8E47900DD3156 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
-		48241F462CC8ECB200DD3156 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		48241F482CC90A9400DD3156 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		482763D82CCA3B3900491F26 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		482763DB2CCA415800491F26 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 		48241F3F2CC8E1F100DD3156 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				48241F462CC8ECB200DD3156 /* AuthView.swift */,
 				48241F402CC8E24B00DD3156 /* AuthViewModel.swift */,
 				48A703702CC6ADA000E1AFFA /* SignIn */,
 				48A703712CC6ADAA00E1AFFA /* SignUp */,
@@ -465,7 +462,6 @@
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
 				483199472CC81B2F00655F90 /* ApiKey.swift in Sources */,
 				48241F412CC8E24B00DD3156 /* AuthViewModel.swift in Sources */,
-				48241F472CC8ECB200DD3156 /* AuthView.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */,
 				22AE0B782CC7FD3800BBBDD5 /* ProfileView.swift in Sources */,

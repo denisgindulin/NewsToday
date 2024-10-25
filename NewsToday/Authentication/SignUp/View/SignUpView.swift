@@ -16,7 +16,13 @@ enum SignUpField {
 
 struct SignUpView: View {
     @StateObject var viewModel = SignUpViewModel()
+    @Environment(\.dismiss) var dismiss
     @FocusState private var focusedField: SignUpField?
+    
+    @State private var userName = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var repeatPassword = ""
     
     var body: some View {
         VStack(spacing: 32) {
@@ -29,12 +35,34 @@ struct SignUpView: View {
                     .foregroundStyle(.greyPrimary)
             }
             VStack(spacing: 16) {
-                SignUpTextFields(viewModel: viewModel, focusedField: $focusedField)
+                SignUpTextFields(userName: $userName, email: $email, password: $password, repeatPassword: $repeatPassword, focusedField: $focusedField)
+                
+                VStack {
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
+                    } else {
+                        Button {
+                            print(viewModel.isSuccess.description)
+                            viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
+                        } label: {
+                            Text("Sign Up")
+                                .authButton()
+                        }
+                    }
+                }
             }
-            
             Spacer()
+            
+            HStack {
+                Text("Already have an account?")
+                    .interFont(type: .medium)
+                Button("Sign In") {
+                    dismiss()
+                }
+            }
         }
-//        .ignoresSafeArea(.keyboard, edges: .bottom)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .padding(.horizontal, 20)
         .padding(.top, 28)
         .frame(maxHeight: .infinity)
@@ -42,9 +70,14 @@ struct SignUpView: View {
         .onTapGesture {
             focusedField = nil
         }
+        .onChange(of: viewModel.isSuccess) { isSuccess in
+            if isSuccess {
+                dismiss()
+            }
+        }
     }
 }
 
-#Preview {
-    SignUpView()
-}
+//#Preview {
+//    SignUpView()
+//}

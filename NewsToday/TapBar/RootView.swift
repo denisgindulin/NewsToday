@@ -30,7 +30,7 @@ struct RootView: View {
             }
             CustomTabBarView(selectedTab: $selectedTab)
         } else {
-            AuthView()
+            SignInView()
         }
         
     }
