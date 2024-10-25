@@ -8,51 +8,20 @@
 import SwiftUI
 
 struct SignInTextFields: View {
-    @ObservedObject var viewModel: SignInViewModel
-    
-    @State private var email = ""
-    @State private var password = ""
+    @Binding var email: String
+    @Binding var password: String
     
     var focusedField: FocusState<SignInField?>.Binding
     
     var body: some View {
         VStack(spacing: 64) {
             VStack(spacing: 16) {
-                VStack(alignment: .leading) {
-                    AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
-                        .focused(focusedField, equals: .email)
-                    if let emailError = viewModel.emailError {
-                        ErrorText(text: emailError)
-                    }
-                }
+                AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
+                    .focused(focusedField, equals: .email)
                 
-                VStack(alignment: .leading) {
-                    AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
-                        .focused(focusedField, equals: .password)
-                    if let passwordError = viewModel.passwordError {
-                        ErrorText(text: passwordError)
-                    }
-                }
+                AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
+                    .focused(focusedField, equals: .password)
             }
-            
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
-                } else {
-                    Button {
-                        viewModel.signIn(email: email, password: password)
-                    } label: {
-                        Text("Sign In")
-                            .authButton()
-                    }
-                    if let signInError = viewModel.signInError {
-                        ErrorText(text: signInError)
-                    }
-                }
-                
-            }
-            
         }
         .onSubmit {
             switch focusedField.wrappedValue {
