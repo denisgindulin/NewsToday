@@ -65,7 +65,9 @@ class SignUpViewModel: ObservableObject {
                 print("Ошибка при регистрации: \(error.localizedDescription)")
             }
             
-            self.isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         }
     }
 }
