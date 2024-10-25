@@ -19,6 +19,13 @@ struct SignInView: View {
     @State private var email = ""
     @State private var password = ""
     
+    var disableSignIn: Bool {
+        let isEmailEmpty = email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isPasswordEmpty = password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        
+        return isEmailEmpty || isPasswordEmpty
+    }
+    
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .leading, spacing: 8) {
@@ -42,7 +49,9 @@ struct SignInView: View {
                         } label: {
                             Text("Sign In")
                                 .authButton()
+                                .opacity(disableSignIn ? 0.5 : 1)
                         }
+                        .disabled(disableSignIn)
                     }
                     
                 }

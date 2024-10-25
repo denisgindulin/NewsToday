@@ -24,6 +24,17 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var repeatPassword = ""
     
+    var disableSignUp: Bool {
+        let isNameEmpty = userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isEmailEmpty = email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isPasswordEmpty = password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isRepeatPasswordEmpty = repeatPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        
+        let isPasswordMatches = password == repeatPassword
+        
+        return isNameEmpty || isEmailEmpty || isPasswordEmpty || isRepeatPasswordEmpty || !isPasswordMatches
+    }
+    
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .leading, spacing: 8) {
@@ -43,12 +54,13 @@ struct SignUpView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
                     } else {
                         Button {
-                            print(viewModel.isSuccess.description)
                             viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
                         } label: {
                             Text("Sign Up")
                                 .authButton()
+                                .opacity(disableSignUp ? 0.5 : 1)
                         }
+                        .disabled(disableSignUp)
                     }
                 }
             }
@@ -69,11 +81,6 @@ struct SignUpView: View {
         .contentShape(Rectangle())
         .onTapGesture {
             focusedField = nil
-        }
-        .onChange(of: viewModel.isSuccess) { isSuccess in
-            if isSuccess {
-                dismiss()
-            }
         }
     }
 }
