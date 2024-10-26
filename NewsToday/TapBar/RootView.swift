@@ -32,7 +32,9 @@ struct RootView: View {
         } else {
             AuthView()
         }
-        
+        .onAppear {
+            selectedTab: Tab = .home
+        }
     }
 }
 
