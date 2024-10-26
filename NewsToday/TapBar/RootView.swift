@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State var selectedTab: Tab = .home
     
     var body: some View {
@@ -30,7 +31,7 @@ struct RootView: View {
             }
             CustomTabBarView(selectedTab: $selectedTab)
         } else {
-            AuthView()
+            SignInView()
         }
         .onAppear {
             selectedTab: Tab = .home

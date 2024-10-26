@@ -15,6 +15,17 @@ struct SignInView: View {
     @StateObject var viewModel = SignInViewModel()
     @FocusState var focusedField: SignInField?
     
+    @State private var isSignUp: Bool = false
+    @State private var email = ""
+    @State private var password = ""
+    
+    var disableSignIn: Bool {
+        let isEmailEmpty = email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isPasswordEmpty = password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        
+        return isEmailEmpty || isPasswordEmpty
+    }
+    
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .leading, spacing: 8) {
@@ -25,10 +36,41 @@ struct SignInView: View {
                     .interFont(type: .regular)
                     .foregroundStyle(.greyPrimary)
             }
-            SignInTextFields(viewModel: viewModel, focusedField: $focusedField)
+            VStack(spacing: 64) {
+                SignInTextFields(email: $email, password: $password, focusedField: $focusedField)
+                
+                VStack {
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
+                    } else {
+                        Button {
+                            viewModel.signIn(email: email, password: password)
+                        } label: {
+                            Text("Sign In")
+                                .authButton()
+                                .opacity(disableSignIn ? 0.5 : 1)
+                        }
+                        .disabled(disableSignIn)
+                    }
+                    
+                }
+            }
+            
             Spacer()
+            
+            HStack {
+                Text(isSignUp ? "Already have an account?" : "Don't have an account?")
+                    .interFont(type: .medium)
+                Button(isSignUp ? "Sign In" : "Sign Up") {
+                    withAnimation {
+                        isSignUp.toggle()
+                    }
+                }
+                .fullScreenCover(isPresented: $isSignUp) { SignUpView() }
+            }
         }
-//        .ignoresSafeArea(.keyboard, edges: .bottom)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .padding(.horizontal, 20)
         .padding(.top, 28)
         .frame(maxHeight: .infinity)

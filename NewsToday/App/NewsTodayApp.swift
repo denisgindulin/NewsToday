@@ -21,6 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
+    @StateObject var newsLoader = NewsViewModel()
     
     @State private var onboardingViewsIsOn = UserDefaults.standard.bool(forKey: "onboardingViewsIsOn")
     
@@ -31,6 +32,7 @@ struct NewsTodayApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
+                .environmentObject(newsLoader)
 //            if !onboardingViewsIsOn {
 //                StartView()
 //                    .environmentObject(authViewModel)
