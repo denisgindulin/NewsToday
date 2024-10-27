@@ -50,6 +50,10 @@ class NewsViewModel: ObservableObject {
     
     let networkManager = NetworkManager()
     
+    init() {
+        loadCategory(category: .top)
+    }
+    
     func loadCategory(category: Categories) {
         Task {
             await fetchArticles(endpoint: .latest(category: category))
@@ -68,6 +72,7 @@ class NewsViewModel: ObservableObject {
         do {
             let response = try await networkManager.fetchNews(endpoint: endpoint)
             self.articles = response
+            print("Fetched articles count: \(self.articles.count)")
         } catch {
             print("Ошибка при получении новостей: \(error.localizedDescription)")
             errorMessage = error.localizedDescription

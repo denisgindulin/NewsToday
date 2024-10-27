@@ -16,3 +16,13 @@ struct InterFontModifier: ViewModifier {
             .font(.custom(type.rawValue, size: size))
     }
 }
+
+struct AdaminaFontModifier: ViewModifier {
+    let type: AdaminaFont
+    let size: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.custom(type.rawValue, size: size))
+    }
+}

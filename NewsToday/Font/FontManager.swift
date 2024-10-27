@@ -15,3 +15,7 @@ enum InterFont: String {
     case semiBold = "Inter-Regular_SemiBold"
     case bold = "Inter-Regular_Bold"
 }
+
+enum AdaminaFont: String {
+    case regular = "Adamina-Regular"
+}

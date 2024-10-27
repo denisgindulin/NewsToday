@@ -21,6 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
+    @StateObject var newsLoader = NewsViewModel()
     
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -28,6 +29,8 @@ struct NewsTodayApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(authViewModel)
+                .environmentObject(newsLoader)
         }
     }
 }
