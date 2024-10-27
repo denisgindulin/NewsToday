@@ -18,40 +18,43 @@ struct CustomTabBarView: View {
     @Binding var selectedTab: Tab
     
     var body: some View {
-        HStack {
-            Spacer()
-
-            Button(action: { selectedTab = .home /* switch to HomeView */}) {
-                Image("Home")
-                    .foregroundStyle(selectedTab != .home ? .greyLight : .purplePrimary)
+        ZStack {
+            HStack {
+                Spacer()
+                
+                Button(action: { selectedTab = .home /* switch to HomeView */}) {
+                    Image("Home")
+                        .foregroundStyle(selectedTab != .home ? .greyLight : .purplePrimary)
+                }
+                
+                Spacer()
+                Spacer()
+                
+                Button(action: {selectedTab = .categories /* switch to CategoriesView */}) {
+                    Image("categoriesIcon")
+                        .foregroundStyle(selectedTab != .categories ? .greyLight : .purplePrimary)
+                }
+                
+                Spacer()
+                Spacer()
+                
+                Button(action: { selectedTab = .bookmark /* switch to BookmarksView */}) {
+                    Image("bookmarkIcon")
+                        .foregroundStyle(selectedTab != .bookmark ? .greyLight : .purplePrimary)
+                }
+                
+                Spacer()
+                Spacer()
+                
+                Button(action: { selectedTab = .profile /* switch to ProfileView */}) {
+                    Image("profileIcon")
+                        .foregroundStyle(selectedTab != .profile ? .greyLight : .purplePrimary)
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
-            Spacer()
-
-            Button(action: {selectedTab = .categories /* switch to CategoriesView */}) {
-                Image("categoriesIcon")
-                    .foregroundStyle(selectedTab != .categories ? .greyLight : .purplePrimary)
-            }
-            
-            Spacer()
-            Spacer()
-
-            Button(action: { selectedTab = .bookmark /* switch to BookmarksView */}) {
-                Image("bookmarkIcon")
-                    .foregroundStyle(selectedTab != .bookmark ? .greyLight : .purplePrimary)
-            }
-            
-            Spacer()
-            Spacer()
-
-            Button(action: { selectedTab = .profile /* switch to ProfileView */}) {
-                Image("profileIcon")
-                    .foregroundStyle(selectedTab != .profile ? .greyLight : .purplePrimary)
-            }
-            
-            Spacer()
         }
+        .zIndex(2)
     }
 }
 
