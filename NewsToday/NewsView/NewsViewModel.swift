@@ -15,7 +15,7 @@ class NewsViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var searchText: String = ""
-    @Published var selectedCategory: Categories? = .crime
+    @Published var selectedCategory: Category? = .crime
     @Published var loading: Bool = false
     
     private var cancellables = [AnyCancellable]()
@@ -44,7 +44,7 @@ class NewsViewModel: ObservableObject {
                 }
             }).store(in: &cancellables)
         
-        loadCategory(category: selectedCategory ?? Categories.top)
+        loadCategory(category: selectedCategory ?? Category.top)
     }
     
     
@@ -54,7 +54,7 @@ class NewsViewModel: ObservableObject {
         loadCategory(category: .top)
     }
     
-    func loadCategory(category: Categories) {
+    func loadCategory(category: Category) {
         Task {
             await fetchArticles(endpoint: .latest(category: category))
         }

@@ -9,7 +9,7 @@ import Foundation
 
 enum Endpoint {
     case search(request: String)
-    case latest(category: Categories)
+    case latest(category: Category)
 }
 
 final class NetworkManager {
