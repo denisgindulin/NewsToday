@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showingImagePicker = false  // Для отображения модального окна выбора изображения
@@ -17,9 +18,6 @@ struct ProfileView: View {
         NavigationView {
             VStack (spacing: 24) {
                 HStack(spacing: 24) {
-//                    Image("ProfileImage")
-//                        .frame(width: 72, height: 72)
-//                        .clipShape(Circle())
                     if let avatarImage = avatarImage {
                         Image(uiImage: avatarImage)
                             .resizable()
@@ -51,7 +49,7 @@ struct ProfileView: View {
                 // Language Button with NavigationLink
                 NavigationLink(destination: LanguageView()) {
                     CustomButtonProfile(
-                        text: LocalizedStringKey("Language"),
+                        text: Resources.Text.lang.localized(localizationService.language),
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
                         icon: "chevron.right"
@@ -63,7 +61,7 @@ struct ProfileView: View {
                 // Terms & Conditions Button
                 NavigationLink(destination: TermsAndConditionsView()) {
                     CustomButtonProfile(
-                        text: LocalizedStringKey("Terms & Conditions"),
+                        text: Resources.Text.termsAndConditions.localized(localizationService.language),
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
                         icon: "chevron.right"
@@ -73,7 +71,7 @@ struct ProfileView: View {
                 
                 // Sign Out Button
                 CustomButtonProfile(
-                    text: LocalizedStringKey("Sign Out"),
+                    text: Resources.Text.signOut.localized(localizationService.language),
                     textColor: Color("GreyDarker"),
                     backgroundColor: Color("GreyLighter"),
                     icon: "rectangle.portrait.and.arrow.right",
@@ -83,7 +81,7 @@ struct ProfileView: View {
                 )
             }
             .padding(.vertical, 24)
-            .navigationTitle("Profile")
+            .navigationTitle(Resources.Text.profile.localized(localizationService.language))
 //            .navigationBarTitleDisplayMode(.inline)
         }
         .sheet(isPresented: $showingImagePicker) {

@@ -64,6 +64,8 @@
 		93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */; };
 		93E92B0A2CC9564F004FEB0F /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */; };
 		93E92B112CCF719E004FEB0F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 93E92B102CCF719E004FEB0F /* Localizable.xcstrings */; };
+		93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */; };
+		93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B162CCF9009004FEB0F /* Resourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonProfile.swift; sourceTree = "<group>"; };
 		93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		93E92B102CCF719E004FEB0F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		93E92B162CCF9009004FEB0F /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				93E92B102CCF719E004FEB0F /* Localizable.xcstrings */,
+				93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */,
+				93E92B162CCF9009004FEB0F /* Resourses.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
 				48241F362CC8D38D00DD3156 /* SignUpTextFields.swift in Sources */,
 				48241F352CC8D37C00DD3156 /* NewsView.swift in Sources */,
 				48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */,
@@ -517,6 +524,7 @@
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
 				483199452CC81AAA00655F90 /* Categories.swift in Sources */,
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
+				93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,
