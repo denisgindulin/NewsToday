@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomButtonProfile: View {
-    var text: String
+    var text: LocalizedStringKey
     var textColor: Color
     var backgroundColor: Color
     var icon: String

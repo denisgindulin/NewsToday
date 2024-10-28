@@ -51,7 +51,7 @@ struct ProfileView: View {
                 // Language Button with NavigationLink
                 NavigationLink(destination: LanguageView()) {
                     CustomButtonProfile(
-                        text: "Language",
+                        text: LocalizedStringKey("Language"),
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
                         icon: "chevron.right"
@@ -63,7 +63,7 @@ struct ProfileView: View {
                 // Terms & Conditions Button
                 NavigationLink(destination: TermsAndConditionsView()) {
                     CustomButtonProfile(
-                        text: "Terms & Conditions",
+                        text: LocalizedStringKey("Terms & Conditions"),
                         textColor: Color("GreyDarker"),
                         backgroundColor: Color("GreyLighter"),
                         icon: "chevron.right"
@@ -73,7 +73,7 @@ struct ProfileView: View {
                 
                 // Sign Out Button
                 CustomButtonProfile(
-                    text: "Sign Out",
+                    text: LocalizedStringKey("Sign Out"),
                     textColor: Color("GreyDarker"),
                     backgroundColor: Color("GreyLighter"),
                     icon: "rectangle.portrait.and.arrow.right",

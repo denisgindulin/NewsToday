@@ -1,0 +1,396 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "\nBy using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Используя News App, вы соглашаетесь с настоящими Условиями и положениями. Пожалуйста, прекратите использование приложения, если вы не согласны.\n\n1. Принятие условий\nПри доступе к News App вы соглашаетесь с настоящими условиями и любыми будущими обновлениями. Продолжение использования после изменений подразумевает принятие.\n\n2. Поведение пользователя\nВы соглашаетесь использовать приложение законно и избегать любого поведения, которое может нанести вред другим или приложению.\n\n3. Отказ от ответственности\nNews App предоставляется «как есть». Мы не гарантируем его точность, надежность или бесперебойную работу.\n\n4. Ограничение ответственности\nМы не несем ответственности за любой ущерб, возникший в результате использования вами приложения.\n\n5. Прекращение\nМы можем приостановить или прекратить доступ к приложению, если эти условия будут нарушены.\n\n6. Контакты\nЕсли у вас есть вопросы, отправьте нам электронное письмо по адресу support@newsapp.com."
+          }
+        }
+      }
+    },
+    "Already have an account?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already have an account?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уже есть учетная запись?"
+          }
+        }
+      }
+    },
+    "autor" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "autor"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор"
+          }
+        }
+      }
+    },
+    "Browse" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обзор"
+          }
+        }
+      }
+    },
+    "Discover things of this world" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discover things of this world"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откройте для себя этот мир"
+          }
+        }
+      }
+    },
+    "Don't have an account?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't have an account?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вас нет учетной записи?"
+          }
+        }
+      }
+    },
+    "English" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Английский"
+          }
+        }
+      }
+    },
+    "Hello, I guess you are new around here. You can start using the application after sign up." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, I guess you are new around here. You can start using the application after sign up."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет, я думаю, Вы здесь новичок. Вы можете начать пользоваться приложением после регистрации."
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет, мир!"
+          }
+        }
+      }
+    },
+    "I am happy to see you again. You can continue where you left off by logging in" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I am happy to see you again. You can continue where you left off by logging in"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Я рад снова Вас видеть. Вы можете продолжить с того места, где остановились, войдя в систему"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
+    },
+    "News" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "News"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новости"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Recomend for you" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recomend for you"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рекомендации для Вас"
+          }
+        }
+      }
+    },
+    "Results" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Results"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Результаты"
+          }
+        }
+      }
+    },
+    "Russian" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Russian"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Русский"
+          }
+        }
+      }
+    },
+    "See all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See all"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "Sign In" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Out"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выйти"
+          }
+        }
+      }
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Up"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрация"
+          }
+        }
+      }
+    },
+    "Skip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пропустить"
+          }
+        }
+      }
+    },
+    "Terms & Conditions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terms & Conditions"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Условия и положения"
+          }
+        }
+      }
+    },
+    "ToDay" : {
+
+    },
+    "Welcome Back 👋" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome Back 👋"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать обратно 👋"
+          }
+        }
+      }
+    },
+    "Welcome to NewsToDay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to NewsToDay"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать в NewsToDay"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
