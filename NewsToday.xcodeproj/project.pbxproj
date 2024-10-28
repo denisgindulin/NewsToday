@@ -43,7 +43,7 @@
 		482763D92CCA3B3A00491F26 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482763D82CCA3B3900491F26 /* FirestoreManager.swift */; };
 		482763DC2CCA415800491F26 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482763DB2CCA415800491F26 /* UserData.swift */; };
 		482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482763DD2CCA416B00491F26 /* FirestoreError.swift */; };
-		483199452CC81AAA00655F90 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199442CC81AAA00655F90 /* Categories.swift */; };
+		483199452CC81AAA00655F90 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199442CC81AAA00655F90 /* Category.swift */; };
 		483199472CC81B2F00655F90 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483199462CC81B2F00655F90 /* ApiKey.swift */; };
 		484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */; };
 		484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD36E2CC634CB00D94D3D /* FontManager.swift */; };
@@ -57,6 +57,7 @@
 		48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48A7036E2CC6ABA200E1AFFA /* FirebaseDatabase */; };
 		48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703722CC6ADE400E1AFFA /* SignUpView.swift */; };
 		48A703752CC6ADF200E1AFFA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A703742CC6ADF200E1AFFA /* SignInView.swift */; };
+		48EAB9872CCF683900EC8D93 /* CategoryEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAB9862CCF683900EC8D93 /* CategoryEmojiView.swift */; };
 		48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1D4C22CC7C5D800F64081 /* SignUpViewModel.swift */; };
 		48F1D4C62CC7C7E900F64081 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 48F1D4C52CC7C7E900F64081 /* FirebaseFirestore */; };
 		93E92B002CC8D6F5004FEB0F /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92AFF2CC8D6F5004FEB0F /* LanguageView.swift */; };
@@ -99,7 +100,7 @@
 		482763DB2CCA415800491F26 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		482763DD2CCA416B00491F26 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		482893452CC669040075C778 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
-		483199442CC81AAA00655F90 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		483199442CC81AAA00655F90 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		483199462CC81B2F00655F90 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		484AD36B2CC62FCF00D94D3D /* Inter-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont.ttf"; sourceTree = "<group>"; };
 		484AD36D2CC6302400D94D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		48A703692CC6AB5300E1AFFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48A703722CC6ADE400E1AFFA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		48A703742CC6ADF200E1AFFA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		48EAB9862CCF683900EC8D93 /* CategoryEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEmojiView.swift; sourceTree = "<group>"; };
 		48F1D4C22CC7C5D800F64081 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		93E92AFF2CC8D6F5004FEB0F /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		93E92B012CC8D725004FEB0F /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				22AE0B6F2CC7FCDD00BBBDD5 /* CategoriesView.swift */,
+				48EAB9862CCF683900EC8D93 /* CategoryEmojiView.swift */,
 				22AE0B712CC7FCEF00BBBDD5 /* CategoriesViewModel.swift */,
 			);
 			path = Categories;
@@ -351,7 +354,7 @@
 		484AD3762CC6436900D94D3D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				483199442CC81AAA00655F90 /* Categories.swift */,
+				483199442CC81AAA00655F90 /* Category.swift */,
 				483199462CC81B2F00655F90 /* ApiKey.swift */,
 				484AD3772CC643BB00D94D3D /* NewsResponse.swift */,
 				484AD3792CC6468000D94D3D /* NetworkManager.swift */,
@@ -502,13 +505,14 @@
 				93E92B002CC8D6F5004FEB0F /* LanguageView.swift in Sources */,
 				93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */,
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
-				483199452CC81AAA00655F90 /* Categories.swift in Sources */,
+				483199452CC81AAA00655F90 /* Category.swift in Sources */,
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,
 				22F7EDDD2CCA96CC0072847E /* SkipButton.swift in Sources */,
 				22F7EDD42CCA7CBE0072847E /* OnboardingPage1View.swift in Sources */,
+				48EAB9872CCF683900EC8D93 /* CategoryEmojiView.swift in Sources */,
 				484AD36F2CC634CB00D94D3D /* FontManager.swift in Sources */,
 				93E92B022CC8D726004FEB0F /* TermsAndConditionsView.swift in Sources */,
 				48F1D4C32CC7C5D800F64081 /* SignUpViewModel.swift in Sources */,
