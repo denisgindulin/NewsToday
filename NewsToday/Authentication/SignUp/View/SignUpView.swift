@@ -55,6 +55,7 @@ struct SignUpView: View {
                     } else {
                         Button {
                             viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
+//                            dismiss()
                         } label: {
                             Text("Sign Up")
                                 .authButton()

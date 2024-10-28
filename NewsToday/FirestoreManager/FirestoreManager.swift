@@ -29,10 +29,9 @@ class FirestoreManager: ObservableObject {
         }
         
         
-        return await UserData(id: userId,
+        return UserData(id: userId,
                         name: name,
-                        email: email,
-                        favoriteCategories: try getUserCategories(userId: userId))
+                        email: email)
     }
     
     func getUserCategories(userId: String) async throws -> [Category] {
