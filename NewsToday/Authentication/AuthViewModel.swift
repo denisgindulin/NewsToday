@@ -11,6 +11,7 @@ import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
+    @Published var selectedCategories: Set<Category> = []
     
     private let firestoreManager = FirestoreManager()
     private var authStateListenerHandle: AuthStateDidChangeListenerHandle?
@@ -23,6 +24,7 @@ class AuthViewModel: ObservableObject {
         authStateListenerHandle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if let user {
                 self?.loadUserData(userId: user.uid)
+                self?.loadFavoriteCategories(userId: user.uid)
             } else {
                 self?.user = nil
             }
@@ -34,6 +36,16 @@ class AuthViewModel: ObservableObject {
             guard let user = try? await firestoreManager.getUserData(userId: userId) else { return }
             DispatchQueue.main.async {
                 self.user = user
+            }
+        }
+    }
+    
+    func loadFavoriteCategories(userId: String) {
+        Task {
+            guard let categories = try? await firestoreManager.getUserCategories(userId: userId) else { return }
+            
+            DispatchQueue.main.async {
+                self.selectedCategories = Set(categories)
             }
         }
     }

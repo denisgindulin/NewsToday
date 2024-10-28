@@ -32,7 +32,7 @@ struct NewsView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
-                                    ForEach(Categories.allCases, id: \.self) { category in
+                                    ForEach(Category.allCases, id: \.self) { category in
                                         Button {
                                             viewModel.selectedCategory = category
                                             viewModel.loadCategory(category: category)
