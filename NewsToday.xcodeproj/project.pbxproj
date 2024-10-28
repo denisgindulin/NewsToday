@@ -64,6 +64,9 @@
 		93E92B022CC8D726004FEB0F /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B012CC8D725004FEB0F /* TermsAndConditionsView.swift */; };
 		93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */; };
 		93E92B0A2CC9564F004FEB0F /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */; };
+		93E92B112CCF719E004FEB0F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 93E92B102CCF719E004FEB0F /* Localizable.xcstrings */; };
+		93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */; };
+		93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B162CCF9009004FEB0F /* Resourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		93E92B012CC8D725004FEB0F /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
 		93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonProfile.swift; sourceTree = "<group>"; };
 		93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		93E92B102CCF719E004FEB0F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		93E92B162CCF9009004FEB0F /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
+				93E92B0F2CCF7180004FEB0F /* Localization */,
 				484AD3732CC6369800D94D3D /* App */,
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
@@ -417,6 +424,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		93E92B0F2CCF7180004FEB0F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				93E92B102CCF719E004FEB0F /* Localizable.xcstrings */,
+				93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */,
+				93E92B162CCF9009004FEB0F /* Resourses.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +479,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 22020CD02CC54AFA00A76887;
 			packageReferences = (
@@ -484,6 +502,7 @@
 			files = (
 				22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */,
 				48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */,
+				93E92B112CCF719E004FEB0F /* Localizable.xcstrings in Resources */,
 				484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */,
 				22889E1D2CC99BFD00FFE525 /* Adamina-Regular.ttf in Resources */,
 				22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */,
@@ -497,6 +516,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
 				48A67D102CCFCC5E009F65FF /* ProfileViewModel.swift in Sources */,
 				48A67D0F2CCFCC27009F65FF /* ProfileView.swift in Sources */,
 				48A67D0E2CCFCBDF009F65FF /* NewsCardView.swift in Sources */,
@@ -512,6 +533,7 @@
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
 				483199452CC81AAA00655F90 /* Category.swift in Sources */,
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
+				93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,

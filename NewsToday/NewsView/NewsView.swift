@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewsView: View {
-    
+    @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = NewsViewModel()
     
@@ -26,7 +26,7 @@ struct NewsView: View {
                         LazyVStack(alignment: .leading, spacing: 24) {
                             
                             AppTextField(textFieldText: $viewModel.searchText,
-                                         placeholder: "Search",
+                                         placeholder: (Resources.Text.search.localized(localizationService.language)),
                                          imageName: "magnifyingglass")
                             .padding(.horizontal, 20)
                             
@@ -78,7 +78,7 @@ struct NewsView: View {
             .fullScreenCover(isPresented: $isFullScreen) {
                 NewsPreviewCardView(articles: viewModel.articles)
             }
-        }.navigationTitle("Browse")
+        }.navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }
 }
 
@@ -87,13 +87,13 @@ extension NewsView {
     
     var headerTitle: some View {
         Group {
-            Text("Browse")
+            Text(Resources.Text.browseTitle.localized(localizationService.language))
                 .font(.system(size: 24, weight: .semibold))
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 8)
                 .padding(.top, 28)
             
-            Text("Discover things of this world")
+            Text(Resources.Text.browseText.localized(localizationService.language))
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 16, weight: .regular))
                 .padding(.bottom, 32)
@@ -104,7 +104,7 @@ extension NewsView {
     var recomendTitles: some View {
         HStack {
             
-            Text("Recomend for you")
+            Text(Resources.Text.recommended.localized(localizationService.language))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.black)
             
@@ -113,7 +113,7 @@ extension NewsView {
             Button {
                 isFullScreen = true
             } label: {
-                Text("See all")
+                Text((Resources.Text.seeAll.localized(localizationService.language)))
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.gray)
             }

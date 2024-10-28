@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
+    @StateObject private var localizationService = LocalizationService.shared
+    
     
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -31,6 +33,7 @@ struct NewsTodayApp: App {
             RootView()
                 .environmentObject(authViewModel)
                 .environmentObject(newsLoader)
+                .environmentObject(localizationService)
         }
     }
 }
