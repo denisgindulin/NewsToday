@@ -19,9 +19,9 @@ struct RootView: View {
             case .home:
                 NewsView() // заглушка для экрана HomeView
             case .categories:
-                //            CategoriesView() // здесь указать на Экран выбора категорий новостей
-                Circle().frame(width: 250).foregroundStyle(.red)
-                Spacer() // заглушка для экрана CategoriesView
+                CategoriesView(title: "Categories",
+                               subtitle: "Thousands of articles in each category",
+                               showButton: true)
             case .bookmark:
                 //            BookmarksView() // здесь указать на Экран с избранными новостями
                 Circle().frame(width: 200).foregroundStyle(.green)
