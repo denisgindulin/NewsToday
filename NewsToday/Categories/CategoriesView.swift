@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct CategoriesView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @StateObject private var viewModel = CategoriesViewModel()
+    
     let title: String
     let subtitle: String
     let showButton: Bool
+    
+    @State private var selectedCategories: Set<Category> = [] 
+//        didSet {
+//            print("Selected categories changed: \(selectedCategories)")
+//            viewModel.saveFavoriteCategory(Array(selectedCategories))
+//        }
+//    }
     
     var body: some View {
         ScrollView {
@@ -24,7 +34,7 @@ struct CategoriesView: View {
                         .foregroundStyle(.greyPrimary)
                 }
                 VStack(alignment: .center, spacing: 16) {
-                    CategoryItems()
+                    CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
                     Button {
                         //
                     } label: {
@@ -46,14 +56,19 @@ struct CategoriesView: View {
 }
 
 struct CategoryItems: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var viewModel: CategoriesViewModel
+    @Binding var selectedCategories: Set<Category>
+    
     let columns: [GridItem] = [GridItem(.adaptive(minimum: 160), spacing: 16)]
-    @State private var selectedCategories: Set<Category> = []
+    
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
             ForEach(Category.allCases, id: \.rawValue) { category in
                 Button {
                     toggleSelection(for: category)
+                    viewModel.saveFavoriteCategory(Array(selectedCategories))
                 } label: {
                     HStack {
                         CategoryEmojiView(category: category)
