@@ -5,6 +5,7 @@
 //  Created by Даниил Сивожелезов on 21.10.2024.
 //
 
+import Alamofire
 import Foundation
 
 enum Endpoint {
@@ -39,20 +40,43 @@ final class NetworkManager {
         guard let url = components.url else { throw URLError(.badURL)}
         print("Запрос URL: \(url)")
         
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let newsResponse = try await AF.request(url)
+            .validate(statusCode: 200..<300)
+            .serializingDecodable(NewsResponse.self)
+            .value
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw URLError(.badServerResponse)
+        if let jsonData = try? JSONSerialization.jsonObject(with: JSONEncoder().encode(newsResponse),
+                                                            options: []) {
+            print(jsonData)
         }
         
-        let json = try? JSONSerialization.jsonObject(with: data, options: [])
-        print(json ?? "")
-        
-        do {
-            let decoder = try JSONDecoder().decode(NewsResponse.self, from: data)
-            return decoder.results
-        } catch {
-            throw error
-        }
+        return newsResponse.results
     }
+    
+//    func fetchNews(endpoint: Endpoint, language: String = "ru") async throws -> [Article] {
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = "newsdata.io"
+//        components.path = "/api/1/news"
+//        components.queryItems = createQueryItems(endpoint, language: language)
+//        
+//        guard let url = components.url else { throw URLError(.badURL)}
+//        print("Запрос URL: \(url)")
+//        
+//        let (data, response) = try await URLSession.shared.data(from: url)
+//        
+//        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+//            throw URLError(.badServerResponse)
+//        }
+//        
+//        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//        print(json ?? "")
+//        
+//        do {
+//            let decoder = try JSONDecoder().decode(NewsResponse.self, from: data)
+//            return decoder.results
+//        } catch {
+//            throw error
+//        }
+//    }
 }
