@@ -15,6 +15,7 @@ enum SignUpField {
 }
 
 struct SignUpView: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @StateObject var viewModel = SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     @FocusState private var focusedField: SignUpField?
@@ -38,10 +39,10 @@ struct SignUpView: View {
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Welcome to NewsToDay")
+                Text(Resources.Text.authorizationSignUpTitle.localized(localizationService.language))
                     .interFont(size: 24)
                     .foregroundStyle(.blackPrimary)
-                Text("Hello, I guess you are new around here. You can start using the application after sign up.")
+                Text(Resources.Text.authorizationSignUpText.localized(localizationService.language))
                     .interFont(type: .regular)
                     .foregroundStyle(.greyPrimary)
             }
@@ -57,7 +58,7 @@ struct SignUpView: View {
                             viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
 //                            dismiss()
                         } label: {
-                            Text("Sign Up")
+                            Text(Resources.Text.signUp.localized(localizationService.language))
                                 .authButton()
                                 .opacity(disableSignUp ? 0.5 : 1)
                         }
@@ -68,9 +69,9 @@ struct SignUpView: View {
             Spacer()
             
             HStack {
-                Text("Already have an account?")
+                Text(Resources.Text.alreadyHaveAnAccount.localized(localizationService.language))
                     .interFont(type: .medium)
-                Button("Sign In") {
+                Button(Resources.Text.signIn.localized(localizationService.language)) {
                     dismiss()
                 }
             }

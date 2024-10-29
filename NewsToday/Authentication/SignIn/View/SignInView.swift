@@ -12,6 +12,7 @@ enum SignInField {
 }
 
 struct SignInView: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @StateObject var viewModel = SignInViewModel()
     @FocusState var focusedField: SignInField?
     
@@ -29,10 +30,10 @@ struct SignInView: View {
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Welcome Back 👋")
+                Text(Resources.Text.authorizationSignInTitle.localized(localizationService.language))
                     .interFont(size: 24)
                     .foregroundStyle(.blackPrimary)
-                Text("I am happy to see you again. You can continue where you left off by logging in")
+                Text(Resources.Text.authorizationSignInText.localized(localizationService.language))
                     .interFont(type: .regular)
                     .foregroundStyle(.greyPrimary)
             }
@@ -47,7 +48,7 @@ struct SignInView: View {
                         Button {
                             viewModel.signIn(email: email, password: password)
                         } label: {
-                            Text("Sign In")
+                            Text(Resources.Text.signIn.localized(localizationService.language))
                                 .authButton()
                                 .opacity(disableSignIn ? 0.5 : 1)
                         }
@@ -60,9 +61,9 @@ struct SignInView: View {
             Spacer()
             
             HStack {
-                Text(isSignUp ? "Already have an account?" : "Don't have an account?")
+                Text(Resources.Text.dontHaveAnAccount.localized(localizationService.language))
                     .interFont(type: .medium)
-                Button(isSignUp ? "Sign In" : "Sign Up") {
+                Button(Resources.Text.signUp.localized(localizationService.language)) {
                     withAnimation {
                         isSignUp.toggle()
                     }
