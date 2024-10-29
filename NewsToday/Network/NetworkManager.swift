@@ -40,17 +40,23 @@ final class NetworkManager {
         guard let url = components.url else { throw URLError(.badURL)}
         print("Запрос URL: \(url)")
         
-        let newsResponse = try await AF.request(url)
+        let newsResponse = await AF.request(url)
             .validate(statusCode: 200..<300)
             .serializingDecodable(NewsResponse.self)
-            .value
+            .response
         
-        if let jsonData = try? JSONSerialization.jsonObject(with: JSONEncoder().encode(newsResponse),
-                                                            options: []) {
-            print(jsonData)
+        if let data = newsResponse.data {
+            if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) {
+                print(jsonData)
+            }
         }
         
-        return newsResponse.results
+        switch newsResponse.result {
+        case .success(let news):
+            return news.results
+        case .failure(let error):
+            throw error
+        }
     }
     
 //    func fetchNews(endpoint: Endpoint, language: String = "ru") async throws -> [Article] {

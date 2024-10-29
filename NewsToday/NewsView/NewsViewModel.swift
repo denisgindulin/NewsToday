@@ -70,7 +70,7 @@ class NewsViewModel: ObservableObject {
         isLoading = true
         errorMessage = nil
         do {
-            let response = try await networkManager.fetchNewsAF(endpoint: endpoint)
+            let response = try await networkManager.fetchNews(endpoint: endpoint)
             self.articles = response
             print("Fetched articles count: \(self.articles.count)")
         } catch {
