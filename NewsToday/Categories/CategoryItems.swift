@@ -23,7 +23,6 @@ struct CategoryItems: View {
                 } label: {
                     HStack {
                         CategoryEmojiView(category: category)
-                        Text(category.rawValue)
                     }
                     .padding(.vertical, 24)
                     .frame(maxWidth: .infinity)
