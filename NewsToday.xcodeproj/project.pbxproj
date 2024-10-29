@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7002342CD0CC7E0004C99B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7002332CD0CC7E0004C99B /* Alamofire */; };
+		1B7002362CD0CC7E0004C99B /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7002352CD0CC7E0004C99B /* AlamofireDynamic */; };
 		1B78E79F2CCA23EA00F9DB60 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78E79E2CCA23EA00F9DB60 /* ActivityView.swift */; };
 		1B8349012CCA5B85006431E3 /* NewsPreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8349002CCA5B85006431E3 /* NewsPreviewCardView.swift */; };
 		1BCDD20E2CC9347F001AF8DF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */; };
@@ -138,6 +140,8 @@
 				1BCDD20E2CC9347F001AF8DF /* SDWebImageSwiftUI in Frameworks */,
 				48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */,
 				48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */,
+				1B7002342CD0CC7E0004C99B /* Alamofire in Frameworks */,
+				1B7002362CD0CC7E0004C99B /* AlamofireDynamic in Frameworks */,
 				48F1D4C62CC7C7E900F64081 /* FirebaseFirestore in Frameworks */,
 				48241F452CC8E6D600DD3156 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
@@ -452,6 +456,8 @@
 			name = NewsToday;
 			packageProductDependencies = (
 				1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */,
+				1B7002332CD0CC7E0004C99B /* Alamofire */,
+				1B7002352CD0CC7E0004C99B /* AlamofireDynamic */,
 			);
 			productName = NewsToday;
 			productReference = 22020CD92CC54AFA00A76887 /* NewsToday.app */;
@@ -485,6 +491,7 @@
 			packageReferences = (
 				48A7036B2CC6ABA200E1AFFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 22020CDA2CC54AFA00A76887 /* Products */;
 			projectDirPath = "";
@@ -516,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
 				48A67D102CCFCC5E009F65FF /* ProfileViewModel.swift in Sources */,
 				48A67D0F2CCFCC27009F65FF /* ProfileView.swift in Sources */,
@@ -785,6 +791,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 		1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -804,6 +818,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1B7002332CD0CC7E0004C99B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1B7002352CD0CC7E0004C99B /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
 		1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
