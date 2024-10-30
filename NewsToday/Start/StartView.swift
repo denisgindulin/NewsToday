@@ -38,9 +38,8 @@ struct StartView: View {
                 self.onboardingViewsIsOn = true
             }
         }
-        .fullScreenCover(isPresented: $onboardingViewsIsOn) { OnboardingView()
-                .environmentObject(authViewModel)
-                .environmentObject(localizationService)
+        .fullScreenCover(isPresented: $onboardingViewsIsOn) { 
+            OnboardingView()
         }
     }
 }

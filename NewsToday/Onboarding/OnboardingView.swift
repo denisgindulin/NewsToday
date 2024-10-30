@@ -10,8 +10,12 @@ import SwiftUI
 struct OnboardingView: View {
     @State private var isCardTapped = false
     @State private var currentCardIndex = -(OnboardingItem.onboardingItems.count / 2) // ряд карточек отцентрирован и, чтобы показать первую карточку, устанавливаю отрицательное значение индекса
+    @EnvironmentObject var onBoardingViewModel: OnboardingViewModel
+
     
     @GestureState private var dragOffset: CGFloat = 0
+    
+//    @Binding var isOnboardingShown: Bool
     
     var body: some View {
         GeometryReader { outerView in
@@ -86,7 +90,7 @@ struct OnboardingView: View {
                         currentCardIndex += 1
                     }
                 } else {
-                    // TODO: здесь добавить переход на другой экран
+                    onBoardingViewModel.finishedOnboarding()
                     print("Navigate to other View")
                 }
             },
@@ -110,6 +114,6 @@ struct OnboardingView: View {
     }
 }
 
-#Preview {
-    OnboardingView()
-}
+//#Preview {
+//    OnboardingView()
+//}

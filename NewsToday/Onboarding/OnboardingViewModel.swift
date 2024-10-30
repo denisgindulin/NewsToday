@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
+    @AppStorage("isOnboardingShown") var isOnboardingShown = false
     
     var onboardingItems: [OnboardingItem]
     var currentCardIndex: Int
 //    var currentCardIndex = -(onboardingItems.count/2) // ряд карточек отцентрирован (HStack.frame(alignment:)) и, чтобы показать первую карточку, устанавливаю отрицательное значение индекса
+    
+    func finishedOnboarding() {
+        isOnboardingShown = true
+    }
     
     init() {
         onboardingItems = [

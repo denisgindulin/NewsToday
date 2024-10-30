@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
+    @StateObject var onboardingViewModel = OnboardingViewModel()
+
     @StateObject private var localizationService = LocalizationService.shared
     
     
@@ -36,15 +38,24 @@ struct NewsTodayApp: App {
 //                .environmentObject(authViewModel)
 //                .environmentObject(newsLoader)
 //                .environmentObject(localizationService)
-            if !onboardingViewsIsOn {
+            if !onboardingViewModel.isOnboardingShown {
                 StartView()
-                .environmentObject(authViewModel)
-                .environmentObject(newsLoader)
-                .environmentObject(localizationService)
+                    .environmentObject(authViewModel)
+                    .environmentObject(newsLoader)
+                    .environmentObject(localizationService)
+                    .environmentObject(onboardingViewModel)
+//            if !onboardingViewsIsOn {
+//                StartView()
+//                .environmentObject(authViewModel)
+//                .environmentObject(newsLoader)
+//                .environmentObject(localizationService)
+//                .environmentObject(onboardingViewModel)
             } else {
                 RootView()
                 .environmentObject(authViewModel)
                 .environmentObject(newsLoader)
+                .environmentObject(localizationService)
+                .environmentObject(onboardingViewModel)
             }
         }
     }
