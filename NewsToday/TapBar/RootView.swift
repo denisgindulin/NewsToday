@@ -22,7 +22,7 @@ struct RootView: View {
             case .categories:
                 CategoriesView(title: Resources.Text.categoriesTitle.localized(localizationService.language),
                                subtitle: Resources.Text.categoriesText.localized(localizationService.language),
-                               showButton: true)
+                               showButton: false)
             case .bookmark:
                 //            BookmarksView() // здесь указать на Экран с избранными новостями
                 Circle().frame(width: 200).foregroundStyle(.green)
