@@ -13,7 +13,7 @@ struct NewsResponse: Codable {
     let results: [Article]
 }
 
-struct Article: Codable, Identifiable {
+struct Article: Hashable, Codable, Identifiable {
     let id: String
     let title: String?
     let link: String?

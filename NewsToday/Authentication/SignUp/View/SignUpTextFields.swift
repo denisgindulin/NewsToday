@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpTextFields: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @Binding var userName: String
     @Binding var email: String
     @Binding var password: String
@@ -17,16 +18,24 @@ struct SignUpTextFields: View {
     
     var body: some View {
         VStack(spacing: 16) {
-                AppTextField(textFieldText: $userName, placeholder: "Username", imageName: "person")
+                AppTextField(textFieldText: $userName,
+                             placeholder: Resources.Text.username.localized(localizationService.language),
+                             imageName: "person")
                     .focused(focusedField, equals: .username)
             
-                AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope")
+                AppTextField(textFieldText: $email,
+                             placeholder: Resources.Text.email.localized(localizationService.language),
+                             imageName: "envelope")
                     .focused(focusedField, equals: .email)
             
-                AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
+                AppTextField(textFieldText: $password,
+                             placeholder: Resources.Text.password.localized(localizationService.language),
+                             imageName: "exclamationmark.lock", isSecure: true)
                     .focused(focusedField, equals: .password)
 
-                AppTextField(textFieldText: $repeatPassword, placeholder: "Repeat Password", imageName: "exclamationmark.lock", isSecure: true)
+                AppTextField(textFieldText: $repeatPassword,
+                             placeholder: Resources.Text.confirmPassword.localized(localizationService.language),
+                             imageName: "exclamationmark.lock", isSecure: true)
                     .focused(focusedField, equals: .repeatPassword)
         }
         .onSubmit {
