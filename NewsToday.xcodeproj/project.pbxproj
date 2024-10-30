@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7002342CD0CC7E0004C99B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7002332CD0CC7E0004C99B /* Alamofire */; };
 		1B78E79F2CCA23EA00F9DB60 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78E79E2CCA23EA00F9DB60 /* ActivityView.swift */; };
 		1B8349012CCA5B85006431E3 /* NewsPreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8349002CCA5B85006431E3 /* NewsPreviewCardView.swift */; };
 		1BCDD20E2CC9347F001AF8DF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */; };
@@ -20,6 +21,11 @@
 		22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6F2CC7FCDD00BBBDD5 /* CategoriesView.swift */; };
 		22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B712CC7FCEF00BBBDD5 /* CategoriesViewModel.swift */; };
 		22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */; };
+		22D946E32CD11DF900B670F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E22CD11DF900B670F6 /* OnboardingView.swift */; };
+		22D946E52CD11E6300B670F6 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E42CD11E6300B670F6 /* OnboardingCard.swift */; };
+		22D946E72CD11E7900B670F6 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E62CD11E7900B670F6 /* OnboardingItem.swift */; };
+		22D946E92CD18DB600B670F6 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E82CD18DB600B670F6 /* OnboardingViewModel.swift */; };
+		22D946ED2CD21C7500B670F6 /* OnboardingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946EC2CD21C7500B670F6 /* OnboardingTextView.swift */; };
 		22F7EDD42CCA7CBE0072847E /* OnboardingPage1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */; };
 		22F7EDD72CCA81C70072847E /* OnboardingPage2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */; };
 		22F7EDD92CCA81DB0072847E /* OnboardingPage3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */; };
@@ -64,6 +70,9 @@
 		93E92B022CC8D726004FEB0F /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B012CC8D725004FEB0F /* TermsAndConditionsView.swift */; };
 		93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */; };
 		93E92B0A2CC9564F004FEB0F /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */; };
+		93E92B112CCF719E004FEB0F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 93E92B102CCF719E004FEB0F /* Localizable.xcstrings */; };
+		93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */; };
+		93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E92B162CCF9009004FEB0F /* Resourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +92,11 @@
 		22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		22AE0B772CC7FD3800BBBDD5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		22D946E22CD11DF900B670F6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		22D946E42CD11E6300B670F6 /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
+		22D946E62CD11E7900B670F6 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		22D946E82CD18DB600B670F6 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		22D946EC2CD21C7500B670F6 /* OnboardingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextView.swift; sourceTree = "<group>"; };
 		22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1View.swift; sourceTree = "<group>"; };
 		22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2View.swift; sourceTree = "<group>"; };
 		22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3View.swift; sourceTree = "<group>"; };
@@ -122,6 +136,9 @@
 		93E92B012CC8D725004FEB0F /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsView.swift; sourceTree = "<group>"; };
 		93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonProfile.swift; sourceTree = "<group>"; };
 		93E92B092CC9564F004FEB0F /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		93E92B102CCF719E004FEB0F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		93E92B162CCF9009004FEB0F /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +149,7 @@
 				1BCDD20E2CC9347F001AF8DF /* SDWebImageSwiftUI in Frameworks */,
 				48A7036F2CC6ABA200E1AFFA /* FirebaseDatabase in Frameworks */,
 				48A7036D2CC6ABA200E1AFFA /* FirebaseAuth in Frameworks */,
+				1B7002342CD0CC7E0004C99B /* Alamofire in Frameworks */,
 				48F1D4C62CC7C7E900F64081 /* FirebaseFirestore in Frameworks */,
 				48241F452CC8E6D600DD3156 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
@@ -170,6 +188,7 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
+				93E92B0F2CCF7180004FEB0F /* Localization */,
 				484AD3732CC6369800D94D3D /* App */,
 				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
@@ -259,6 +278,7 @@
 				484E93402CC7B0C1000C531A /* AppTextField.swift */,
 				48863E482CCA22600058D669 /* SecureTextField.swift */,
 				48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */,
+				22D946E42CD11E6300B670F6 /* OnboardingCard.swift */,
 				48241F422CC8E47900DD3156 /* ErrorText.swift */,
 				93E92B032CC8DA19004FEB0F /* CustomButtonProfile.swift */,
 				22F7EDDA2CCA8A3E0072847E /* NextButton.swift */,
@@ -271,6 +291,10 @@
 		22F7EDD52CCA7CE40072847E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				22D946E22CD11DF900B670F6 /* OnboardingView.swift */,
+				22D946EC2CD21C7500B670F6 /* OnboardingTextView.swift */,
+				22D946E82CD18DB600B670F6 /* OnboardingViewModel.swift */,
+				22D946E62CD11E7900B670F6 /* OnboardingItem.swift */,
 				22F7EDD32CCA7CBE0072847E /* OnboardingPage1View.swift */,
 				22F7EDD62CCA81C70072847E /* OnboardingPage2View.swift */,
 				22F7EDD82CCA81DB0072847E /* OnboardingPage3View.swift */,
@@ -417,6 +441,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		93E92B0F2CCF7180004FEB0F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				93E92B102CCF719E004FEB0F /* Localizable.xcstrings */,
+				93E92B142CCF8E37004FEB0F /* LocalizationManager.swift */,
+				93E92B162CCF9009004FEB0F /* Resourses.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,6 +469,7 @@
 			name = NewsToday;
 			packageProductDependencies = (
 				1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */,
+				1B7002332CD0CC7E0004C99B /* Alamofire */,
 			);
 			productName = NewsToday;
 			productReference = 22020CD92CC54AFA00A76887 /* NewsToday.app */;
@@ -462,11 +497,13 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 22020CD02CC54AFA00A76887;
 			packageReferences = (
 				48A7036B2CC6ABA200E1AFFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 22020CDA2CC54AFA00A76887 /* Products */;
 			projectDirPath = "";
@@ -484,6 +521,7 @@
 			files = (
 				22020CE42CC54AFF00A76887 /* Preview Assets.xcassets in Resources */,
 				48A7036A2CC6AB5300E1AFFA /* GoogleService-Info.plist in Resources */,
+				93E92B112CCF719E004FEB0F /* Localizable.xcstrings in Resources */,
 				484AD36C2CC62FCF00D94D3D /* Inter-VariableFont.ttf in Resources */,
 				22889E1D2CC99BFD00FFE525 /* Adamina-Regular.ttf in Resources */,
 				22020CE12CC54AFF00A76887 /* Assets.xcassets in Resources */,
@@ -497,6 +535,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
+				22D946E52CD11E6300B670F6 /* OnboardingCard.swift in Sources */,
 				48A67D102CCFCC5E009F65FF /* ProfileViewModel.swift in Sources */,
 				48A67D0F2CCFCC27009F65FF /* ProfileView.swift in Sources */,
 				48A67D0E2CCFCBDF009F65FF /* NewsCardView.swift in Sources */,
@@ -508,10 +548,12 @@
 				484AD3782CC643BB00D94D3D /* NewsResponse.swift in Sources */,
 				22F7EDDB2CCA8A3E0072847E /* NextButton.swift in Sources */,
 				93E92B002CC8D6F5004FEB0F /* LanguageView.swift in Sources */,
+				22D946E72CD11E7900B670F6 /* OnboardingItem.swift in Sources */,
 				93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */,
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
 				483199452CC81AAA00655F90 /* Category.swift in Sources */,
 				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
+				93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
 				48863E492CCA22600058D669 /* SecureTextField.swift in Sources */,
@@ -530,6 +572,7 @@
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
 				483199472CC81B2F00655F90 /* ApiKey.swift in Sources */,
 				48241F412CC8E24B00DD3156 /* AuthViewModel.swift in Sources */,
+				22D946E92CD18DB600B670F6 /* OnboardingViewModel.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
 				48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */,
 				22889E1A2CC9921800FFE525 /* StartView.swift in Sources */,
@@ -538,6 +581,8 @@
 				1B78E79F2CCA23EA00F9DB60 /* ActivityView.swift in Sources */,
 				48241F3E2CC8DF6C00DD3156 /* SignInViewModel.swift in Sources */,
 				484AD3722CC6356900D94D3D /* View+Ex.swift in Sources */,
+				22D946ED2CD21C7500B670F6 /* OnboardingTextView.swift in Sources */,
+				22D946E32CD11DF900B670F6 /* OnboardingView.swift in Sources */,
 				484E93412CC7B0C1000C531A /* AppTextField.swift in Sources */,
 				1BCDD2102CC94ACC001AF8DF /* NewsPresentCardView.swift in Sources */,
 				1B8349012CCA5B85006431E3 /* NewsPreviewCardView.swift in Sources */,
@@ -763,6 +808,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 		1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -782,6 +835,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1B7002332CD0CC7E0004C99B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7002322CD0CC7E0004C99B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		1BCDD20D2CC9347F001AF8DF /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1BCDD20C2CC9347F001AF8DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

@@ -8,42 +8,43 @@
 import SwiftUI
 
 struct CategoryEmojiView: View {
+    @EnvironmentObject var localizationService: LocalizationService
     let category: Category
     
     var body: some View {
         switch category {
         case .crime:
-            Text("👹")
+            Text(Resources.Text.crime.localized(localizationService.language))
         case .business:
-            Text("💰")
+            Text(Resources.Text.business.localized(localizationService.language))
         case .domestic:
-            Text("🏠")
+            Text(Resources.Text.domestic.localized(localizationService.language))
         case .education:
-            Text("📚")
+            Text(Resources.Text.education.localized(localizationService.language))
         case .entertainment:
-            Text("🎭")
+            Text(Resources.Text.entertainment.localized(localizationService.language))
         case .environment:
-            Text("🌍")
+            Text(Resources.Text.environment.localized(localizationService.language))
         case .food:
-            Text("🍗")
+            Text(Resources.Text.food.localized(localizationService.language))
         case .health:
-            Text("🏥")
+            Text(Resources.Text.health.localized(localizationService.language))
         case .lifestyle:
-            Text("👟")
+            Text(Resources.Text.lifestyle.localized(localizationService.language))
         case .other:
-            Text("❓")
+            Text(Resources.Text.other.localized(localizationService.language))
         case .politics:
-            Text("⚖️")
+            Text(Resources.Text.politics.localized(localizationService.language))
         case .science:
-            Text("🔬")
+            Text(Resources.Text.science.localized(localizationService.language))
         case .sports:
-            Text("⚽️")
+            Text(Resources.Text.sport.localized(localizationService.language))
         case .technology:
-            Text("💻")
+            Text(Resources.Text.technology.localized(localizationService.language))
         case .top:
-            Text("🏆")
+            Text(Resources.Text.top.localized(localizationService.language))
         case .world:
-            Text("🌐")
+            Text(Resources.Text.world.localized(localizationService.language))
         }
     }
 }

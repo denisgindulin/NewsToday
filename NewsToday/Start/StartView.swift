@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StartView: View {
+    @EnvironmentObject var localizationService: LocalizationService
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State private var onboardingViewsIsOn = false
     private let textHorizontalOffsetValue = UIScreen.main.bounds.width/10
     private let textVerticalOffsetValue = -(UIScreen.main.bounds.width/5)
@@ -35,7 +38,9 @@ struct StartView: View {
                 self.onboardingViewsIsOn = true
             }
         }
-        .fullScreenCover(isPresented: $onboardingViewsIsOn) { OnboardingPage1View()
+        .fullScreenCover(isPresented: $onboardingViewsIsOn) { OnboardingView()
+                .environmentObject(authViewModel)
+                .environmentObject(localizationService)
         }
     }
 }

@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
+    @StateObject private var localizationService = LocalizationService.shared
+    
     
     @State private var onboardingViewsIsOn = UserDefaults.standard.bool(forKey: "onboardingViewsIsOn")
     
@@ -30,16 +32,20 @@ struct NewsTodayApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView()
+//            RootView()
+//                .environmentObject(authViewModel)
+//                .environmentObject(newsLoader)
+//                .environmentObject(localizationService)
+            if !onboardingViewsIsOn {
+                StartView()
                 .environmentObject(authViewModel)
                 .environmentObject(newsLoader)
-//            if !onboardingViewsIsOn {
-//                StartView()
-//                    .environmentObject(authViewModel)
-//            } else {
-//                RootView()
-//                    .environmentObject(authViewModel)
-//            }
+                .environmentObject(localizationService)
+            } else {
+                RootView()
+                .environmentObject(authViewModel)
+                .environmentObject(newsLoader)
+            }
         }
     }
 }

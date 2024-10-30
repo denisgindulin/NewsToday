@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInTextFields: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @Binding var email: String
     @Binding var password: String
     
@@ -16,10 +17,14 @@ struct SignInTextFields: View {
     var body: some View {
         VStack(spacing: 64) {
             VStack(spacing: 16) {
-                AppTextField(textFieldText: $email, placeholder: "Email Adress", imageName: "envelope", isSecure: false)
+                AppTextField(textFieldText: $email,
+                             placeholder: Resources.Text.email.localized(localizationService.language),
+                             imageName: "envelope", isSecure: false)
                     .focused(focusedField, equals: .email)
                 
-                AppTextField(textFieldText: $password, placeholder: "Password", imageName: "exclamationmark.lock", isSecure: true)
+                AppTextField(textFieldText: $password,
+                             placeholder: Resources.Text.password.localized(localizationService.language),
+                             imageName: "exclamationmark.lock", isSecure: true)
                     .focused(focusedField, equals: .password)
             }
         }
