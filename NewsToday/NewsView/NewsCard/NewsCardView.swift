@@ -14,18 +14,20 @@ struct ShareText: Identifiable {
 }
 
 struct NewsCardView: View {
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
-    var arcticle: Article
+    let fromBookmark: Bool
+    var article: Article
     
     var body: some View {
         
         GeometryReader { geo in
             VStack(spacing: 0) {
                 ZStack(alignment: .top) {
-                    WebImage(url: URL(string: arcticle.imageURL ?? ""))
+                    WebImage(url: URL(string: article.imageURL ?? ""))
                         .resizable()
                         .edgesIgnoringSafeArea(.top)
                         .frame(height: geo.size.height / 2.4, alignment: .center)
@@ -47,7 +49,7 @@ struct NewsCardView: View {
                             Spacer()
                         }
                         
-                        Text(arcticle.description ?? "")
+                        Text(article.description ?? "")
                             .font(.system(size: 16, weight: .light))
                     }
                     .foregroundColor(.black)
@@ -72,14 +74,20 @@ extension NewsCardView {
                 
                 Spacer()
                 
-                Button(action: {},
-                       label:  { Image(systemName: "bookmark") })
+                Button(action: {
+                    if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
+                        viewModel.deleteBookmark(articleId: article.id)
+                        fromBookmark ? dismiss() : ()
+                    } else {
+                        viewModel.addBookmark(article: article)
+                    }
+                }, label:  { Image(systemName: authViewModel.bookmarks.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark") })
             }
             
             HStack {
                 Spacer()
                 
-                Button(action: { shareText = ShareText(text: arcticle.link ?? "")},
+                Button(action: { shareText = ShareText(text: article.link ?? "")},
                        label:  { Image(systemName: "arrowshape.turn.up.right")})
             }
             
@@ -94,7 +102,7 @@ extension NewsCardView {
     var articleText: some View {
         
         Group {
-            Text(arcticle.category?.first ?? "")
+            Text(article.category?.first ?? "")
                 .textCase(.uppercase)
                 .font(.system(size: 12, weight: .bold))
                 .padding(.horizontal, 16)
@@ -102,11 +110,11 @@ extension NewsCardView {
                 .background(Color.purplePrimary)
                 .cornerRadius(16)
             
-            Text(arcticle.title ?? "")
+            Text(article.title ?? "")
                 .font(.system(size: 20, weight: .bold))
             
             VStack(alignment: .leading, spacing: 0){
-                Text(arcticle.creator?.first ?? "")
+                Text(article.creator?.first ?? "")
                     .font(.system(size: 16, weight: .bold))
                 
                 Text("autor")

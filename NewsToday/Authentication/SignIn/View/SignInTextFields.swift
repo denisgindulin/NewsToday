@@ -24,7 +24,8 @@ struct SignInTextFields: View {
                 
                 AppTextField(textFieldText: $password,
                              placeholder: Resources.Text.password.localized(localizationService.language),
-                             imageName: "exclamationmark.lock", isSecure: true)
+                             imageName: password.count >= 6 ? "lock.open" : "lock",
+                             isSecure: true)
                     .focused(focusedField, equals: .password)
             }
         }

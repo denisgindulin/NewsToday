@@ -10,7 +10,7 @@ import SwiftUI
 struct NewsView: View {
     @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
-    @StateObject private var viewModel = NewsViewModel()
+    @EnvironmentObject var viewModel: NewsViewModel
     
     @State private var isFullScreen = false
     
@@ -54,9 +54,7 @@ struct NewsView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 20) {
                                     ForEach(viewModel.articles, id: \.self) { news in
-                                        NewsPresentCardView(
-                                            arcticle: news,
-                                            action: {})
+                                        NewsPresentCardView(article: news, action: {})
                                     }
                                 }
                                 .padding(.leading, 20)
@@ -68,7 +66,7 @@ struct NewsView: View {
                                 
                                 recomendTitles
                                 
-                                NewsPreviewCardView(articles: viewModel.articles, sourceScreen: true)
+                                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles, sourceScreen: true)
                             }
                             .padding(.bottom, 16)
                         }
@@ -76,7 +74,7 @@ struct NewsView: View {
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
-                NewsPreviewCardView(articles: viewModel.articles)
+                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles)
             }
         }.navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }

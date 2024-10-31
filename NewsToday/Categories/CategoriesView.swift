@@ -7,6 +7,24 @@
 
 import SwiftUI
 
+struct HeaderTitle: View {
+    let title: String
+    let subtitle: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .interFont(size: 24)
+                .foregroundStyle(.blackPrimary)
+            Text(subtitle)
+                .interFont(type: .regular)
+                .foregroundStyle(.greyPrimary)
+        }
+        
+        .padding(.horizontal, 20)
+    }
+}
+
 struct CategoriesView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = CategoriesViewModel()
@@ -18,29 +36,26 @@ struct CategoriesView: View {
     @State private var selectedCategories: Set<Category> = []
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 32) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(title)
-                        .interFont(size: 24)
-                        .foregroundStyle(.blackPrimary)
-                    Text(subtitle)
-                        .interFont(type: .regular)
-                        .foregroundStyle(.greyPrimary)
-                }
+        VStack(alignment: .leading) {
+            HeaderTitle(title: title, subtitle: subtitle)
+            
+            ScrollView {
                 VStack(alignment: .center, spacing: 16) {
                     CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
-                    Button {
-                        //
-                    } label: {
-                        Text("Next")
-                            .authButton()
+                    if showButton {
+                        Button {
+                            //
+                        } label: {
+                            Text("Next")
+                                .authButton()
+                        }
                     }
-
                 }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 32)
             }
-            .padding(.horizontal, 20)
         }
+        
     }
 }
 

@@ -9,11 +9,13 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct NewsPreviewCardView: View {
-    
-    var articles: [Article]
-    var sourceScreen: Bool = false
+    @EnvironmentObject var viewModel: NewsViewModel
     @State private var isFullScreen = false
     @Environment(\.dismiss) var dismiss
+    
+    let fromBookmark: Bool
+    var articles: [Article]
+    var sourceScreen: Bool = false
     
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 0) {
@@ -32,7 +34,7 @@ struct NewsPreviewCardView: View {
                 .padding(.bottom, 20)
             }
             
-            ForEach(articles, id: \.self) { article in
+            ForEach(articles) { article in
                 ZStack {
                     Button {
                         isFullScreen = true
@@ -57,8 +59,8 @@ struct NewsPreviewCardView: View {
                             }
                         }
                     }
-                    .fullScreenCover(isPresented: $isFullScreen) {
-                            NewsCardView(arcticle: article)
+                    .fullScreenCover(isPresented: $isFullScreen) { 
+                        NewsCardView(fromBookmark: fromBookmark, article: article)
                     }
                 }
                 .padding(.bottom, 8)
