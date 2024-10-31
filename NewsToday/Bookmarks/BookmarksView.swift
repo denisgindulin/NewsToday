@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct BookmarksView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        Text("Hello, World!")
+        if authViewModel.bookmarks.isEmpty {
+            EmptyBookmarks()
+        } else {
+            FilledBookmarks()
+        }
     }
 }
 

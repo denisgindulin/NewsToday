@@ -20,13 +20,13 @@ struct RootView: View {
             case .home:
                 NewsView() // заглушка для экрана HomeView
             case .categories:
-                CategoriesView(title: Resources.Text.categoriesTitle.localized(localizationService.language),
-                               subtitle: Resources.Text.categoriesText.localized(localizationService.language),
-                               showButton: true)
+                CategoriesView(
+                    title: Resources.Text.categoriesTitle.localized(localizationService.language),
+                    subtitle: Resources.Text.categoriesText.localized(localizationService.language),
+                    showButton: false
+                )
             case .bookmark:
-                //            BookmarksView() // здесь указать на Экран с избранными новостями
-                Circle().frame(width: 200).foregroundStyle(.green)
-                Spacer() // заглушка для экрана BookmarksView
+                BookmarksView()
             case .profile:
                 ProfileView()
             }

@@ -10,7 +10,7 @@ import Combine
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    
+    let firestoreManager = FirestoreManager()
     @Published var articles: [Article] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
@@ -78,5 +78,13 @@ class NewsViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
         isLoading = false
+    }
+    
+    func addBookmark(article: Article) {
+        firestoreManager.addBookmark(for: article)
+    }
+    
+    func deleteBookmark(articleId: String) {
+        firestoreManager.deleteBookmark(articleId: articleId)
     }
 }

@@ -12,12 +12,15 @@ import FirebaseAuthCombineSwift
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
     @Published var selectedCategories: Set<Category> = []
+    @Published var bookmarks: [Article] = []
     
     private let firestoreManager = FirestoreManager()
     private var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     init() {
         listenToAuthState()
+        
+        
     }
     
     private func listenToAuthState() {
@@ -25,6 +28,7 @@ class AuthViewModel: ObservableObject {
             if let user {
                 self?.loadUserData(userId: user.uid)
                 self?.loadFavoriteCategories(userId: user.uid)
+                self?.loadBookmarks(userId: user.uid)
             } else {
                 self?.user = nil
             }
@@ -48,6 +52,25 @@ class AuthViewModel: ObservableObject {
                 self.selectedCategories = Set(categories)
             }
         }
+    }
+    
+    func loadBookmarks(userId: String) {
+        firestoreManager.fetchBookmark(userId: userId)
+        firestoreManager.$bookmarks
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$bookmarks)
+//        bookmarks = firestoreManager.bookmarks
+        //        Task {
+        //            guard let bookmarks = try? await firestoreManager.fetchBookmarks(userId: userId) else { return }
+        //
+        //            DispatchQueue.main.async {
+        //                self.bookmarks = bookmarks
+        //            }
+        //        }
+    }
+    
+    func deleteBookmark(articleId: String) {
+        firestoreManager.deleteBookmark(articleId: articleId)
     }
     
     func signOut() {

@@ -28,6 +28,9 @@
 		22D946E92CD18DB600B670F6 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E82CD18DB600B670F6 /* OnboardingViewModel.swift */; };
 		22F7EDDB2CCA8A3E0072847E /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDDA2CCA8A3E0072847E /* NextButton.swift */; };
 		22F7EDDD2CCA96CC0072847E /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7EDDC2CCA96CC0072847E /* SkipButton.swift */; };
+		480DC8F32CD3655100D924BF /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */; };
+		480DC8F92CD3948D00D924BF /* FilledBookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DC8F82CD3948D00D924BF /* FilledBookmarks.swift */; };
+		480DC8FB2CD3949900D924BF /* EmptyBookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DC8FA2CD3949900D924BF /* EmptyBookmarks.swift */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
 		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
 		48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
@@ -96,6 +99,8 @@
 		22D946E82CD18DB600B670F6 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		22F7EDDA2CCA8A3E0072847E /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		22F7EDDC2CCA96CC0072847E /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
+		480DC8F82CD3948D00D924BF /* FilledBookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledBookmarks.swift; sourceTree = "<group>"; };
+		480DC8FA2CD3949900D924BF /* EmptyBookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBookmarks.swift; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarView.swift; sourceTree = "<group>"; };
@@ -232,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */,
+				480DC8FA2CD3949900D924BF /* EmptyBookmarks.swift */,
+				480DC8F82CD3948D00D924BF /* FilledBookmarks.swift */,
 				22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */,
 			);
 			path = Bookmarks;
@@ -526,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480DC8F32CD3655100D924BF /* BookmarksView.swift in Sources */,
 				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
 				22D946E52CD11E6300B670F6 /* OnboardingCard.swift in Sources */,
 				48A67D102CCFCC5E009F65FF /* ProfileViewModel.swift in Sources */,
@@ -557,6 +565,7 @@
 				22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */,
 				22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */,
 				93E92B0A2CC9564F004FEB0F /* ImagePickerCoordinator.swift in Sources */,
+				480DC8FB2CD3949900D924BF /* EmptyBookmarks.swift in Sources */,
 				482763DC2CCA415800491F26 /* UserData.swift in Sources */,
 				484AD3752CC63A5000D94D3D /* FontModifier.swift in Sources */,
 				48A703732CC6ADE400E1AFFA /* SignUpView.swift in Sources */,
@@ -564,6 +573,7 @@
 				48241F412CC8E24B00DD3156 /* AuthViewModel.swift in Sources */,
 				22D946E92CD18DB600B670F6 /* OnboardingViewModel.swift in Sources */,
 				22020CDD2CC54AFA00A76887 /* NewsTodayApp.swift in Sources */,
+				480DC8F92CD3948D00D924BF /* FilledBookmarks.swift in Sources */,
 				48241F382CC8D51B00DD3156 /* CustomTapBarView.swift in Sources */,
 				22889E1A2CC9921800FFE525 /* StartView.swift in Sources */,
 				48A67D122CCFCC99009F65FF /* CategoryItems.swift in Sources */,

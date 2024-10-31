@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class FirestoreManager: ObservableObject {
+    @Published var bookmarks: [Article] = []
     func getUserData(userId: String) async throws -> UserData {
         let document = try await Firestore.firestore()
             .collection("users")
@@ -74,6 +75,89 @@ class FirestoreManager: ObservableObject {
                     print("Error saving favorite categories: \(error.localizedDescription)")
                 } else {
                     print("Favorite categories saved successfully")
+                }
+            }
+    }
+    
+    func addBookmark(for article: Article) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        let bookmark = Article(
+            id: article.id,
+            title: article.title,
+            link: article.link,
+            keywords: article.keywords,
+            creator: article.category,
+            description: article.description,
+            pubDate: article.pubDate,
+            imageURL: article.imageURL,
+            country: article.country,
+            category: article.category,
+            duplicate: article.duplicate
+        )
+          
+        do {
+            try Firestore.firestore()
+                .collection("users")
+                .document(userId)
+                .collection("bookmarks")
+                .document(bookmark.id)
+                .setData(from: bookmark)
+            print("Save was successful")
+        } catch {
+            print("Error to save bookmark: \(error.localizedDescription)")
+        }
+    }
+    
+    func fetchBookmark(userId: String) {
+        Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("bookmarks")
+            .addSnapshotListener { [weak self] snapshot, error in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                self?.bookmarks = snapshot?.documents.compactMap { document in
+                    return try? document.data(as: Article.self)
+                } ?? []
+            }
+    }
+    
+    func fetchBookmarks(userId: String) async throws -> [Article] {
+        let bookmarksCollection = Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("bookmarks")
+        
+        do {
+            let document = try await bookmarksCollection.getDocuments()
+            let articles = try document.documents.map { document -> Article in
+                return try document.data(as: Article.self)
+            }
+            print(articles.count)
+            return articles
+        } catch {
+            print(error.localizedDescription)
+            throw error
+        }
+    }
+    
+    func deleteBookmark(articleId: String) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("bookmarks")
+            .document(articleId)
+            .delete { error in
+                if let error = error {
+                    print("Error when deleting document: \(error.localizedDescription)")
+                } else {
+                    print("The document was successfully deleted")
                 }
             }
     }

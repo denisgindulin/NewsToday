@@ -627,6 +627,17 @@
         }
       }
     },
+    "Saved articles to the library" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статьи сохраненные в библиотеку"
+          }
+        }
+      }
+    },
     "Search" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -839,6 +850,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Добро пожаловать в NewsToDay"
+          }
+        }
+      }
+    },
+    "You haven’t saved any articles yet. Start reading and bookmarking them now" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы еще не сохранили ни одной статьи. Начните читать и добавляйте их в закладки прямо сейчас"
           }
         }
       }
