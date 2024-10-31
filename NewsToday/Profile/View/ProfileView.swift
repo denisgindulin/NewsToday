@@ -32,7 +32,6 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFill()
                             .frame(width: 72, height: 72)
-//                            .clipShape(Circle())
                             .foregroundColor(Color("GreyDarker"))
                             .onTapGesture {
                                 showingImagePicker = true
@@ -40,9 +39,11 @@ struct ProfileView: View {
                     }
                     VStack(alignment: .leading) {
                         Text(authViewModel.user?.name ?? "No Name")
-                            .font(.headline)
+                            .interFont(size: 24) 
+                            .foregroundColor(Color("BlackPrimary"))
                         Text(authViewModel.user?.email ?? "No Email")
-                            .font(.subheadline)
+                            .interFont(size: 16)
+                            .foregroundColor(Color("GreyPrimary"))
                     }
                     Spacer()
                 }
@@ -57,7 +58,7 @@ struct ProfileView: View {
                         icon: "chevron.right"
                     )
                 }
-                .buttonStyle(PlainButtonStyle())  // To avoid the default button styling
+                .buttonStyle(PlainButtonStyle())
                 Spacer()
                 
                 // Terms & Conditions Button
@@ -83,8 +84,13 @@ struct ProfileView: View {
                 )
             }
             .padding(.vertical, 24)
-            .navigationTitle(Resources.Text.profile.localized(localizationService.language))
-//            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text(Resources.Text.profile.localized(localizationService.language))
+                        .interFont(size: 24)
+                        .foregroundColor(Color("BlackPrimary"))
+                }
+            }
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
             }
