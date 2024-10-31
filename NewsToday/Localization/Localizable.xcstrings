@@ -196,6 +196,28 @@
         }
       }
     },
+    "All in One Place" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё в одном месте"
+          }
+        }
+      }
+    },
+    "all your bookmarks are here" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "все отмеченные статьи здесь"
+          }
+        }
+      }
+    },
     "Already have an account?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -229,6 +251,28 @@
         }
       }
     },
+    "be the first to know" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "узнавай новости первым"
+          }
+        }
+      }
+    },
+    "Bookmarks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Раздел с закладками"
+          }
+        }
+      }
+    },
     "Browse" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -253,6 +297,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Категории"
+          }
+        }
+      }
+    },
+    "Choose a Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбери язык"
+          }
+        }
+      }
+    },
+    "Choose an Article" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирай статью"
+          }
+        }
+      }
+    },
+    "Choose News Topics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирай тематику"
           }
         }
       }
@@ -330,6 +407,17 @@
         }
       }
     },
+    "english or russian" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "английский или русский"
+          }
+        }
+      }
+    },
     "First to know" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -337,6 +425,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Во-первых"
+          }
+        }
+      }
+    },
+    "from many categories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "из разных категорий"
+          }
+        }
+      }
+    },
+    "get personalized news" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "получи персональную ленту"
           }
         }
       }
@@ -402,23 +512,6 @@
         }
       }
     },
-    "Language" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Language"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Язык"
-          }
-        }
-      }
-    },
     "News" : {
       "localizations" : {
         "en" : {
@@ -469,6 +562,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "read or add to bookmarks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "читай или ставь закладку"
           }
         }
       }
@@ -557,6 +661,17 @@
         }
       }
     },
+    "Select Your Favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отметь предпочтения"
+          }
+        }
+      }
+    },
     "Sign In" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -570,6 +685,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Войти"
+          }
+        }
+      }
+    },
+    "Sign in to the App" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Авторизуйся"
           }
         }
       }
@@ -647,6 +773,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Тысячи статей в каждой категории"
+          }
+        }
+      }
+    },
+    "to personalize the news" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "чтобы персонализировать новости"
           }
         }
       }

@@ -71,9 +71,10 @@ struct SignUpView: View {
             HStack {
                 Text(Resources.Text.alreadyHaveAnAccount.localized(localizationService.language))
                     .interFont(type: .medium)
-                Button(Resources.Text.signIn.localized(localizationService.language)) {
-                    dismiss()
-                }
+                Button(action: {dismiss()}, label: {
+                    Text(Resources.Text.signIn.localized(localizationService.language))
+                        .foregroundStyle(.purplePrimary)
+                })
             }
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)

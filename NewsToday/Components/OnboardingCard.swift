@@ -13,23 +13,19 @@ struct OnboardingCard: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
+                Color(.purpleLighter)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .shadow(color: .greyPrimary, radius: 5, x: 0, y: 2)
+
                 Image(self.imageName)
                     .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                               
-                Text(self.imageName)
-                    .font(.largeTitle)
-                    .foregroundStyle(.red)
-                    .padding(32)
-                    .background(.white)
-                    .clipShape(Circle())
+                    .scaledToFit()
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.95)
             }
         }
     }
 }
 
 #Preview {
-    OnboardingCard(imageName: "one")
+    OnboardingCard(imageName: "homeScreen")
 }
