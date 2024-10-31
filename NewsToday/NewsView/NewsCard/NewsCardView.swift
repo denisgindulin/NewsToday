@@ -15,10 +15,11 @@ struct ShareText: Identifiable {
 
 struct NewsCardView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-    @ObservedObject var viewModel: NewsViewModel
+    @EnvironmentObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
+    let fromBookmark: Bool
     var article: Article
     
     var body: some View {
@@ -74,13 +75,13 @@ extension NewsCardView {
                 Spacer()
                 
                 Button(action: {
-                    if authViewModel.bookmarks.contains(article) {
+                    if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
                         viewModel.deleteBookmark(articleId: article.id)
-                        dismiss()
+                        fromBookmark ? dismiss() : ()
                     } else {
                         viewModel.addBookmark(article: article)
                     }
-                }, label:  { Image(systemName: "bookmark") })
+                }, label:  { Image(systemName: authViewModel.bookmarks.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark") })
             }
             
             HStack {

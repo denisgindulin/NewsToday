@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct NewsPresentCardView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-    @ObservedObject var viewModel: NewsViewModel
+    @EnvironmentObject var viewModel: NewsViewModel
     @State private var isFullScreen = false
     var article: Article
     
@@ -29,14 +29,13 @@ struct NewsPresentCardView: View {
                     HStack {
                         Spacer()
                         Button {
-                            if authViewModel.bookmarks.contains(article) {
-                                print("delete")
+                            if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
                                 viewModel.deleteBookmark(articleId: article.id)
                             } else {
                                 viewModel.addBookmark(article: article)
                             }
                         } label: {
-                            Image(systemName: "bookmark")
+                            Image(systemName: authViewModel.bookmarks.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark")
                                 .foregroundColor(.white)
                         }
                     }
@@ -61,7 +60,7 @@ struct NewsPresentCardView: View {
             .cornerRadius(12)
         }
         .fullScreenCover(isPresented: $isFullScreen) {
-            NewsCardView(viewModel: viewModel, article: article)
+            NewsCardView(fromBookmark: false, article: article)
         }
     }
 }

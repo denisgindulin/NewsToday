@@ -9,11 +9,13 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct NewsPreviewCardView: View {
-    @ObservedObject var viewModel: NewsViewModel
-    var articles: [Article]
-    var sourceScreen: Bool = false
+    @EnvironmentObject var viewModel: NewsViewModel
     @State private var isFullScreen = false
     @Environment(\.dismiss) var dismiss
+    
+    let fromBookmark: Bool
+    var articles: [Article]
+    var sourceScreen: Bool = false
     
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 0) {
@@ -58,7 +60,7 @@ struct NewsPreviewCardView: View {
                         }
                     }
                     .fullScreenCover(isPresented: $isFullScreen) { 
-                        NewsCardView(viewModel: viewModel, article: article)
+                        NewsCardView(fromBookmark: fromBookmark, article: article)
                     }
                 }
                 .padding(.bottom, 8)

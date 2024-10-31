@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FilledBookmarks: View {
-    @EnvironmentObject var viewModel: NewsViewModel
     @EnvironmentObject var authViewModel: AuthViewModel
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +16,7 @@ struct FilledBookmarks: View {
             
             ScrollView {
                 VStack(alignment: .leading) {
-                    NewsPreviewCardView(viewModel: viewModel, articles: authViewModel.bookmarks, sourceScreen: true)
+                    NewsPreviewCardView(fromBookmark: true, articles: authViewModel.bookmarks, sourceScreen: true)
                 }
                 .padding(.vertical, 32)
             }
