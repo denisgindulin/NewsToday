@@ -8,9 +8,9 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct NewsPreviewCardView<T: NewsItemProtocol>: View {
-    
-    var articles: [T]
+struct NewsPreviewCardView: View {
+    @ObservedObject var viewModel: NewsViewModel
+    var articles: [Article]
     var sourceScreen: Bool = false
     @State private var isFullScreen = false
     @Environment(\.dismiss) var dismiss
@@ -58,7 +58,7 @@ struct NewsPreviewCardView<T: NewsItemProtocol>: View {
                         }
                     }
                     .fullScreenCover(isPresented: $isFullScreen) { 
-                            NewsCardView(article: article)
+                        NewsCardView(viewModel: viewModel, article: article)
                     }
                 }
                 .padding(.bottom, 8)

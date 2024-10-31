@@ -13,12 +13,13 @@ struct ShareText: Identifiable {
     let text: String
 }
 
-struct NewsCardView<T: NewsItemProtocol>: View {
-    
+struct NewsCardView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
-    var article: T
+    var article: Article
     
     var body: some View {
         
@@ -72,8 +73,14 @@ extension NewsCardView {
                 
                 Spacer()
                 
-                Button(action: {},
-                       label:  { Image(systemName: "bookmark") })
+                Button(action: {
+                    if authViewModel.bookmarks.contains(article) {
+                        viewModel.deleteBookmark(articleId: article.id)
+                        dismiss()
+                    } else {
+                        viewModel.addBookmark(article: article)
+                    }
+                }, label:  { Image(systemName: "bookmark") })
             }
             
             HStack {
@@ -94,7 +101,6 @@ extension NewsCardView {
     var articleText: some View {
         
         Group {
-//        VStack {
             Text(article.category?.first ?? "")
                 .textCase(.uppercase)
                 .font(.system(size: 12, weight: .bold))
@@ -113,7 +119,6 @@ extension NewsCardView {
                 Text("autor")
                     .font(.system(size: 16, weight: .light))
             }
-//        }
         }
     }
 }

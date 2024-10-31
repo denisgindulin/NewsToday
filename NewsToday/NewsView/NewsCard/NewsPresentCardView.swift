@@ -9,9 +9,10 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct NewsPresentCardView: View {
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var viewModel: NewsViewModel
     @State private var isFullScreen = false
-    var arcticle: Article
+    var article: Article
     
     var action: () -> ()
     
@@ -20,7 +21,7 @@ struct NewsPresentCardView: View {
             isFullScreen = true
         } label: {
             ZStack {
-                WebImage(url: URL(string: arcticle.imageURL ?? ""))
+                WebImage(url: URL(string: article.imageURL ?? ""))
                     .resizable()
                     .opacity(0.7)
                 
@@ -28,7 +29,12 @@ struct NewsPresentCardView: View {
                     HStack {
                         Spacer()
                         Button {
-                            
+                            if authViewModel.bookmarks.contains(article) {
+                                print("delete")
+                                viewModel.deleteBookmark(articleId: article.id)
+                            } else {
+                                viewModel.addBookmark(article: article)
+                            }
                         } label: {
                             Image(systemName: "bookmark")
                                 .foregroundColor(.white)
@@ -36,13 +42,13 @@ struct NewsPresentCardView: View {
                     }
                     Spacer ()
                     
-                    Text(arcticle.category?.first ?? "")
+                    Text(article.category?.first ?? "")
                         .textCase(.uppercase)
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.white)
                         .padding(.bottom, 8)
                     
-                    Text(arcticle.title ?? "")
+                    Text(article.title ?? "")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.white)
                     
@@ -55,7 +61,7 @@ struct NewsPresentCardView: View {
             .cornerRadius(12)
         }
         .fullScreenCover(isPresented: $isFullScreen) {
-            NewsCardView(article: arcticle)
+            NewsCardView(viewModel: viewModel, article: article)
         }
     }
 }

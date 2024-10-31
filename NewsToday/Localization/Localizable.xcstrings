@@ -684,6 +684,9 @@
           }
         }
       }
+    },
+    "You haven't saved any articles yet. Start reading and bookmarking them now" : {
+
     }
   },
   "version" : "1.0"
