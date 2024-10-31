@@ -229,6 +229,17 @@
         }
       }
     },
+    "Bookmarks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закладки"
+          }
+        }
+      }
+    },
     "Browse" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -502,6 +513,17 @@
         }
       }
     },
+    "Saved articles to the library" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статьи сохраненные в библиотеку"
+          }
+        }
+      }
+    },
     "Search" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -685,8 +707,16 @@
         }
       }
     },
-    "You haven't saved any articles yet. Start reading and bookmarking them now" : {
-
+    "You haven’t saved any articles yet. Start reading and bookmarking them now" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы еще не сохранили ни одной статьи. Начните читать и добавляйте их в закладки прямо сейчас"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

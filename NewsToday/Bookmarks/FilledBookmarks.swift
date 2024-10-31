@@ -9,10 +9,12 @@ import SwiftUI
 
 struct FilledBookmarks: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var localizationService: LocalizationService
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderTitle(title: "Bookmarks",
-                        subtitle: "Saved articles to the library")
+            HeaderTitle(title: Resources.Text.bookmarksTitle.localized(localizationService.language),
+                        subtitle: Resources.Text.bookmarksText.localized(localizationService.language))
             
             ScrollView {
                 VStack(alignment: .leading) {

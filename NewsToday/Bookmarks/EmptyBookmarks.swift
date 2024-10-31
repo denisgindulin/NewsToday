@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EmptyBookmarks: View {
+    @EnvironmentObject var localizationService: LocalizationService
+    
     var body: some View {
         VStack {
             Spacer()
@@ -16,7 +18,7 @@ struct EmptyBookmarks: View {
                 .foregroundStyle(.purplePrimary)
                 .background(.purpleLighter)
                 .clipShape(Circle())
-            Text("You haven't saved any articles yet. Start reading and bookmarking them now")
+            Text(Resources.Text.bookmarksNote.localized(localizationService.language))
                 .multilineTextAlignment(.center)
             Spacer()
         }
