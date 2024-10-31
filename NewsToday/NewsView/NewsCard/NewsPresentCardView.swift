@@ -55,7 +55,7 @@ struct NewsPresentCardView: View {
             .cornerRadius(12)
         }
         .fullScreenCover(isPresented: $isFullScreen) {
-            NewsCardView(arcticle: arcticle)
+            NewsCardView(article: arcticle)
         }
     }
 }
