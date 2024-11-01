@@ -10,10 +10,11 @@
 import SwiftUI
 
 struct LanguageView: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var localizationService: LocalizationService
 
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             CustomButtonProfile(
                 text: Resources.Text.english.localized(localizationService.language),
                 textColor: localizationService.language == .en ? .white : Color("GreyDarker"),
@@ -32,8 +33,23 @@ struct LanguageView: View {
                 localizationService.language = .ru
             }
         }
-        .padding(.top, 24)
-        .navigationTitle(Resources.Text.lang.localized(localizationService.language))
+        .padding(.top, 20)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(Color("GreyPrimary"))
+                }
+            }
+            ToolbarItem(placement: .principal) {
+                Text(Resources.Text.lang.localized(localizationService.language))
+                    .interFont(size: 24)
+                    .foregroundColor(Color("BlackPrimary"))
+            }
+        }
         Spacer()
     }
 }

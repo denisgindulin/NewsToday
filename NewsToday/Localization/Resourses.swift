@@ -11,8 +11,20 @@ enum Resources {
     enum Text {
         static let next = "Next"
         static let getStarted = "Get started"
-        static let onboarding1 = "First to know"
-        static let onboarding2 = "All news in one place, be the first to know last news"
+        static let onboardingTitle1 = "All in One Place"
+        static let onboardingDescription1 = "be the first to know"
+        static let onboardingTitle2 = "Choose an Article"
+        static let onboardingDescription2 = "read or add to bookmarks"
+        static let onboardingTitle3 = "Bookmarks"
+        static let onboardingDescription3 = "all your bookmarks are here"
+        static let onboardingTitle4 = "Sign in to the App"
+        static let onboardingDescription4 = "to personalize the news"
+        static let onboardingTitle5 = "Choose a Language"
+        static let onboardingDescription5 = "english or russian"
+        static let onboardingTitle6 = "Choose News Topics"
+        static let onboardingDescription6 = "from many categories"
+        static let onboardingTitle7 = "Select Your Favorites"
+        static let onboardingDescription7 = "get personalized news"
         static let topicsTitle = "Select your favorite topics"
         static let topicsText = "Select some of your favorite topics to let us suggest better news for you"
         static let signUp = "Sign Up"
@@ -39,7 +51,28 @@ enum Resources {
         static let lang = "Language"
         static let termsAndConditions = "Terms & Conditions"
         static let signOut = "Sign Out"
-        static let termsAndConditionsText = ""
+        static let termsAndConditionsText = """
+                       
+                       By using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.
+
+                       1. Acceptance of Terms
+                       By accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.
+
+                       2. User Conduct
+                       You agree to use the app lawfully and avoid any behavior that could harm others or the app.
+
+                       3. Disclaimer
+                       News App is provided "as is." We do not guarantee its accuracy, reliability, or uninterrupted service.
+
+                       4. Limitation of Liability
+                       We are not liable for any damages arising from your use of the app.
+
+                       5. Termination
+                       We may suspend or terminate access to the app if these terms are violated.
+
+                       6. Contact
+                       For questions, email us at support@newsapp.com.
+                       """
         static let english = "English"
         static let russian = "Russian"
         static let categoriesTitle = "Categories"

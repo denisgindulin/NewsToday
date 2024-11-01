@@ -41,6 +41,9 @@ struct RootView: View {
         } else {
             SignInView()
         }
+//        .onAppear {
+//            selectedTab: Tab = .home
+//        }
     }
 }
 

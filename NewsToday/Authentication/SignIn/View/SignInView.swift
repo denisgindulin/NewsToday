@@ -63,12 +63,14 @@ struct SignInView: View {
             HStack {
                 Text(Resources.Text.dontHaveAnAccount.localized(localizationService.language))
                     .interFont(type: .medium)
-                Button(Resources.Text.signUp.localized(localizationService.language)) {
+                Button(action: {
                     withAnimation {
                         isSignUp.toggle()
                     }
-                }
-                .fullScreenCover(isPresented: $isSignUp) { SignUpView() }
+                }, label: {
+                    Text(Resources.Text.signUp.localized(localizationService.language))
+                        .foregroundStyle(.purplePrimary)
+                }).fullScreenCover(isPresented: $isSignUp) { SignUpView() }
             }
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)

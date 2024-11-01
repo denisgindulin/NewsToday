@@ -5,6 +5,7 @@
 
     },
     "\nBy using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -196,6 +197,28 @@
         }
       }
     },
+    "All in One Place" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё в одном месте"
+          }
+        }
+      }
+    },
+    "all your bookmarks are here" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "все отмеченные статьи здесь"
+          }
+        }
+      }
+    },
     "Already have an account?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -229,13 +252,24 @@
         }
       }
     },
+    "be the first to know" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "узнавай новости первым"
+          }
+        }
+      }
+    },
     "Bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Закладки"
+            "value" : "Раздел с закладками"
           }
         }
       }
@@ -264,6 +298,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Категории"
+          }
+        }
+      }
+    },
+    "Choose a Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбери язык"
+          }
+        }
+      }
+    },
+    "Choose an Article" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирай статью"
+          }
+        }
+      }
+    },
+    "Choose News Topics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирай тематику"
           }
         }
       }
@@ -341,6 +408,60 @@
         }
       }
     },
+    "english or russian" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "английский или русский"
+          }
+        }
+      }
+    },
+    "First to know" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Во-первых"
+          }
+        }
+      }
+    },
+    "from many categories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "из разных категорий"
+          }
+        }
+      }
+    },
+    "get personalized news" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "получи персональную ленту"
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начинаем"
+          }
+        }
+      }
+    },
     "Hello, I guess you are new around here. You can start using the application after sign up." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -392,23 +513,6 @@
         }
       }
     },
-    "Language" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Language"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Язык"
-          }
-        }
-      }
-    },
     "News" : {
       "localizations" : {
         "en" : {
@@ -420,7 +524,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Новости"
+            "value" : "News"
           }
         }
       }
@@ -459,6 +563,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "read or add to bookmarks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "читай или ставь закладку"
           }
         }
       }
@@ -558,6 +673,17 @@
         }
       }
     },
+    "Select Your Favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отметь предпочтения"
+          }
+        }
+      }
+    },
     "Sign In" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -571,6 +697,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Войти"
+          }
+        }
+      }
+    },
+    "Sign in to the App" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Авторизуйся"
           }
         }
       }
@@ -626,6 +763,7 @@
       }
     },
     "Terms & Conditions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -652,12 +790,23 @@
         }
       }
     },
+    "to personalize the news" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "чтобы персонализировать новости"
+          }
+        }
+      }
+    },
     "ToDay" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "НаДень"
+            "value" : "ToDay"
           }
         }
       }

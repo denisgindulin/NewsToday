@@ -11,15 +11,15 @@ struct ProfileView: View {
     @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = ProfileViewModel()
-    @State private var showingImagePicker = false  // Для отображения модального окна выбора изображения
-    @State private var avatarImage: UIImage? = nil // Хранение выбранного изображения
+    @State private var showingImagePicker = false 
+    @State private var avatarImage: UIImage? = nil
     
     var body: some View {
         NavigationView {
             VStack (spacing: 24) {
                 HStack(spacing: 24) {
-                    if let avatarImage = avatarImage {
-                        Image(uiImage: avatarImage)
+                    if let imageData = viewModel.avatarImageData, let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 72, height: 72)
@@ -28,19 +28,22 @@ struct ProfileView: View {
                                 showingImagePicker = true
                             }
                     } else {
-                        Image("ProfileImage")  // Заглушка по умолчанию
+                        Image(systemName: "photo.circle.fill")
                             .resizable()
+                            .scaledToFill()
                             .frame(width: 72, height: 72)
-                            .clipShape(Circle())
+                            .foregroundColor(Color("GreyDarker"))
                             .onTapGesture {
                                 showingImagePicker = true
                             }
                     }
                     VStack(alignment: .leading) {
                         Text(authViewModel.user?.name ?? "No Name")
-                            .font(.headline)
+                            .interFont(size: 24) 
+                            .foregroundColor(Color("BlackPrimary"))
                         Text(authViewModel.user?.email ?? "No Email")
-                            .font(.subheadline)
+                            .interFont(size: 16)
+                            .foregroundColor(Color("GreyPrimary"))
                     }
                     Spacer()
                 }
@@ -55,7 +58,7 @@ struct ProfileView: View {
                         icon: "chevron.right"
                     )
                 }
-                .buttonStyle(PlainButtonStyle())  // To avoid the default button styling
+                .buttonStyle(PlainButtonStyle())
                 Spacer()
                 
                 // Terms & Conditions Button
@@ -81,11 +84,24 @@ struct ProfileView: View {
                 )
             }
             .padding(.vertical, 24)
-            .navigationTitle(Resources.Text.profile.localized(localizationService.language))
-//            .navigationBarTitleDisplayMode(.inline)
-        }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text(Resources.Text.profile.localized(localizationService.language))
+                        .interFont(size: 24)
+                        .foregroundColor(Color("BlackPrimary"))
+                }
+            }
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
+            }
+            .onChange(of: avatarImage) { newImage in
+                if let newImage = newImage {
+                    viewModel.uploadProfileImage(image: newImage)
+                }
+            }
+            .onAppear {
+                viewModel.fetchProfileImage() // Fetch the avatar when the view appears
+            }
         }
     }
 }
