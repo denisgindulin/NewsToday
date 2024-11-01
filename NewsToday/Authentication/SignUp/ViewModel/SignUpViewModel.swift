@@ -14,8 +14,10 @@ class SignUpViewModel: ObservableObject {
     
     private let firestoreManager = FirestoreManager()
     
-    func createUser(name: String, email: String, password: String, repeatPassword: String) {
+    @MainActor
+    func createUser(name: String, email: String, password: String, repeatPassword: String) async throws {
         isLoading = true
+        
         Task {
             do {
                 let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -23,11 +25,9 @@ class SignUpViewModel: ObservableObject {
                 try await authResult.user.sendEmailVerification()
             } catch {
                 print("Ошибка при регистрации: \(error.localizedDescription)")
+                throw error
             }
-            
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
+            isLoading = false
         }
     }
 }

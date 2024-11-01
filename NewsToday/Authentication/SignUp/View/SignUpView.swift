@@ -16,6 +16,7 @@ enum SignUpField {
 
 struct SignUpView: View {
     @EnvironmentObject var localizationService: LocalizationService
+    @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject var viewModel = SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     @FocusState private var focusedField: SignUpField?
@@ -24,8 +25,6 @@ struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var repeatPassword = ""
-    
-//    @State private var showCategoriesView = false
     
     var disableSignUp: Bool {
         let isNameEmpty = userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -57,16 +56,22 @@ struct SignUpView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
                     } else {
                         Button {
-                            viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
-//                            showCategoriesView = true
-//                            dismiss()
+                            Task {
+                                do {
+                                    try await viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
+                                    
+                                    authViewModel.hasSelectedCategories = false
+                                    
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            }
                         } label: {
                             Text(Resources.Text.signUp.localized(localizationService.language))
                                 .authButton()
                                 .opacity(disableSignUp ? 0.5 : 1)
                         }
                         .disabled(disableSignUp)
-                        
                     }
                 }
             }

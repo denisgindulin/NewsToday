@@ -15,7 +15,7 @@ struct RootView: View {
     
     var body: some View {
         if authViewModel.user != nil {
-            if !authViewModel.hasSelectedCategories, authViewModel.selectedCategories.isEmpty {
+            if !authViewModel.hasSelectedCategories {
                 CategoriesView(
                     title: Resources.Text.categoriesTitle.localized(localizationService.language),
                     subtitle: Resources.Text.categoriesText.localized(localizationService.language),

@@ -29,6 +29,7 @@
 		480DC8F32CD3655100D924BF /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */; };
 		480DC8F92CD3948D00D924BF /* FilledBookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DC8F82CD3948D00D924BF /* FilledBookmarks.swift */; };
 		480DC8FB2CD3949900D924BF /* EmptyBookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DC8FA2CD3949900D924BF /* EmptyBookmarks.swift */; };
+		480DC8FD2CD4EB4F00D924BF /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DC8FC2CD4EB4F00D924BF /* HeaderTitle.swift */; };
 		481102F32CC658E4005C9999 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481102F22CC658E4005C9999 /* NewsViewModel.swift */; };
 		481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AA6D92CC78394009982DB /* AuthButton.swift */; };
 		48241F342CC8D36700DD3156 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484AD3792CC6468000D94D3D /* NetworkManager.swift */; };
@@ -97,6 +98,7 @@
 		22F7EDDC2CCA96CC0072847E /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		480DC8F82CD3948D00D924BF /* FilledBookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledBookmarks.swift; sourceTree = "<group>"; };
 		480DC8FA2CD3949900D924BF /* EmptyBookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBookmarks.swift; sourceTree = "<group>"; };
+		480DC8FC2CD4EB4F00D924BF /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		481102F22CC658E4005C9999 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		481AA6D92CC78394009982DB /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				22F7EDDA2CCA8A3E0072847E /* NextButton.swift */,
 				22F7EDDC2CCA96CC0072847E /* SkipButton.swift */,
 				1B78E79E2CCA23EA00F9DB60 /* ActivityView.swift */,
+				480DC8FC2CD4EB4F00D924BF /* HeaderTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				93E92B152CCF8E37004FEB0F /* LocalizationManager.swift in Sources */,
 				48A67D102CCFCC5E009F65FF /* ProfileViewModel.swift in Sources */,
 				48A67D0F2CCFCC27009F65FF /* ProfileView.swift in Sources */,
+				480DC8FD2CD4EB4F00D924BF /* HeaderTitle.swift in Sources */,
 				48A67D0E2CCFCBDF009F65FF /* NewsCardView.swift in Sources */,
 				48241F362CC8D38D00DD3156 /* SignUpTextFields.swift in Sources */,
 				48241F352CC8D37C00DD3156 /* NewsView.swift in Sources */,

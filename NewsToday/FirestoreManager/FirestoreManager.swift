@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 class FirestoreManager: ObservableObject {
     @Published var bookmarks: [Article] = []
+    
     func getUserData(userId: String) async throws -> UserData {
         let document = try await Firestore.firestore()
             .collection("users")

@@ -11,7 +11,7 @@ import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
-    @Published var hasSelectedCategories: Bool = UserDefaults.standard.bool(forKey: "hasSelectedCategories")
+    @Published var hasSelectedCategories: Bool = true
     @Published var selectedCategories: Set<Category> = []
     @Published var bookmarks: [Article] = []
     
@@ -30,6 +30,7 @@ class AuthViewModel: ObservableObject {
                 self?.loadBookmarks(userId: user.uid)
             } else {
                 self?.user = nil
+                self?.selectedCategories = []
             }
         }
     }

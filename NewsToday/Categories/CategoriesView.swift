@@ -7,24 +7,6 @@
 
 import SwiftUI
 
-struct HeaderTitle: View {
-    let title: String
-    let subtitle: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .interFont(size: 24)
-                .foregroundStyle(.blackPrimary)
-            Text(subtitle)
-                .interFont(type: .regular)
-                .foregroundStyle(.greyPrimary)
-        }
-        
-        .padding(.horizontal, 20)
-    }
-}
-
 struct CategoriesView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = CategoriesViewModel()
@@ -44,7 +26,7 @@ struct CategoriesView: View {
                     CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
                     if showButton {
                         Button {
-                            UserDefaults.standard.set(true, forKey: "hasSelectedCategories")
+                            authViewModel.hasSelectedCategories = true
                         } label: {
                             Text("Next")
                                 .authButton()
