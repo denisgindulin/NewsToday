@@ -25,6 +25,8 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var repeatPassword = ""
     
+//    @State private var showCategoriesView = false
+    
     var disableSignUp: Bool {
         let isNameEmpty = userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         let isEmailEmpty = email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -56,6 +58,7 @@ struct SignUpView: View {
                     } else {
                         Button {
                             viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
+//                            showCategoriesView = true
 //                            dismiss()
                         } label: {
                             Text(Resources.Text.signUp.localized(localizationService.language))
@@ -63,6 +66,7 @@ struct SignUpView: View {
                                 .opacity(disableSignUp ? 0.5 : 1)
                         }
                         .disabled(disableSignUp)
+                        
                     }
                 }
             }

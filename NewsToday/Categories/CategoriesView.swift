@@ -44,7 +44,7 @@ struct CategoriesView: View {
                     CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
                     if showButton {
                         Button {
-                            //
+                            UserDefaults.standard.set(true, forKey: "hasSelectedCategories")
                         } label: {
                             Text("Next")
                                 .authButton()
