@@ -62,7 +62,7 @@ struct OnboardingView: View {
                 } else {
                     Circle()
                         .frame(width: 10)
-                        .foregroundStyle(.greyPrimary)
+                        .foregroundStyle(.greyLight)
                 }
             }
         }
@@ -70,7 +70,7 @@ struct OnboardingView: View {
         
         // заголовок для текущей карточки
         Text(Onboarding.items[currentCardIndex + (Onboarding.items.count / 2)].title.localized)
-            .font(.title)
+            .interFont(size: 24)
             .foregroundStyle(.blackPrimary)
             .padding(.top, 8)
             .multilineTextAlignment(.center)
@@ -78,9 +78,8 @@ struct OnboardingView: View {
         
         // описание для текущей карточки
         Text(Onboarding.items[currentCardIndex + (Onboarding.items.count / 2)].description.localized)
-            .font(.headline)
+            .font(.custom(InterFont.regular.rawValue, fixedSize: 16))
             .foregroundStyle(.greyPrimary)
-
             .multilineTextAlignment(.center)
         
         // кнопка "Next" для перехода к следующей карточке в ряду (или "Get Started" для перехода на другой экран, если карточка последняя)

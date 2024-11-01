@@ -40,8 +40,7 @@ struct LanguageView: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(Color("GreyPrimary"))
+                    Image(.greyLeftArrow)
                 }
             }
             ToolbarItem(placement: .principal) {
