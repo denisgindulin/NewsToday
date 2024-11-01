@@ -200,6 +200,12 @@
     "All in One Place" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All in One Place"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -211,6 +217,12 @@
     "all your bookmarks are here" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "all your bookmarks are here"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -255,6 +267,12 @@
     "be the first to know" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "be the first to know"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -266,10 +284,16 @@
     "Bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmarks"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Раздел с закладками"
+            "value" : "Закладки"
           }
         }
       }
@@ -294,6 +318,12 @@
     "Categories" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -305,6 +335,12 @@
     "Choose a Language" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a Language"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -316,6 +352,12 @@
     "Choose an Article" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose an Article"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -327,6 +369,12 @@
     "Choose News Topics" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose News Topics"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -338,6 +386,12 @@
     "Confirm Password" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Password"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -383,6 +437,12 @@
     "Email" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -411,6 +471,12 @@
     "english or russian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "english or russian"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -422,6 +488,12 @@
     "First to know" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First to know"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -433,6 +505,12 @@
     "from many categories" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "from many categories"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -444,6 +522,12 @@
     "get personalized news" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "get personalized news"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -454,6 +538,12 @@
     },
     "Get Started" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -513,6 +603,23 @@
         }
       }
     },
+    "Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
+    },
     "News" : {
       "localizations" : {
         "en" : {
@@ -531,6 +638,12 @@
     },
     "Next" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -542,6 +655,12 @@
     "Password" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -570,6 +689,12 @@
     "read or add to bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "read or add to bookmarks"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -631,6 +756,12 @@
     "Saved articles to the library" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved articles to the library"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -676,6 +807,12 @@
     "Select Your Favorites" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Your Favorites"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -704,6 +841,12 @@
     "Sign in to the App" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in to the App"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -782,6 +925,12 @@
     "Thousands of articles in each category" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousands of articles in each category"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -793,6 +942,12 @@
     "to personalize the news" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "to personalize the news"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -803,6 +958,12 @@
     },
     "ToDay" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ToDay"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -814,6 +975,12 @@
     "Username" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Username"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -859,6 +1026,12 @@
     "You haven’t saved any articles yet. Start reading and bookmarking them now" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven’t saved any articles yet. Start reading and bookmarking them now"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
