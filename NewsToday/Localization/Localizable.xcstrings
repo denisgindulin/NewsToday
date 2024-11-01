@@ -5,6 +5,7 @@
 
     },
     "\nBy using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -762,6 +763,7 @@
       }
     },
     "Terms & Conditions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
