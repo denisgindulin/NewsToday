@@ -30,9 +30,9 @@ struct NewsPresentCardView: View {
                         Spacer()
                         Button {
                             if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
-                                viewModel.deleteBookmark(articleId: article.id)
+                                authViewModel.deleteBookmark(articleId: article.id)
                             } else {
-                                viewModel.addBookmark(article: article)
+                                authViewModel.addBookmark(article: article)
                             }
                         } label: {
                             Image(systemName: authViewModel.bookmarks.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark")
@@ -60,7 +60,7 @@ struct NewsPresentCardView: View {
             .cornerRadius(12)
         }
         .fullScreenCover(isPresented: $isFullScreen) {
-            NewsCardView(fromBookmark: false, article: article)
+            NewsCardView(article: article)
         }
     }
 }

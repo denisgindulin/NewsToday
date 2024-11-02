@@ -23,7 +23,7 @@ struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
     @StateObject var onboardingViewModel = OnboardingViewModel()
-    @StateObject var localizationService = LocalizationService.shared
+    @StateObject var localizationService = LocalizationService()
     
     @State private var showStartView = true
     

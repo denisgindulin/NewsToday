@@ -70,6 +70,10 @@ class AuthViewModel: ObservableObject {
             .assign(to: &$bookmarks)
     }
     
+    func addBookmark(article: Article) {
+        firestoreManager.addBookmark(for: article)
+    }
+    
     func deleteBookmark(articleId: String) {
         firestoreManager.deleteBookmark(articleId: articleId)
     }

@@ -66,7 +66,7 @@ struct NewsView: View {
                                 
                                 recomendTitles
                                 
-                                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles, sourceScreen: true)
+                                NewsPreviewCardView(articles: viewModel.articles, sourceScreen: true)
                             }
                             .padding(.bottom, 16)
                         }
@@ -74,7 +74,7 @@ struct NewsView: View {
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
-                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles)
+                NewsPreviewCardView(articles: viewModel.articles)
             }
         }.navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }

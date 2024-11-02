@@ -19,7 +19,7 @@ struct ProfileView: View {
         NavigationView {
             VStack (spacing: 24) {
                 HStack(spacing: 24) {
-                    WebImage(url: URL(string: authViewModel.userAvatar ?? "")) { image in
+                    AsyncImage(url: URL(string: authViewModel.userAvatar ?? "")) { image in
                         image
                             .resizable()
                             .scaledToFill()

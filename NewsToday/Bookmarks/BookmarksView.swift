@@ -21,4 +21,6 @@ struct BookmarksView: View {
 
 #Preview {
     BookmarksView()
+        .environmentObject(LocalizationService())
+        .environmentObject(AuthViewModel())
 }

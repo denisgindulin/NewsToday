@@ -13,7 +13,6 @@ struct NewsPreviewCardView: View {
     @State private var isFullScreen = false
     @Environment(\.dismiss) var dismiss
     
-    let fromBookmark: Bool
     var articles: [Article]
     var sourceScreen: Bool = false
     
@@ -60,7 +59,7 @@ struct NewsPreviewCardView: View {
                         }
                     }
                     .fullScreenCover(isPresented: $isFullScreen) { 
-                        NewsCardView(fromBookmark: fromBookmark, article: article)
+                        NewsCardView(article: article)
                     }
                 }
                 .padding(.bottom, 8)
