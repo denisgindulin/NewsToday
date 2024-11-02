@@ -11,7 +11,7 @@ import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
-    @Published var selectedCategories: Set<Category> = []
+    @Published var selectedCategories: [Category] = []
     @Published var bookmarks: [Article] = []
     
     private let firestoreManager = FirestoreManager()
@@ -49,7 +49,7 @@ class AuthViewModel: ObservableObject {
             guard let categories = try? await firestoreManager.getUserCategories(userId: userId) else { return }
             
             DispatchQueue.main.async {
-                self.selectedCategories = Set(categories)
+                self.selectedCategories.append(contentsOf: categories)
             }
         }
     }

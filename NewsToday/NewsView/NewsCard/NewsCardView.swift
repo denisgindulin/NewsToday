@@ -27,11 +27,20 @@ struct NewsCardView: View {
         GeometryReader { geo in
             VStack(spacing: 0) {
                 ZStack(alignment: .top) {
-                    WebImage(url: URL(string: article.imageURL ?? ""))
-                        .resizable()
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: geo.size.height / 2.4, alignment: .center)
-                        .opacity(0.5)
+                    
+                    if article.imageURL != nil {
+                        WebImage(url: URL(string: article.imageURL ?? ""))
+                            .resizable()
+                            .edgesIgnoringSafeArea(.top)
+                            .frame(height: geo.size.height / 2.4, alignment: .center)
+                            .opacity(0.5)
+                    } else {
+                        Image("EmptyImage")
+                            .resizable()
+                            .edgesIgnoringSafeArea(.top)
+                            .frame(height: geo.size.height / 2.4, alignment: .center)
+                            .opacity(0.5)
+                    }
                     
                     textOnImageHeader
                 }

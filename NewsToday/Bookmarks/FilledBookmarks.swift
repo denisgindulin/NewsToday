@@ -18,7 +18,13 @@ struct FilledBookmarks: View {
             
             ScrollView {
                 VStack(alignment: .leading) {
-                    NewsPreviewCardView(fromBookmark: true, articles: authViewModel.bookmarks, sourceScreen: true)
+                    ForEach(authViewModel.bookmarks, id: \.self) { bookmark in
+                        NewsPreviewCardView(
+                            fromBookmark: true,
+                            articles: bookmark,
+                            sourceScreen: true
+                        )
+                    }
                 }
                 .padding(.vertical, 32)
             }

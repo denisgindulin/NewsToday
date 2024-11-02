@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryItems: View {
     @ObservedObject var viewModel: CategoriesViewModel
-    @Binding var selectedCategories: Set<Category>
+    @Binding var selectedCategories: [Category]
     
     let columns: [GridItem] = [GridItem(.adaptive(minimum: 160), spacing: 16)]
     
@@ -35,10 +35,10 @@ struct CategoryItems: View {
     }
     
     private func toggleSelection(for category: Category) {
-        if selectedCategories.contains(category) {
-            selectedCategories.remove(category)
+        if let index = selectedCategories.firstIndex(of: category) {
+            selectedCategories.remove(at: index)
         } else {
-            selectedCategories.insert(category)
+            selectedCategories.append(category)
         }
     }
 }

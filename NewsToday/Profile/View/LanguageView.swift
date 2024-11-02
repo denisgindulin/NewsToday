@@ -12,6 +12,7 @@ import SwiftUI
 struct LanguageView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var localizationService: LocalizationService
+    @EnvironmentObject var newsViewModel: NewsViewModel
 
     var body: some View {
         VStack(spacing: 16) {
@@ -21,6 +22,7 @@ struct LanguageView: View {
                 backgroundColor: localizationService.language == .en ? Color("PurplePrimary") : Color("GreyLighter"),
                 icon: localizationService.language == .en ? "checkmark" : ""
             ) {
+                newsViewModel.language = "en"
                 localizationService.language = .en
             }
 
@@ -30,6 +32,7 @@ struct LanguageView: View {
                 backgroundColor: localizationService.language == .ru ? Color("PurplePrimary") : Color("GreyLighter"),
                 icon: localizationService.language == .ru ? "checkmark" : ""
             ) {
+                newsViewModel.language = "ru"
                 localizationService.language = .ru
             }
         }

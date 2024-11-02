@@ -12,6 +12,8 @@ struct NewsView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var viewModel: NewsViewModel
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var isFullScreen = false
     
     var body: some View {
@@ -28,6 +30,7 @@ struct NewsView: View {
                             AppTextField(textFieldText: $viewModel.searchText,
                                          placeholder: (Resources.Text.search.localized(localizationService.language)),
                                          imageName: "magnifyingglass")
+                            .frame(height: 100)
                             .padding(.horizontal, 20)
                             
                             ScrollView(.horizontal, showsIndicators: false) {
@@ -47,6 +50,10 @@ struct NewsView: View {
                                         .background(viewModel.selectedCategory != category ? Color.gray : Color.purplePrimary)
                                         .cornerRadius(16)
                                     }
+                                    
+                                    Rectangle()
+                                        .frame(width: 20)
+                                        .foregroundColor(.white)
                                 }
                                 .padding(.leading, 20)
                             }
@@ -55,18 +62,30 @@ struct NewsView: View {
                                 HStack(spacing: 20) {
                                     ForEach(viewModel.articles, id: \.self) { news in
                                         NewsPresentCardView(article: news, action: {})
+                                        
                                     }
+                                    
+                                    Rectangle()
+                                        .frame(width: 20)
+                                        .foregroundColor(.white)
                                 }
                                 .padding(.leading, 20)
                             }
                             
                             Spacer()
                             
-                            LazyVStack(alignment: .leading, spacing: 0) {
+                            VStack(alignment: .leading, spacing: 0) {
                                 
                                 recomendTitles
                                 
-                                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles, sourceScreen: true)
+                                ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
+                                    NewsPreviewCardView(fromBookmark: false, articles: recomendArticle, sourceScreen: true)
+                                    
+                                }
+                                
+                                Rectangle()
+                                    .frame(height: 100)
+                                    .foregroundColor(.white)
                             }
                             .padding(.bottom, 16)
                         }
@@ -74,9 +93,16 @@ struct NewsView: View {
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
-                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles)
+                ForEach(viewModel.articles, id: \.self) { articles in
+                    NewsPreviewCardView(fromBookmark: false, articles: articles)
+                }
             }
-        }.navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
+        }
+        .onAppear {
+            viewModel.loadLatestNews()
+            viewModel.firstLoadRecomended(authViewModel.selectedCategories)
+        }
+        .navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }
 }
 
@@ -94,7 +120,6 @@ extension NewsView {
             Text(Resources.Text.browseText.localized(localizationService.language))
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 16, weight: .regular))
-                .padding(.bottom, 32)
         }
         .padding(.leading, 20)
     }

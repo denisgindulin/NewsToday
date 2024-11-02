@@ -50,6 +50,9 @@ struct CategoriesView: View {
                                 .authButton()
                         }
                     }
+                    Rectangle()
+                        .frame(height: 100)
+                        .foregroundColor(.white)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 32)

@@ -10,21 +10,24 @@ import Foundation
 
 enum Endpoint {
     case search(request: String)
-    case latest(category: Category)
+    case category(category: Category)
+    case latest
 }
 
 final class NetworkManager {
     private func createQueryItems(_ endpoint: Endpoint, language: String) -> [URLQueryItem] {
         var queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "apiKey", value: ApiKey.first),
+            URLQueryItem(name: "apiKey", value: ApiKey.second),
             URLQueryItem(name: "language", value: language),
         ]
         
         switch endpoint {
         case .search(let query):
             queryItems.append(URLQueryItem(name: "q", value: query))
-        case .latest(let category):
+        case .category(let category):
             queryItems.append(URLQueryItem(name: "category", value: category.rawValue))
+        case .latest:
+            print("latest")
         }
         
         return queryItems.compactMap { $0.value != nil ? $0 : nil }
@@ -34,7 +37,7 @@ final class NetworkManager {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "newsdata.io"
-        components.path = "/api/1/news"
+        components.path = "/api/1/latest"
         components.queryItems = createQueryItems(endpoint, language: language)
         
         guard let url = components.url else { throw URLError(.badURL)}

@@ -10,13 +10,18 @@ import Combine
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    let firestoreManager = FirestoreManager()
+    
+    private let networkManager = NetworkManager()
+    private let firestoreManager = FirestoreManager()
+    
     @Published var articles: [Article] = []
+    @Published var recomendedarticles: [Article] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var searchText: String = ""
-    @Published var selectedCategory: Category? = .crime
+    @Published var selectedCategory: Category?
     @Published var loading: Bool = false
+    @Published var language: String = "en"
     
     private var cancellables = [AnyCancellable]()
     
@@ -27,7 +32,7 @@ class NewsViewModel: ObservableObject {
         self.errorMessage = errorMessage
         
         $searchText
-            .throttle(for: .seconds(4), scheduler: RunLoop.main, latest: true)
+            .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -43,35 +48,49 @@ class NewsViewModel: ObservableObject {
                     self?.selectedCategory = nil
                 }
             }).store(in: &cancellables)
-        
-        loadCategory(category: selectedCategory ?? Category.top)
     }
     
+     func loadLatestNews() {
+        Task {
+            await fetchArticles(endpoint: .latest)
+        }
+    }
     
-    let networkManager = NetworkManager()
+    func firstLoadRecomended(_ recomended: [Category]) {
+        recomendedarticles = []
+        for index in recomended {
+            loadRecomendedCategory(category: index)
+        }
+    }
     
-    init() {
-        loadCategory(category: .top)
+    private func loadRecomendedCategory(category: Category) {
+        Task {
+            await fetchArticles(endpoint: .category(category: category), recomended: true)
+        }
     }
     
     func loadCategory(category: Category) {
         Task {
-            await fetchArticles(endpoint: .latest(category: category))
+            await fetchArticles(endpoint: .category(category: category))
         }
     }
     
-    func searchNews(query: String) {
+    private func searchNews(query: String) {
         Task {
             await fetchArticles(endpoint: .search(request: query))
         }
     }
     
-    func fetchArticles(endpoint: Endpoint) async {
+    func fetchArticles(endpoint: Endpoint, recomended: Bool = false) async {
         isLoading = true
         errorMessage = nil
         do {
-            let response = try await networkManager.fetchNews(endpoint: endpoint)
-            self.articles = response
+            let response = try await networkManager.fetchNews(endpoint: endpoint, language: language)
+            if !recomended {
+                self.articles = response
+            } else {
+                recomendedarticles.append(contentsOf: response)
+            }
             print("Fetched articles count: \(self.articles.count)")
         } catch {
             print("Ошибка при получении новостей: \(error.localizedDescription)")

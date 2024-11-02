@@ -21,9 +21,15 @@ struct NewsPresentCardView: View {
             isFullScreen = true
         } label: {
             ZStack {
-                WebImage(url: URL(string: article.imageURL ?? ""))
-                    .resizable()
-                    .opacity(0.7)
+                if article.imageURL != nil {
+                    WebImage(url: URL(string: article.imageURL ?? ""))
+                        .resizable()
+                        .opacity(0.7)
+                } else {
+                    Image("EmptyImage")
+                        .resizable()
+                        .opacity(0.7)
+                }
                 
                 VStack(alignment: .leading) {
                     HStack {
