@@ -21,6 +21,9 @@
 <img src="https://img.shields.io/badge/elaiten-green"/></a>
 </p>
 
+<p align="left"> 
+</p>
+
 ## Технологии / Technologies
 <p align="left"> 
 <a href="https://swift.org">
@@ -40,12 +43,12 @@
 
 ## Функционал / App features
 
-### Персонализированный главный экран / Personalized home screen:
+### Персонализированный главный экран:
 * представлены только самые свежие новости
 * новости разбиты по категориям
 * есть подборка рекомендаций
 * также можно выполнить поиск
-  
+### Personalized home screen:  
 * the latest news only is presented
 * the news is divided into categories
 * there is a selection of recommendations
