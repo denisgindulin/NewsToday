@@ -98,7 +98,7 @@ struct NewsView: View {
         }
         .onAppear {
             viewModel.loadLatestNews()
-            viewModel.firstLoadRecomended(authViewModel.selectedCategories)
+            viewModel.firstLoadRecomended(Array(authViewModel.selectedCategories))
         }
         .navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }

@@ -10,10 +10,9 @@ import SwiftUI
 struct CategoryItems: View {
     @EnvironmentObject var localizationService: LocalizationService
     @ObservedObject var viewModel: CategoriesViewModel
-    @Binding var selectedCategories: [Category]
+    @Binding var selectedCategories: Set<Category>
     
     let columns: [GridItem] = [GridItem(.adaptive(minimum: 140), spacing: 16)]
-    
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
@@ -39,7 +38,7 @@ struct CategoryItems: View {
         if let index = selectedCategories.firstIndex(of: category) {
             selectedCategories.remove(at: index)
         } else {
-            selectedCategories.append(category)
+            selectedCategories.insert(category)
         }
     }
 }

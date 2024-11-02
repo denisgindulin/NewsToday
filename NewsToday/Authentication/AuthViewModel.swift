@@ -13,7 +13,7 @@ class AuthViewModel: ObservableObject {
     @Published var user: UserData?
     @Published var userAvatar: String?
     @Published var hasSelectedCategories: Bool = true
-    @Published var selectedCategories: [Category] = []
+    @Published var selectedCategories: Set<Category> = []
     @Published var bookmarks: [Article] = []
     
     private let firestoreManager = FirestoreManager()
@@ -51,7 +51,7 @@ class AuthViewModel: ObservableObject {
             guard let categories = try? await firestoreManager.getUserCategories(userId: userId) else { return }
             
             DispatchQueue.main.async {
-                self.selectedCategories.append(contentsOf: categories)
+                self.selectedCategories = Set(categories)
             }
         }
     }
