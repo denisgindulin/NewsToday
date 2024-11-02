@@ -39,9 +39,9 @@
 <img src="https://img.shields.io/badge/Alamofire-green"/></a>
 </p>
 
-![second-NewsToDayApp](https://github.com/user-attachments/assets/ced6e3c3-4a3b-441e-9d87-748bbb348302)
-
 ## Функционал / App features
+
+![second-NewsToDayApp](https://github.com/user-attachments/assets/ced6e3c3-4a3b-441e-9d87-748bbb348302)
 
 ### Персонализированный главный экран:
 * представлены только самые свежие новости
