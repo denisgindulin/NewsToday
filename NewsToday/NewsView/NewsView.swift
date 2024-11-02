@@ -39,14 +39,14 @@ struct NewsView: View {
                                             viewModel.selectedCategory = category
                                             viewModel.loadCategory(category: category)
                                         } label: {
-                                            Text(category.rawValue)
+                                            Text(Resources.Text.localeCategories(category: category).localized(localizationService.language))
                                                 .textCase(.uppercase)
-                                                .font(.system(size: 12, weight: .semibold))
-                                                .foregroundColor(.white)
+                                                .interFont(size: 12)
+                                                .foregroundStyle(viewModel.selectedCategory != category ? .greyPrimary : .white)
                                                 .padding(.horizontal, 16)
                                                 .padding([.top, .bottom], 8)
                                         }
-                                        .background(viewModel.selectedCategory != category ? Color.gray : Color.purplePrimary)
+                                        .background(viewModel.selectedCategory != category ? .greyLighter : .purplePrimary)
                                         .cornerRadius(16)
                                     }
                                     
@@ -61,7 +61,6 @@ struct NewsView: View {
                                 HStack(spacing: 20) {
                                     ForEach(viewModel.articles, id: \.self) { news in
                                         NewsPresentCardView(article: news, action: {})
-                                        
                                     }
                                     
                                     Rectangle()
@@ -111,14 +110,14 @@ extension NewsView {
     var headerTitle: some View {
         Group {
             Text(Resources.Text.browseTitle.localized(localizationService.language))
-                .font(.system(size: 24, weight: .semibold))
+                .interFont(size: 24)
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 8)
                 .padding(.top, 28)
             
             Text(Resources.Text.browseText.localized(localizationService.language))
                 .multilineTextAlignment(.leading)
-                .font(.system(size: 16, weight: .regular))
+                .interFont(type: .regular)
         }
         .padding(.leading, 20)
     }
@@ -127,7 +126,7 @@ extension NewsView {
         HStack {
             
             Text(Resources.Text.recommended.localized(localizationService.language))
-                .font(.system(size: 20, weight: .semibold))
+                .interFont(size: 20)
                 .foregroundColor(.black)
             
             Spacer()
@@ -136,6 +135,7 @@ extension NewsView {
                 isFullScreen = true
             } label: {
                 Text((Resources.Text.seeAll.localized(localizationService.language)))
+                    .interFont(type: .medium, size: 14)
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.gray)
             }

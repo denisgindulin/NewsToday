@@ -17,7 +17,7 @@ enum Endpoint {
 final class NetworkManager {
     private func createQueryItems(_ endpoint: Endpoint, language: String) -> [URLQueryItem] {
         var queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "apiKey", value: ApiKey.second),
+            URLQueryItem(name: "apiKey", value: ApiKey.third),
             URLQueryItem(name: "language", value: language),
         ]
         

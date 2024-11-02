@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryItems: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @ObservedObject var viewModel: CategoriesViewModel
     @Binding var selectedCategories: [Category]
     
@@ -22,7 +23,7 @@ struct CategoryItems: View {
                     viewModel.saveFavoriteCategory(Array(selectedCategories))
                 } label: {
                     HStack {
-                        CategoryEmojiView(category: category)
+                        Text(emojiForCategory(category) + Resources.Text.localeCategories(category: category).localized(localizationService.language))
                     }
                     .padding(.vertical, 24)
                     .frame(maxWidth: .infinity)
@@ -39,6 +40,45 @@ struct CategoryItems: View {
             selectedCategories.remove(at: index)
         } else {
             selectedCategories.append(category)
+        }
+    }
+}
+
+extension CategoryItems {
+    func emojiForCategory(_ category: Category) -> String {
+        switch category {
+        case .crime:
+            return "👹"
+        case .business:
+            return "💰"
+        case .domestic:
+            return "🏠"
+        case .education:
+            return "📚"
+        case .entertainment:
+            return "🎭"
+        case .environment:
+            return "🌍"
+        case .food:
+            return "🍗"
+        case .health:
+            return "🏥"
+        case .lifestyle:
+            return "👟"
+        case .other:
+            return "❓"
+        case .politics:
+            return "⚖️"
+        case .science:
+            return "🔬"
+        case .sports:
+            return "⚽️"
+        case .technology:
+            return "💻"
+        case .top:
+            return "🏆"
+        case .world:
+            return "🌐"
         }
     }
 }

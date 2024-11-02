@@ -14,6 +14,7 @@ struct ShareText: Identifiable {
 }
 
 struct NewsCardView: View {
+    @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
@@ -49,8 +50,9 @@ struct NewsCardView: View {
                     VStack(alignment: .leading) {
                         
                         HStack {
-                            Text("Results")
-                                .font(.system(size: 16, weight: .bold))
+                            Text(Resources.Text.results.localized(localizationService.language))
+                                .interFont(type: .bold)
+                                .foregroundStyle(.blackPrimary)
                                 .padding(.bottom, 8)
                                 .padding(.top, 24)
                             
@@ -60,7 +62,7 @@ struct NewsCardView: View {
                         Text(article.description ?? "")
                             .font(.system(size: 16, weight: .light))
                     }
-                    .foregroundColor(.black)
+                    .foregroundStyle(.greyDarker)
                     .padding(.horizontal, 20)
                 }
             }
@@ -78,10 +80,10 @@ extension NewsCardView {
             
             HStack {
                 Button(action: { dismiss() },
-                       label:  { Image(systemName: "arrow.backward") })
+                       label:  { Image("whiteLeftArrow") })
                 
                 Spacer()
-                
+    
                 Button(action: {
                     if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
                         authViewModel.deleteBookmark(articleId: article.id)
@@ -102,7 +104,7 @@ extension NewsCardView {
             
         }
         .padding(.horizontal, 20)
-        .padding([.top, .bottom], 16)
+        .padding(.bottom, 16)
         .foregroundColor(.white)
     }
     
@@ -121,10 +123,10 @@ extension NewsCardView {
                 .font(.system(size: 20, weight: .bold))
             
             VStack(alignment: .leading, spacing: 0){
-                Text(article.creator?.first ?? "")
+                Text(article.creator?.first ?? Resources.Text.unknownAuthor.localized(localizationService.language))
                     .font(.system(size: 16, weight: .bold))
                 
-                Text("autor")
+                Text(Resources.Text.author.localized(localizationService.language))
                     .font(.system(size: 16, weight: .light))
             }
         }

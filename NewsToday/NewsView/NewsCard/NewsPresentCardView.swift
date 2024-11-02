@@ -49,12 +49,12 @@ struct NewsPresentCardView: View {
                     
                     Text(article.category?.first ?? "")
                         .textCase(.uppercase)
-                        .font(.system(size: 12, weight: .regular))
+                        .interFont(type: .regular, size: 12)
                         .foregroundColor(.white)
                         .padding(.bottom, 8)
                     
                     Text(article.title ?? "")
-                        .font(.system(size: 16, weight: .bold))
+                        .interFont(type: .bold)
                         .foregroundColor(.white)
                     
                 }

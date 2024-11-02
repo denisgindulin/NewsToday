@@ -11,6 +11,8 @@ import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
+    @Published var userAvatar: String?
+    @Published var hasSelectedCategories: Bool = true
     @Published var selectedCategories: [Category] = []
     @Published var bookmarks: [Article] = []
     
