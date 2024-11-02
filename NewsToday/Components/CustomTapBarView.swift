@@ -19,10 +19,17 @@ struct CustomTabBarView: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .foregroundStyle(.clear)
+                .frame(height: UIScreen.main.bounds.height / 9)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .shadow(color: Color(.greyDarker).opacity(0.5), radius: 0, x: 0, y: -1)
+            
             HStack {
                 Spacer()
                 
-                Button(action: { selectedTab = .home /* switch to HomeView */}) {
+                Button(action: { selectedTab = .home }) {
                     Image("Home")
                         .foregroundStyle(selectedTab != .home ? .greyLight : .purplePrimary)
                 }
@@ -30,7 +37,7 @@ struct CustomTabBarView: View {
                 Spacer()
                 Spacer()
                 
-                Button(action: {selectedTab = .categories /* switch to CategoriesView */}) {
+                Button(action: {selectedTab = .categories }) {
                     Image("categoriesIcon")
                         .foregroundStyle(selectedTab != .categories ? .greyLight : .purplePrimary)
                 }
@@ -38,7 +45,7 @@ struct CustomTabBarView: View {
                 Spacer()
                 Spacer()
                 
-                Button(action: { selectedTab = .bookmark /* switch to BookmarksView */}) {
+                Button(action: { selectedTab = .bookmark }) {
                     Image("bookmarkIcon")
                         .foregroundStyle(selectedTab != .bookmark ? .greyLight : .purplePrimary)
                 }
@@ -46,13 +53,14 @@ struct CustomTabBarView: View {
                 Spacer()
                 Spacer()
                 
-                Button(action: { selectedTab = .profile /* switch to ProfileView */}) {
+                Button(action: { selectedTab = .profile }) {
                     Image("profileIcon")
                         .foregroundStyle(selectedTab != .profile ? .greyLight : .purplePrimary)
                 }
                 
                 Spacer()
             }
+            .padding(.bottom, 32)
         }
         .zIndex(2)
     }

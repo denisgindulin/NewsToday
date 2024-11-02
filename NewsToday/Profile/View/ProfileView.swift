@@ -83,7 +83,8 @@ struct ProfileView: View {
                     }
                 )
             }
-            .padding(.vertical, 24)
+            .padding(.top, 24)
+            .padding(.bottom, 88)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text(Resources.Text.profile.localized(localizationService.language))
