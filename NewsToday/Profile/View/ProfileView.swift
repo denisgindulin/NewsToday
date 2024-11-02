@@ -38,10 +38,10 @@ struct ProfileView: View {
                     VStack(alignment: .leading) {
                         Text(authViewModel.user?.name ?? "No Name")
                             .interFont(size: 24)
-                            .foregroundColor(Color("BlackPrimary"))
+                            .foregroundColor(.blackPrimary)
                         Text(authViewModel.user?.email ?? "No Email")
-                            .interFont(size: 16)
-                            .foregroundColor(Color("GreyPrimary"))
+                            .interFont(type: .regular, size: 14)
+                            .foregroundColor(.greyPrimary)
                     }
                     Spacer()
                 }
@@ -81,7 +81,9 @@ struct ProfileView: View {
                     }
                 )
             }
-            .padding(.vertical, 24)
+            .padding(.vertical, 16)
+//            .navigationTitle(Resources.Text.profile.localized(localizationService.language))
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text(Resources.Text.profile.localized(localizationService.language))
