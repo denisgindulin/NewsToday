@@ -63,6 +63,17 @@ struct NewsView: View {
                                         NewsPresentCardView(article: news, action: {})
                                     }
                                     
+                                    if viewModel.articles.isEmpty {
+                                        ForEach(0..<10) { _ in
+                                            Rectangle()
+                                                .background(Color.gray)
+                                                .frame(width: 256, height: 256)
+                                                .cornerRadius(12)
+                                                .shimmer(configuration: .default)
+                                        }
+                                    }
+                                    
+                                    
                                     Rectangle()
                                         .frame(width: 20)
                                         .foregroundColor(.white)
@@ -78,7 +89,12 @@ struct NewsView: View {
                                 
                                 ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
                                     NewsPreviewCardView(fromBookmark: false, articles: recomendArticle, sourceScreen: true)
-                                    
+                                }
+                                
+                                if viewModel.articles.isEmpty {
+                                    ForEach(0..<10) { _ in
+                                        EmptyNewsView()
+                                    }
                                 }
                                 
                                 Rectangle()
@@ -139,7 +155,7 @@ extension NewsView {
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.gray)
             }
-            
+            .disabled(!viewModel.articles.isEmpty)
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 24)
