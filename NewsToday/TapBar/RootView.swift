@@ -19,30 +19,38 @@ struct RootView: View {
                 CategoriesView(
                     title: Resources.Text.categoriesTitle.localized(localizationService.language),
                     subtitle: Resources.Text.categoriesText.localized(localizationService.language),
-                    showButton: true
+                    showButton: true,
+                    padding: 0
                 )
             } else {
-                switch selectedTab {
-                case .home:
-                    NewsView() // заглушка для экрана HomeView
-                case .categories:
-                    CategoriesView(
-                        title: Resources.Text.categoriesTitle.localized(localizationService.language),
-                        subtitle: Resources.Text.categoriesText.localized(localizationService.language),
-                        showButton: false
-                    )
-                case .bookmark:
-                    BookmarksView()
-                case .profile:
-                    ProfileView()
+                VStack {
+                    switch selectedTab {
+                    case .home:
+                        NewsView() // заглушка для экрана HomeView
+                    case .categories:
+                        CategoriesView(
+                            title: Resources.Text.categoriesTitle.localized(localizationService.language),
+                            subtitle: Resources.Text.categoriesText.localized(localizationService.language),
+                            showButton: false,
+                            padding: 98
+                        )
+                    case .bookmark:
+                        BookmarksView()
+                    case .profile:
+                        ProfileView()
+                    }
                 }
+                .onAppear {
+                    selectedTab = .home
+                }
+                .overlay(
+                    CustomTabBarView(selectedTab: $selectedTab)
+                        .ignoresSafeArea(.keyboard),
+                    alignment: .bottom
+                )
+                .ignoresSafeArea(edges: .bottom)
             }
-            .overlay(
-                CustomTabBarView(selectedTab: $selectedTab)
-                    .ignoresSafeArea(.keyboard),
-                alignment: .bottom
-            )
-            .ignoresSafeArea(edges: .bottom)
+            
         } else {
             SignInView()
         }

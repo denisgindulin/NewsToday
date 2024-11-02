@@ -81,7 +81,8 @@ struct ProfileView: View {
                     }
                 )
             }
-            .padding(.vertical, 16)
+            .padding(.top, 16)
+            .padding(.bottom, 88)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

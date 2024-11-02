@@ -45,12 +45,15 @@ struct FilledBookmarks: View {
                                 }
                             }
                         }
+                        
                     }
                     .onDelete(perform: deleteBookmark)
-                    .padding(.top, 20)
+                    .onMove(perform: move)
                     .listRowSeparator(.hidden)
                 }
-                .listStyle(PlainListStyle())   
+                .padding(.top, 20)
+                .padding(.bottom, 88)
+                .listStyle(.plain)
             }
         }
     }
@@ -66,6 +69,10 @@ struct FilledBookmarks: View {
         for bookmark in bookmarksToDelete {
             authViewModel.deleteBookmark(articleId: bookmark.id)
         }
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        authViewModel.bookmarks.move(fromOffsets: source, toOffset: destination)
     }
 }
 
