@@ -47,10 +47,10 @@ struct FilledBookmarks: View {
                         }
                     }
                     .onDelete(perform: deleteBookmark)
+                    .padding(.top, 20)
                     .listRowSeparator(.hidden)
                 }
-                .listStyle(PlainListStyle())
-                .padding(.top, 20)
+                .listStyle(PlainListStyle())   
             }
         }
     }
