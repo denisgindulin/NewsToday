@@ -51,6 +51,9 @@ enum Resources {
         static let lang = "Language"
         static let termsAndConditions = "Terms & Conditions"
         static let signOut = "Sign Out"
+        static let author = "Author"
+        static let unknownAuthor = "Unknown"
+        static let results = "Results"
         static let termsAndConditionsText = """
                        By using NewsToDay App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.
 
@@ -77,21 +80,41 @@ enum Resources {
         static let categoriesTitle = "Categories"
         static let categoriesText = "Thousands of articles in each category"
         
-        static let politics = "⚖️ Politics"
-        static let other = "❓ Other"
-        static let environment = "🌍 Environment"
-        static let world = "🌐 World"
-        static let food = "🍗 Food"
-        static let entertainment = "🎭 Entertainment"
-        static let top = "🏆 Top"
-        static let domestic = "🏠 Domestic"
-        static let health = "🏥 Health"
-        static let lifestyle = "👟 Lifestyle"
-        static let crime = "👹 Crime"
-        static let business = "💰 Business"
-        static let technology = "💻 Technology"
-        static let education = "📚 Education"
-        static let science = "🔬 Science"
-        static let sport = "⚽️ Sports"
+        static func localeCategories(category: Category) -> String {
+            switch category {
+            case .crime:
+                "Crime"
+            case .business:
+                "Business"
+            case .domestic:
+                "Domestic"
+            case .education:
+                "Education"
+            case .entertainment:
+                "Entertainment"
+            case .environment:
+                "Environment"
+            case .food:
+                "Food"
+            case .health:
+                "Health"
+            case .lifestyle:
+                "Lifestyle"
+            case .other:
+                "Other"
+            case .politics:
+                "Politics"
+            case .science:
+                "Science"
+            case .sports:
+                "Sports"
+            case .technology:
+                "Technology"
+            case .top:
+                "Top"
+            case .world:
+                "World"
+            }
+        }
     }
 }

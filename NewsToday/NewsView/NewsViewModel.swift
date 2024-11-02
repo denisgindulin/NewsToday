@@ -12,7 +12,7 @@ import Combine
 class NewsViewModel: ObservableObject {
     
     private let networkManager = NetworkManager()
-    private let firestoreManager = FirestoreManager()
+    private let localizationService = LocalizationService()
     
     @Published var articles: [Article] = []
     @Published var recomendedarticles: [Article] = []
@@ -38,7 +38,7 @@ class NewsViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     self.loading = false
-                case .failure(let _):
+                case .failure:
                     self.loading = true
                 }
             }, receiveValue: { [weak self] text in
