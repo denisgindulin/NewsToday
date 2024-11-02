@@ -82,7 +82,6 @@ struct ProfileView: View {
                 )
             }
             .padding(.vertical, 16)
-//            .navigationTitle(Resources.Text.profile.localized(localizationService.language))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
