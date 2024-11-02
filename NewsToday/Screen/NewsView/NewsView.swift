@@ -66,7 +66,7 @@ struct NewsView: View {
                                     if viewModel.articles.isEmpty {
                                         ForEach(0..<10) { _ in
                                             Rectangle()
-                                                .background(Color.gray)
+                                                .foregroundColor(.gray)
                                                 .frame(width: 256, height: 256)
                                                 .cornerRadius(12)
                                                 .shimmer(configuration: .default)

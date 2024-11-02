@@ -163,6 +163,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B7E51592CD6EF35009A3D64 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				22AE0B7E2CC7FDA400BBBDD5 /* NewsView */,
+				22AE0B7C2CC7FD7A00BBBDD5 /* Bookmarks */,
+				22AE0B7B2CC7FD6A00BBBDD5 /* Profile */,
+				22AE0B7D2CC7FD9000BBBDD5 /* Categories */,
+				22889E1B2CC9922100FFE525 /* Start */,
+				22F7EDD52CCA7CE40072847E /* Onboarding */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		1BCDD2092CC93276001AF8DF /* NewsCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,23 +206,15 @@
 		22020CDB2CC54AFA00A76887 /* NewsToday */ = {
 			isa = PBXGroup;
 			children = (
-				93E92B0F2CCF7180004FEB0F /* Localization */,
+				1B7E51592CD6EF35009A3D64 /* Screen */,
 				484AD3732CC6369800D94D3D /* App */,
-				484AD36A2CC62FB400D94D3D /* Font */,
 				484AD3762CC6436900D94D3D /* Network */,
-				482763DA2CCA413900491F26 /* FirestoreManager */,
-				48241F3F2CC8E1F100DD3156 /* Authentication */,
 				22AE0B802CC7FDE500BBBDD5 /* Components */,
-				22889E1B2CC9922100FFE525 /* Start */,
-				22F7EDD52CCA7CE40072847E /* Onboarding */,
-				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
-				22AE0B7E2CC7FDA400BBBDD5 /* NewsView */,
-				22AE0B7D2CC7FD9000BBBDD5 /* Categories */,
-				22AE0B7C2CC7FD7A00BBBDD5 /* Bookmarks */,
-				22AE0B7B2CC7FD6A00BBBDD5 /* Profile */,
 				481AA6D82CC7835C009982DB /* Modifiers */,
 				484AD3702CC6355A00D94D3D /* Extensions */,
 				22020CE02CC54AFF00A76887 /* Assets.xcassets */,
+				484AD36A2CC62FB400D94D3D /* Font */,
+				93E92B0F2CCF7180004FEB0F /* Localization */,
 			);
 			path = NewsToday;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		22AE0B802CC7FDE500BBBDD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				22AE0B7F2CC7FDB800BBBDD5 /* TapBar */,
 				484E93402CC7B0C1000C531A /* AppTextField.swift */,
 				48863E482CCA22600058D669 /* SecureTextField.swift */,
 				48241F372CC8D51B00DD3156 /* CustomTapBarView.swift */,
@@ -386,6 +392,8 @@
 		484AD3762CC6436900D94D3D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				48241F3F2CC8E1F100DD3156 /* Authentication */,
+				482763DA2CCA413900491F26 /* FirestoreManager */,
 				483199442CC81AAA00655F90 /* Category.swift */,
 				483199462CC81B2F00655F90 /* ApiKey.swift */,
 				484AD3772CC643BB00D94D3D /* NewsResponse.swift */,
