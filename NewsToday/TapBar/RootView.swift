@@ -36,17 +36,15 @@ struct RootView: View {
                 case .profile:
                     ProfileView()
                 }
-                CustomTabBarView(selectedTab: $selectedTab)
             }
+            .overlay(
+                CustomTabBarView(selectedTab: $selectedTab)
+                    .ignoresSafeArea(.keyboard),
+                alignment: .bottom
+            )
+            .ignoresSafeArea(edges: .bottom)
         } else {
             SignInView()
         }
-//        .onAppear {
-//            selectedTab: Tab = .home
-//        }
     }
-}
-
-#Preview {
-    RootView()
 }

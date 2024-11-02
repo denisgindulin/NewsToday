@@ -4,23 +4,6 @@
     "" : {
 
     },
-    "\nBy using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "By using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNews App is provided \"as is.\" We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newsapp.com."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Используя News App, вы соглашаетесь с настоящими Условиями и положениями. Пожалуйста, прекратите использование приложения, если вы не согласны.\n\n1. Принятие условий\nПри доступе к News App вы соглашаетесь с настоящими условиями и любыми будущими обновлениями. Продолжение использования после изменений подразумевает принятие.\n\n2. Поведение пользователя\nВы соглашаетесь использовать приложение законно и избегать любого поведения, которое может нанести вред другим или приложению.\n\n3. Отказ от ответственности\nNews App предоставляется «как есть». Мы не гарантируем его точность, надежность или бесперебойную работу.\n\n4. Ограничение ответственности\nМы не несем ответственности за любой ущерб, возникший в результате использования вами приложения.\n\n5. Прекращение\nМы можем приостановить или прекратить доступ к приложению, если эти условия будут нарушены.\n\n6. Контакты\nЕсли у вас есть вопросы, отправьте нам электронное письмо по адресу support@newsapp.com."
-          }
-        }
-      }
-    },
     "⚖️ Politics" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -200,6 +183,12 @@
     "All in One Place" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All in One Place"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -211,6 +200,12 @@
     "all your bookmarks are here" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "all your bookmarks are here"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -255,6 +250,12 @@
     "be the first to know" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "be the first to know"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -266,10 +267,16 @@
     "Bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmarks"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Раздел с закладками"
+            "value" : "Закладки"
           }
         }
       }
@@ -291,9 +298,26 @@
         }
       }
     },
+    "By using NewsToDay App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.\n\n1. Acceptance of Terms\nBy accessing NewsToDay App, you agree to these terms and any future updates. Continued use after changes implies acceptance.\n\n2. User Conduct\nYou agree to use the app lawfully and avoid any behavior that could harm others or the app.\n\n3. Disclaimer\nNewsToDay App is provided \"as is\". We do not guarantee its accuracy, reliability, or uninterrupted service.\n\n4. Limitation of Liability\nWe are not liable for any damages arising from your use of the app.\n\n5. Termination\nWe may suspend or terminate access to the app if these terms are violated.\n\n6. Contact\nFor questions, email us at support@newstodayapp.com." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Используя NewsToDay App, вы соглашаетесь с настоящими Условиями и положениями. Пожалуйста, прекратите использование приложения, если вы не согласны.\n\n1. Принятие условий\nПри доступе к NewsToDay App вы соглашаетесь с настоящими условиями и любыми будущими обновлениями. Продолжение использования после изменений подразумевает принятие.\n\n2. Поведение пользователя\nВы соглашаетесь использовать приложение законно и избегать любого поведения, которое может нанести вред другим или приложению.\n\n3. Отказ от ответственности\nNewsToDay App предоставляется «как есть». Мы не гарантируем его точность, надежность или бесперебойную работу.\n\n4. Ограничение ответственности\nМы не несем ответственности за любой ущерб, возникший в результате использования вами приложения.\n\n5. Прекращение\nМы можем приостановить или прекратить доступ к приложению, если эти условия будут нарушены.\n\n6. Контакты\nЕсли у вас есть вопросы, отправьте нам электронное письмо по адресу support@newstodayapp.com."
+          }
+        }
+      }
+    },
     "Categories" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -305,10 +329,16 @@
     "Choose a Language" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a Language"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выбери язык"
+            "value" : "Выберай язык"
           }
         }
       }
@@ -316,6 +346,12 @@
     "Choose an Article" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose an Article"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -327,6 +363,12 @@
     "Choose News Topics" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose News Topics"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -338,6 +380,12 @@
     "Confirm Password" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Password"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -358,7 +406,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Откройте для себя этот мир"
+            "value" : "Открой для себя этот мир"
           }
         }
       }
@@ -383,6 +431,12 @@
     "Email" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -411,6 +465,12 @@
     "english or russian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "english or russian"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -419,20 +479,15 @@
         }
       }
     },
-    "First to know" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Во-первых"
-          }
-        }
-      }
-    },
     "from many categories" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "from many categories"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -444,6 +499,12 @@
     "get personalized news" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "get personalized news"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -454,6 +515,12 @@
     },
     "Get Started" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -513,6 +580,23 @@
         }
       }
     },
+    "Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
+    },
     "News" : {
       "localizations" : {
         "en" : {
@@ -531,6 +615,12 @@
     },
     "Next" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -542,6 +632,12 @@
     "Password" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -570,6 +666,12 @@
     "read or add to bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "read or add to bookmarks"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -631,10 +733,16 @@
     "Saved articles to the library" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved articles to the library"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Статьи сохраненные в библиотеку"
+            "value" : "Статьи, сохраненные в библиотеку"
           }
         }
       }
@@ -676,6 +784,12 @@
     "Select Your Favorites" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Your Favorites"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -704,6 +818,12 @@
     "Sign in to the App" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in to the App"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -763,7 +883,7 @@
       }
     },
     "Terms & Conditions" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -774,7 +894,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Условия и положения"
+            "value" : "Правила и условия"
           }
         }
       }
@@ -782,6 +902,12 @@
     "Thousands of articles in each category" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thousands of articles in each category"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -793,6 +919,12 @@
     "to personalize the news" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "to personalize the news"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -803,6 +935,12 @@
     },
     "ToDay" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ToDay"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -814,6 +952,12 @@
     "Username" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Username"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -859,6 +1003,12 @@
     "You haven’t saved any articles yet. Start reading and bookmarking them now" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven’t saved any articles yet. Start reading and bookmarking them now"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",

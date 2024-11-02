@@ -7,5 +7,12 @@
 		<string>Adamina-Regular.ttf</string>
 		<string>Inter-VariableFont.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>PurpleDarker</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

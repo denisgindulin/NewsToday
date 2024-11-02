@@ -50,6 +50,20 @@ struct NewsTodayApp: App {
                         .environmentObject(localizationService)
                 }
             }
+            
+            //            if !onboardingViewModel.isOnboardingShown {
+            //                StartView()
+            //                    .environmentObject(authViewModel)
+            //                    .environmentObject(newsLoader)
+            //                    .environmentObject(localizationService)
+            //                    .environmentObject(onboardingViewModel)
+            //            } else {
+            //                RootView()
+            //                    .environmentObject(authViewModel)
+            //                    .environmentObject(newsLoader)
+            //                    .environmentObject(localizationService)
+            //                    .environmentObject(onboardingViewModel)
+            //            }
         }
     }
 }

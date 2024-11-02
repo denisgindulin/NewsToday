@@ -52,17 +52,16 @@ enum Resources {
         static let termsAndConditions = "Terms & Conditions"
         static let signOut = "Sign Out"
         static let termsAndConditionsText = """
-                       
-                       By using News App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.
+                       By using NewsToDay App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.
 
                        1. Acceptance of Terms
-                       By accessing News App, you agree to these terms and any future updates. Continued use after changes implies acceptance.
+                       By accessing NewsToDay App, you agree to these terms and any future updates. Continued use after changes implies acceptance.
 
                        2. User Conduct
                        You agree to use the app lawfully and avoid any behavior that could harm others or the app.
 
                        3. Disclaimer
-                       News App is provided "as is." We do not guarantee its accuracy, reliability, or uninterrupted service.
+                       NewsToDay App is provided "as is". We do not guarantee its accuracy, reliability, or uninterrupted service.
 
                        4. Limitation of Liability
                        We are not liable for any damages arising from your use of the app.
@@ -71,7 +70,7 @@ enum Resources {
                        We may suspend or terminate access to the app if these terms are violated.
 
                        6. Contact
-                       For questions, email us at support@newsapp.com.
+                       For questions, email us at support@newstodayapp.com.
                        """
         static let english = "English"
         static let russian = "Russian"
