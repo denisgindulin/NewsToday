@@ -10,45 +10,42 @@ import FirebaseFirestore
 import FirebaseStorage
 import FirebaseAuth
 
-final class StorageManager {
-    static let shared = StorageManager()
-
-    private init() {}
-    
-    func uploadImage(data: Data, userId: String, completion: @escaping (Result<URL, Error>) -> Void) {
-        let ref = Storage.storage().reference().child("\(userId)/avatar.jpg")
+class StorageManager {
+    func uploadImage(imageData: Data) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
+        let storageRef = Storage.storage().reference().child("avatars/\(userId)/avatar.jpg")
         
-        ref.putData(data, metadata: metadata) { metadata, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            ref.downloadURL { url, error in
-                if let url = url {
-                    completion(.success(url))
-                } else if let error = error {
-                    completion(.failure(error))
-                }
+        Task {
+            do {
+                let url = try await uploadOneImage(image: imageData, storageLink: storageRef)
+                saveAvatarUrl(stringUrl: url.absoluteString)
+                print(url.absoluteString)
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }
     
-    func downloadImage(userId: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        let ref = Storage.storage().reference().child("\(userId)/avatar.jpg")
-        print("Attempting to download image from path: \(userId)/avatar.jpg")
-
-        ref.getData(maxSize: 10 * 1024 * 1024) { data, error in
-            if let data = data {
-                print("Image data successfully downloaded for user \(userId)")
-                completion(.success(data))
-            } else if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
-                completion(.failure(error))
-            }
+    private func saveAvatarUrl(stringUrl: String) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .setData(["avatarUrl": stringUrl], merge: true)
+    }
+    
+    func uploadOneImage(image: Data?, storageLink: StorageReference) async throws -> URL {
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        guard let imageData = image else {
+            throw NSError(domain: "ImageDataError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Image data is nil"])
         }
+        
+        _ = try await storageLink.putDataAsync(imageData, metadata: metaData)
+        
+        let url = try await storageLink.downloadURL()
+        return url
     }
 }

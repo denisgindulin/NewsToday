@@ -19,7 +19,6 @@ struct NewsCardView: View {
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
-    let fromBookmark: Bool
     var article: Article
     
     var body: some View {
@@ -76,10 +75,9 @@ extension NewsCardView {
                 
                 Button(action: {
                     if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
-                        viewModel.deleteBookmark(articleId: article.id)
-                        fromBookmark ? dismiss() : ()
+                        authViewModel.deleteBookmark(articleId: article.id)
                     } else {
-                        viewModel.addBookmark(article: article)
+                        authViewModel.addBookmark(article: article)
                     }
                 }, label:  { Image(systemName: authViewModel.bookmarks.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark") })
             }

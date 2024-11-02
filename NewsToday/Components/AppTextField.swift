@@ -32,7 +32,7 @@ struct AppTextField: View {
             }
         }
         .padding(.horizontal, 10)
-        .frame(maxHeight: 55)
+        .frame(height: 55)
         .background(isFocused ? .clear : .greyLighter)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay {

@@ -35,6 +35,7 @@ struct LanguageView: View {
         }
         .padding(.top, 20)
         .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {

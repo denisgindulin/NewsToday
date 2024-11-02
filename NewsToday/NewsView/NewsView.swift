@@ -24,7 +24,6 @@ struct NewsView: View {
                     
                     ScrollView(.vertical, showsIndicators: false ){
                         LazyVStack(alignment: .leading, spacing: 24) {
-                            
                             AppTextField(textFieldText: $viewModel.searchText,
                                          placeholder: (Resources.Text.search.localized(localizationService.language)),
                                          imageName: "magnifyingglass")
@@ -66,7 +65,7 @@ struct NewsView: View {
                                 
                                 recomendTitles
                                 
-                                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles, sourceScreen: true)
+                                NewsPreviewCardView(articles: viewModel.articles, sourceScreen: true)
                             }
                             .padding(.bottom, 16)
                         }
@@ -74,7 +73,7 @@ struct NewsView: View {
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
-                NewsPreviewCardView(fromBookmark: false, articles: viewModel.articles)
+                NewsPreviewCardView(articles: viewModel.articles)
             }
         }.navigationTitle(Resources.Text.browseTitle.localized(localizationService.language))
     }
@@ -94,7 +93,7 @@ extension NewsView {
             Text(Resources.Text.browseText.localized(localizationService.language))
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 16, weight: .regular))
-                .padding(.bottom, 32)
+                .padding(.bottom, 20)
         }
         .padding(.leading, 20)
     }

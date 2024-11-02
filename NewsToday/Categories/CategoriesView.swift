@@ -7,24 +7,6 @@
 
 import SwiftUI
 
-struct HeaderTitle: View {
-    let title: String
-    let subtitle: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .interFont(size: 24)
-                .foregroundStyle(.blackPrimary)
-            Text(subtitle)
-                .interFont(type: .regular)
-                .foregroundStyle(.greyPrimary)
-        }
-        
-        .padding(.horizontal, 20)
-    }
-}
-
 struct CategoriesView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject private var viewModel = CategoriesViewModel()
@@ -32,8 +14,10 @@ struct CategoriesView: View {
     let title: String
     let subtitle: String
     let showButton: Bool
+    let padding: CGFloat
     
     @State private var selectedCategories: Set<Category> = []
+    @State private var text = ""
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -44,7 +28,7 @@ struct CategoriesView: View {
                     CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
                     if showButton {
                         Button {
-                            //
+                            authViewModel.hasSelectedCategories = true
                         } label: {
                             Text("Next")
                                 .authButton()
@@ -52,7 +36,8 @@ struct CategoriesView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.vertical, 32)
+                .padding(.top, 32)
+                .padding(.bottom, padding)
             }
         }
         
@@ -62,5 +47,6 @@ struct CategoriesView: View {
 #Preview {
     CategoriesView(title: "Select your favorite topics",
                    subtitle: "Select some of your favorite topics to let us suggest better news for you.",
-                   showButton: true)
+                   showButton: true,
+                   padding: 0)
 }

@@ -30,7 +30,7 @@ final class NetworkManager {
         return queryItems.compactMap { $0.value != nil ? $0 : nil }
     }
     
-    func fetchNews(endpoint: Endpoint, language: String = "ru") async throws -> [Article] {
+    func fetchNews(endpoint: Endpoint, language: String = "en") async throws -> [Article] {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "newsdata.io"

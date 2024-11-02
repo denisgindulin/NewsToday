@@ -17,14 +17,14 @@ enum Language: String, CaseIterable, Codable, Identifiable {
 }
 
 final class LocalizationService: ObservableObject {
-    public static let shared = LocalizationService()
+//    public static let shared = LocalizationService()
     @Published var language: Language {
         didSet {
             saveLanguage(language)
         }
     }
 
-    private init() {
+    init() {
         language = Language(rawValue: UserDefaults.standard.string(forKey: "selectedLanguage") ?? "en") ?? .en
     }
 
