@@ -26,3 +26,20 @@ enum FirestoreError: LocalizedError {
         }
     }
 }
+
+enum StorageError: LocalizedError {
+    case imageDataError
+    case unknownError
+    case noDownloadURL
+    
+    var errorDescription: String? {
+        switch self {
+        case .imageDataError:
+            return "Данные image не найдены либо равняются nil"
+        case .unknownError:
+            return "Неизвестная ошибка."
+        case .noDownloadURL:
+            return "Не указан URL для скачивания."
+        }
+    }
+}

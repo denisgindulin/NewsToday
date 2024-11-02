@@ -11,7 +11,7 @@ struct CategoryItems: View {
     @ObservedObject var viewModel: CategoriesViewModel
     @Binding var selectedCategories: [Category]
     
-    let columns: [GridItem] = [GridItem(.adaptive(minimum: 160), spacing: 16)]
+    let columns: [GridItem] = [GridItem(.adaptive(minimum: 140), spacing: 16)]
     
     
     var body: some View {

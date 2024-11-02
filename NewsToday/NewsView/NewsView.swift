@@ -26,7 +26,6 @@ struct NewsView: View {
                     
                     ScrollView(.vertical, showsIndicators: false ){
                         LazyVStack(alignment: .leading, spacing: 24) {
-                            
                             AppTextField(textFieldText: $viewModel.searchText,
                                          placeholder: (Resources.Text.search.localized(localizationService.language)),
                                          imageName: "magnifyingglass")

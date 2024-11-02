@@ -16,6 +16,7 @@ enum SignUpField {
 
 struct SignUpView: View {
     @EnvironmentObject var localizationService: LocalizationService
+    @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject var viewModel = SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     @FocusState private var focusedField: SignUpField?
@@ -55,8 +56,16 @@ struct SignUpView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: .purplePrimary))
                     } else {
                         Button {
-                            viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
-//                            dismiss()
+                            Task {
+                                do {
+                                    try await viewModel.createUser(name: userName, email: email, password: password, repeatPassword: repeatPassword)
+                                    
+                                    authViewModel.hasSelectedCategories = false
+                                    
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            }
                         } label: {
                             Text(Resources.Text.signUp.localized(localizationService.language))
                                 .authButton()

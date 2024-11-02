@@ -6,43 +6,47 @@
 //
 
 import SwiftUI
-import UIKit
-
-class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @Binding var image: UIImage?
-    @Binding var isPresented: Bool
-
-    init(image: Binding<UIImage?>, isPresented: Binding<Bool>) {
-        _image = image
-        _isPresented = isPresented
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let uiImage = info[.originalImage] as? UIImage {
-            image = uiImage
-        }
-        isPresented = false
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        isPresented = false
-    }
-}
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-    @Binding var isPresented: Bool
-
-    func makeCoordinator() -> ImagePickerCoordinator {
-        return ImagePickerCoordinator(image: $image, isPresented: $isPresented)
-    }
-
+    @Binding var image: UIImage
+    
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
         return picker
     }
-
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    
+    func makeCoordinator() -> ImagePickerCoordinator {
+        ImagePickerCoordinator { image in
+            self.image = image
+        }
+    }
+    
+    final class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        let storageManager = StorageManager()
+        
+        var completion: ((UIImage) -> Void)
+        
+        init(completion: @escaping (UIImage) -> Void) {
+            self.completion = completion
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.editedImage] as? UIImage {
+                completion(image)
+
+                if let imageData = image.pngData() {
+                    storageManager.uploadImage(imageData: imageData)
+                } else if let imageData = image.jpegData(compressionQuality: 0.1) {
+                    storageManager.uploadImage(imageData: imageData)
+                }
+            }
+            picker.dismiss(animated: true)
+        }
+    }
 }
 

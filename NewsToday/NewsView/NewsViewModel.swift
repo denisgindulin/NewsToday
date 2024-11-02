@@ -98,12 +98,4 @@ class NewsViewModel: ObservableObject {
         }
         isLoading = false
     }
-    
-    func addBookmark(article: Article) {
-        firestoreManager.addBookmark(for: article)
-    }
-    
-    func deleteBookmark(articleId: String) {
-        firestoreManager.deleteBookmark(articleId: articleId)
-    }
 }

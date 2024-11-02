@@ -23,12 +23,9 @@ struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
     @StateObject var onboardingViewModel = OnboardingViewModel()
-    
-    @StateObject private var localizationService = LocalizationService.shared
+    @StateObject var localizationService = LocalizationService()
     
     @State private var showStartView = true
-//    
-//    @State private var onboardingViewsIsOn = UserDefaults.standard.bool(forKey: "onboardingViewsIsOn")
     
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
