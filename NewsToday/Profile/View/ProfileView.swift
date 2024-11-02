@@ -6,40 +6,38 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
-    @StateObject private var viewModel = ProfileViewModel()
-    @State private var showingImagePicker = false 
-    @State private var avatarImage: UIImage? = nil
+
+    @State private var showingImagePicker = false
+    @State private var avatarImage: UIImage = UIImage(resource: .placeholder)
     
     var body: some View {
         NavigationView {
             VStack (spacing: 24) {
                 HStack(spacing: 24) {
-                    if let imageData = viewModel.avatarImageData, let uiImage = UIImage(data: imageData) {
-                        Image(uiImage: uiImage)
+                    WebImage(url: URL(string: authViewModel.userAvatar ?? "")) { image in
+                        image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 72, height: 72)
-                            .clipShape(Circle())
-                            .onTapGesture {
-                                showingImagePicker = true
-                            }
-                    } else {
-                        Image(systemName: "photo.circle.fill")
+                    } placeholder: {
+                        Image(uiImage: avatarImage)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 72, height: 72)
-                            .foregroundColor(Color("GreyDarker"))
-                            .onTapGesture {
-                                showingImagePicker = true
-                            }
                     }
+                    .frame(width: 72, height: 72)
+                    .clipShape(Circle())
+                    .onTapGesture {
+                        showingImagePicker = true
+                    }
+                    .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $avatarImage) }
+                    
                     VStack(alignment: .leading) {
                         Text(authViewModel.user?.name ?? "No Name")
-                            .interFont(size: 24) 
+                            .interFont(size: 24)
                             .foregroundColor(Color("BlackPrimary"))
                         Text(authViewModel.user?.email ?? "No Email")
                             .interFont(size: 16)
@@ -48,7 +46,7 @@ struct ProfileView: View {
                     Spacer()
                 }
                 .padding()
-
+                
                 // Language Button with NavigationLink
                 NavigationLink(destination: LanguageView()) {
                     CustomButtonProfile(
@@ -79,7 +77,7 @@ struct ProfileView: View {
                     backgroundColor: Color("GreyLighter"),
                     icon: "rectangle.portrait.and.arrow.right",
                     action: {
-                        viewModel.signOut(authViewModel: authViewModel)
+                        authViewModel.signOut()
                     }
                 )
             }
@@ -90,17 +88,6 @@ struct ProfileView: View {
                         .interFont(size: 24)
                         .foregroundColor(Color("BlackPrimary"))
                 }
-            }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $avatarImage, isPresented: $showingImagePicker)
-            }
-            .onChange(of: avatarImage) { newImage in
-                if let newImage = newImage {
-                    viewModel.uploadProfileImage(image: newImage)
-                }
-            }
-            .onAppear {
-                viewModel.fetchProfileImage() // Fetch the avatar when the view appears
             }
         }
     }

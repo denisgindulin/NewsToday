@@ -14,12 +14,12 @@ struct TermsAndConditionsView: View {
     var body: some View {
         ScrollView {
             Text(Resources.Text.termsAndConditionsText.localized(localizationService.language))
-                .interFont(size: 16)
-                .foregroundColor(Color("GreyDarker"))
+                .interFont(type: .regular, size: 16)
+                .foregroundColor(.greyPrimary)
                 .padding()
             Spacer()
         }
-        .padding(.top, 20)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

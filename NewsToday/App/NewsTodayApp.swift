@@ -23,29 +23,32 @@ struct NewsTodayApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var newsLoader = NewsViewModel()
     @StateObject var onboardingViewModel = OnboardingViewModel()
+    @StateObject var localizationService = LocalizationService.shared
     
-    @StateObject private var localizationService = LocalizationService.shared
-    
-    
-    @State private var onboardingViewsIsOn = UserDefaults.standard.bool(forKey: "onboardingViewsIsOn")
+    @State private var showStartView = true
     
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-            if !onboardingViewModel.isOnboardingShown {
+            if showStartView {
                 StartView()
-                    .environmentObject(authViewModel)
-                    .environmentObject(newsLoader)
-                    .environmentObject(localizationService)
-                    .environmentObject(onboardingViewModel)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.showStartView = false
+                        }
+                    }
             } else {
-                RootView()
-                    .environmentObject(authViewModel)
-                    .environmentObject(newsLoader)
-                    .environmentObject(localizationService)
-                    .environmentObject(onboardingViewModel)
+                if !onboardingViewModel.isOnboardingShown {
+                    OnboardingView()
+                        .environmentObject(onboardingViewModel)
+                } else {
+                    RootView()
+                        .environmentObject(authViewModel)
+                        .environmentObject(newsLoader)
+                        .environmentObject(localizationService)
+                }
             }
         }
     }

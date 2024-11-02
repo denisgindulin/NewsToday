@@ -8,9 +8,11 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class FirestoreManager: ObservableObject {
     @Published var bookmarks: [Article] = []
+    @Published var avatarUrl: String?
     
     func getUserData(userId: String) async throws -> UserData {
         let document = try await Firestore.firestore()
@@ -30,6 +32,7 @@ class FirestoreManager: ObservableObject {
             throw FirestoreError.fieldNotFound(fieldName: "email")
         }
         
+//        let avatarUrl = data["avatarUrl"] as? String
         
         return UserData(id: userId,
                         name: name,
@@ -96,7 +99,7 @@ class FirestoreManager: ObservableObject {
             category: article.category,
             duplicate: article.duplicate
         )
-          
+        
         do {
             try Firestore.firestore()
                 .collection("users")
@@ -108,6 +111,19 @@ class FirestoreManager: ObservableObject {
         } catch {
             print("Error to save bookmark: \(error.localizedDescription)")
         }
+    }
+    
+    func loadAvatarUrl(userId: String) {
+        Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .addSnapshotListener { [weak self] snapshot, error in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                self?.avatarUrl = snapshot?.data()?["avatarUrl"] as? String
+            }
     }
     
     func fetchBookmark(userId: String) {

@@ -11,6 +11,7 @@ import FirebaseAuthCombineSwift
 
 class AuthViewModel: ObservableObject {
     @Published var user: UserData?
+    @Published var userAvatar: String?
     @Published var hasSelectedCategories: Bool = true
     @Published var selectedCategories: Set<Category> = []
     @Published var bookmarks: [Article] = []
@@ -28,6 +29,7 @@ class AuthViewModel: ObservableObject {
                 self?.loadUserData(userId: user.uid)
                 self?.loadFavoriteCategories(userId: user.uid)
                 self?.loadBookmarks(userId: user.uid)
+                self?.loadAvatar(userId: user.uid)
             } else {
                 self?.user = nil
                 self?.selectedCategories = []
@@ -54,19 +56,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func loadAvatar(userId: String) {
+        firestoreManager.loadAvatarUrl(userId: userId)
+        firestoreManager.$avatarUrl
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$userAvatar)
+    }
+    
     func loadBookmarks(userId: String) {
         firestoreManager.fetchBookmark(userId: userId)
         firestoreManager.$bookmarks
             .receive(on: DispatchQueue.main)
             .assign(to: &$bookmarks)
-//        bookmarks = firestoreManager.bookmarks
-        //        Task {
-        //            guard let bookmarks = try? await firestoreManager.fetchBookmarks(userId: userId) else { return }
-        //
-        //            DispatchQueue.main.async {
-        //                self.bookmarks = bookmarks
-        //            }
-        //        }
     }
     
     func deleteBookmark(articleId: String) {
