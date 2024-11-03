@@ -58,6 +58,16 @@ struct NewsView: View {
                                         ForEach(viewModel.articles, id: \.self) { news in
                                             NewsPresentCardView(article: news, action: {})
                                         }
+                                        
+                                        if viewModel.articles.isEmpty {
+                                            ForEach(0..<10) { _ in
+                                                Rectangle()
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: 256, height: 256)
+                                                    .cornerRadius(12)
+                                                    .shimmer(configuration: .default)
+                                            }
+                                        }
                                     }
                                     .padding(.horizontal, 20)
                                 }
