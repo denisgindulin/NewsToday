@@ -41,7 +41,6 @@ class NewsViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] text in
                 if text != "" {
-                    self?.loading = true
                     self?.searchNews(query: text)
                     self?.selectedCategory = nil
                 }

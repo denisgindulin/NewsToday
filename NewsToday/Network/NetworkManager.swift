@@ -61,31 +61,4 @@ final class NetworkManager {
             throw error
         }
     }
-    
-//    func fetchNews(endpoint: Endpoint, language: String = "ru") async throws -> [Article] {
-//        var components = URLComponents()
-//        components.scheme = "https"
-//        components.host = "newsdata.io"
-//        components.path = "/api/1/news"
-//        components.queryItems = createQueryItems(endpoint, language: language)
-//        
-//        guard let url = components.url else { throw URLError(.badURL)}
-//        print("Запрос URL: \(url)")
-//        
-//        let (data, response) = try await URLSession.shared.data(from: url)
-//        
-//        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-//            throw URLError(.badServerResponse)
-//        }
-//        
-//        let json = try? JSONSerialization.jsonObject(with: data, options: [])
-//        print(json ?? "")
-//        
-//        do {
-//            let decoder = try JSONDecoder().decode(NewsResponse.self, from: data)
-//            return decoder.results
-//        } catch {
-//            throw error
-//        }
-//    }
 }
