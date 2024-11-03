@@ -17,80 +17,77 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack (spacing: 24) {
-                HStack(spacing: 24) {
-                    AsyncImage(url: URL(string: authViewModel.userAvatar ?? "")) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        Image(uiImage: avatarImage)
-                            .resizable()
-                            .scaledToFill()
+            VStack(alignment: .leading) {
+                HeaderTitle(title: Resources.Text.profile.localized(localizationService.language), subtitle: "")
+                
+                VStack (spacing: 24) {
+                    HStack(spacing: 24) {
+                        AsyncImage(url: URL(string: authViewModel.userAvatar ?? "")) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            Image(uiImage: avatarImage)
+                                .resizable()
+                                .scaledToFill()
+                        }
+                        .frame(width: 72, height: 72)
+                        .clipShape(Circle())
+                        .onTapGesture {
+                            showingImagePicker = true
+                        }
+                        .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $avatarImage) }
+                        
+                        VStack(alignment: .leading) {
+                            Text(authViewModel.user?.name ?? "No Name")
+                                .interFont(size: 24)
+                                .foregroundColor(.blackPrimary)
+                            Text(authViewModel.user?.email ?? "No Email")
+                                .interFont(type: .regular, size: 14)
+                                .foregroundColor(.greyPrimary)
+                        }
+                        Spacer()
                     }
-                    .frame(width: 72, height: 72)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        showingImagePicker = true
-                    }
-                    .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $avatarImage) }
+                    .padding()
                     
-                    VStack(alignment: .leading) {
-                        Text(authViewModel.user?.name ?? "No Name")
-                            .interFont(size: 24)
-                            .foregroundColor(.blackPrimary)
-                        Text(authViewModel.user?.email ?? "No Email")
-                            .interFont(type: .regular, size: 14)
-                            .foregroundColor(.greyPrimary)
+                    // Language Button with NavigationLink
+                    NavigationLink(destination: LanguageView()) {
+                        CustomButtonProfile(
+                            text: Resources.Text.lang.localized(localizationService.language),
+                            textColor: Color("GreyDarker"),
+                            backgroundColor: Color("GreyLighter"),
+                            icon: "chevron.right"
+                        )
                     }
+                    .buttonStyle(PlainButtonStyle())
                     Spacer()
-                }
-                .padding()
-                
-                // Language Button with NavigationLink
-                NavigationLink(destination: LanguageView()) {
-                    CustomButtonProfile(
-                        text: Resources.Text.lang.localized(localizationService.language),
-                        textColor: Color("GreyDarker"),
-                        backgroundColor: Color("GreyLighter"),
-                        icon: "chevron.right"
-                    )
-                }
-                .buttonStyle(PlainButtonStyle())
-                Spacer()
-                
-                // Terms & Conditions Button
-                NavigationLink(destination: TermsAndConditionsView()) {
-                    CustomButtonProfile(
-                        text: Resources.Text.termsAndConditions.localized(localizationService.language),
-                        textColor: Color("GreyDarker"),
-                        backgroundColor: Color("GreyLighter"),
-                        icon: "chevron.right"
-                    )
-                }
-                .buttonStyle(PlainButtonStyle())
-                
-                // Sign Out Button
-                CustomButtonProfile(
-                    text: Resources.Text.signOut.localized(localizationService.language),
-                    textColor: Color("GreyDarker"),
-                    backgroundColor: Color("GreyLighter"),
-                    icon: "rectangle.portrait.and.arrow.right",
-                    action: {
-                        authViewModel.signOut()
+                    
+                    // Terms & Conditions Button
+                    NavigationLink(destination: TermsAndConditionsView()) {
+                        CustomButtonProfile(
+                            text: Resources.Text.termsAndConditions.localized(localizationService.language),
+                            textColor: Color("GreyDarker"),
+                            backgroundColor: Color("GreyLighter"),
+                            icon: "chevron.right"
+                        )
                     }
-                )
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    // Sign Out Button
+                    CustomButtonProfile(
+                        text: Resources.Text.signOut.localized(localizationService.language),
+                        textColor: Color("GreyDarker"),
+                        backgroundColor: Color("GreyLighter"),
+                        icon: "rectangle.portrait.and.arrow.right",
+                        action: {
+                            authViewModel.signOut()
+                        }
+                    )
+                }
+                .padding(.top, 32)
             }
-            .padding(.top, 16)
             .padding(.bottom, 88)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text(Resources.Text.profile.localized(localizationService.language))
-                        .interFont(size: 24)
-                        .foregroundColor(Color("BlackPrimary"))
-                }
-            }
         }
     }
 }

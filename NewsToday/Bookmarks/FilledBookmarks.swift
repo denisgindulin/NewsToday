@@ -52,15 +52,15 @@ struct FilledBookmarks: View {
                                 }
                             }
                         }
-                        
+                        .buttonStyle(PlainButtonStyle())
+                        .listRowSeparator(.hidden)
                     }
                     .onDelete(perform: deleteBookmark)
                     .onMove(perform: move)
-                    .listRowSeparator(.hidden)
                 }
-                .padding(.top, 20)
-                .padding(.bottom, 88)
                 .listStyle(.plain)
+                .padding(.top, 20)
+                //                .padding(.bottom, 88)
             }
         }
     }

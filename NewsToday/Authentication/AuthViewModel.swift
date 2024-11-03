@@ -70,6 +70,10 @@ class AuthViewModel: ObservableObject {
             .assign(to: &$bookmarks)
     }
     
+    func saveFavoriteCategory(_ categories: [Category]) {
+        firestoreManager.saveFavoriteCategory(categories: categories)
+    }
+    
     func addBookmark(article: Article) {
         firestoreManager.addBookmark(for: article)
     }

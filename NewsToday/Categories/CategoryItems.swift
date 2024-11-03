@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CategoryItems: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var localizationService: LocalizationService
-    @ObservedObject var viewModel: CategoriesViewModel
-    @Binding var selectedCategories: Set<Category>
     
     let columns: [GridItem] = [GridItem(.adaptive(minimum: 140), spacing: 16)]
     
@@ -19,15 +18,15 @@ struct CategoryItems: View {
             ForEach(Category.allCases, id: \.rawValue) { category in
                 Button {
                     toggleSelection(for: category)
-                    viewModel.saveFavoriteCategory(Array(selectedCategories))
+                    authViewModel.saveFavoriteCategory(Array(authViewModel.selectedCategories))
                 } label: {
                     HStack {
                         Text(emojiForCategory(category) + Resources.Text.localeCategories(category: category).localized(localizationService.language))
                     }
                     .padding(.vertical, 24)
                     .frame(maxWidth: .infinity)
-                    .foregroundStyle(selectedCategories.contains(category) ? .white : .greyDarker)
-                    .background(selectedCategories.contains(category) ? .purplePrimary : .greyLighter)
+                    .foregroundStyle(authViewModel.selectedCategories.contains(category) ? .white : .greyDarker)
+                    .background(authViewModel.selectedCategories.contains(category) ? .purplePrimary : .greyLighter)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
             }
@@ -35,10 +34,10 @@ struct CategoryItems: View {
     }
     
     private func toggleSelection(for category: Category) {
-        if let index = selectedCategories.firstIndex(of: category) {
-            selectedCategories.remove(at: index)
+        if let index = authViewModel.selectedCategories.firstIndex(of: category) {
+            authViewModel.selectedCategories.remove(at: index)
         } else {
-            selectedCategories.insert(category)
+            authViewModel.selectedCategories.insert(category)
         }
     }
 }

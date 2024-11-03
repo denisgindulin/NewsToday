@@ -10,7 +10,6 @@ import SDWebImageSwiftUI
 
 struct NewsPresentCardView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-    @EnvironmentObject var viewModel: NewsViewModel
     @State private var isFullScreen = false
     var article: Article
     

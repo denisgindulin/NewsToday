@@ -20,7 +20,6 @@
 		22889E1D2CC99BFD00FFE525 /* Adamina-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22889E1C2CC99BFD00FFE525 /* Adamina-Regular.ttf */; };
 		22AE0B6A2CC7E70300BBBDD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B692CC7E70300BBBDD5 /* RootView.swift */; };
 		22AE0B702CC7FCDD00BBBDD5 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B6F2CC7FCDD00BBBDD5 /* CategoriesView.swift */; };
-		22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B712CC7FCEF00BBBDD5 /* CategoriesViewModel.swift */; };
 		22AE0B762CC7FD1E00BBBDD5 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */; };
 		22D946E32CD11DF900B670F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E22CD11DF900B670F6 /* OnboardingView.swift */; };
 		22D946E52CD11E6300B670F6 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D946E42CD11E6300B670F6 /* OnboardingCard.swift */; };
@@ -90,7 +89,6 @@
 		22889E1C2CC99BFD00FFE525 /* Adamina-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-Regular.ttf"; sourceTree = "<group>"; };
 		22AE0B692CC7E70300BBBDD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		22AE0B6F2CC7FCDD00BBBDD5 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		22AE0B712CC7FCEF00BBBDD5 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		22AE0B732CC7FD0700BBBDD5 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		22AE0B752CC7FD1E00BBBDD5 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		22AE0B772CC7FD3800BBBDD5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			children = (
 				22AE0B6F2CC7FCDD00BBBDD5 /* CategoriesView.swift */,
 				48A67D112CCFCC99009F65FF /* CategoryItems.swift */,
-				22AE0B712CC7FCEF00BBBDD5 /* CategoriesViewModel.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 				93E92B042CC8DA19004FEB0F /* CustomButtonProfile.swift in Sources */,
 				482763DE2CCA416B00491F26 /* FirestoreError.swift in Sources */,
 				483199452CC81AAA00655F90 /* Category.swift in Sources */,
-				22AE0B722CC7FCEF00BBBDD5 /* CategoriesViewModel.swift in Sources */,
 				93E92B172CCF9009004FEB0F /* Resourses.swift in Sources */,
 				48241F432CC8E47900DD3156 /* ErrorText.swift in Sources */,
 				481AA6DA2CC78394009982DB /* AuthButton.swift in Sources */,
@@ -725,7 +721,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/App/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TUPKULQZ9B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsToday/App/Info.plist;
@@ -759,7 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NewsToday/App/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TUPKULQZ9B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsToday/App/Info.plist;

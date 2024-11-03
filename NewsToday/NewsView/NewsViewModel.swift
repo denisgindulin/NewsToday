@@ -10,9 +10,7 @@ import Combine
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    
     private let networkManager = NetworkManager()
-    private let localizationService = LocalizationService()
     
     @Published var articles: [Article] = []
     @Published var recomendedarticles: [Article] = []

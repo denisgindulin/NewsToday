@@ -16,7 +16,6 @@ struct ShareText: Identifiable {
 struct NewsCardView: View {
     @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
-    @EnvironmentObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
