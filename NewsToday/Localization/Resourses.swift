@@ -1,0 +1,120 @@
+//
+//  Resourses.swift
+//  NewsToday
+//
+//  Created by Kate Kashko on 28.10.2024.
+//
+
+import Foundation
+
+enum Resources {
+    enum Text {
+        static let next = "Next"
+        static let getStarted = "Get started"
+        static let onboardingTitle1 = "All in One Place"
+        static let onboardingDescription1 = "be the first to know"
+        static let onboardingTitle2 = "Choose an Article"
+        static let onboardingDescription2 = "read or add to bookmarks"
+        static let onboardingTitle3 = "Bookmarks"
+        static let onboardingDescription3 = "all your bookmarks are here"
+        static let onboardingTitle4 = "Sign in to the App"
+        static let onboardingDescription4 = "to personalize the news"
+        static let onboardingTitle5 = "Choose a Language"
+        static let onboardingDescription5 = "english or russian"
+        static let onboardingTitle6 = "Choose News Topics"
+        static let onboardingDescription6 = "from many categories"
+        static let onboardingTitle7 = "Select Your Favorites"
+        static let onboardingDescription7 = "get personalized news"
+        static let topicsTitle = "Select your favorite topics"
+        static let topicsText = "Select some of your favorite topics to let us suggest better news for you"
+        static let signUp = "Sign Up"
+        static let signIn = "Sign In"
+        static let authorizationSignInTitle = "Welcome Back 👋"
+        static let authorizationSignUpTitle = "Welcome to NewsToDay"
+        static let authorizationSignUpText = "I am happy to see you again. You can continue where you left off by logging in"
+        static let authorizationSignInText = "Hello, I guess you are new around here. You can start using the application after sign up."
+        static let alreadyHaveAnAccount = "Already have an account?"
+        static let dontHaveAnAccount = "Don't have an account?"
+        static let username = "Username"
+        static let email = "Email"
+        static let password = "Password"
+        static let confirmPassword = "Confirm Password"
+        static let browseTitle = "Browse"
+        static let browseText = "Discover things of this world"
+        static let search = "Search"
+        static let recommended = "Recommended for you"
+        static let seeAll = "See All"
+        static let bookmarksTitle = "Bookmarks"
+        static let bookmarksText = "Saved articles to the library"
+        static let bookmarksNote = "You haven’t saved any articles yet. Start reading and bookmarking them now"
+        static let profile = "Profile"
+        static let lang = "Language"
+        static let termsAndConditions = "Terms & Conditions"
+        static let signOut = "Sign Out"
+        static let author = "Author"
+        static let unknownAuthor = "Unknown"
+        static let results = "Results"
+        static let termsAndConditionsText = """
+                       By using NewsToDay App, you agree to these Terms & Conditions. Please discontinue using the app if you do not agree.
+
+                       1. Acceptance of Terms
+                       By accessing NewsToDay App, you agree to these terms and any future updates. Continued use after changes implies acceptance.
+
+                       2. User Conduct
+                       You agree to use the app lawfully and avoid any behavior that could harm others or the app.
+
+                       3. Disclaimer
+                       NewsToDay App is provided "as is". We do not guarantee its accuracy, reliability, or uninterrupted service.
+
+                       4. Limitation of Liability
+                       We are not liable for any damages arising from your use of the app.
+
+                       5. Termination
+                       We may suspend or terminate access to the app if these terms are violated.
+
+                       6. Contact
+                       For questions, email us at support@newstodayapp.com.
+                       """
+        static let english = "English"
+        static let russian = "Russian"
+        static let categoriesTitle = "Categories"
+        static let categoriesText = "Thousands of articles in each category"
+        
+        static func localeCategories(category: Category) -> String {
+            switch category {
+            case .crime:
+                "Crime"
+            case .business:
+                "Business"
+            case .domestic:
+                "Domestic"
+            case .education:
+                "Education"
+            case .entertainment:
+                "Entertainment"
+            case .environment:
+                "Environment"
+            case .food:
+                "Food"
+            case .health:
+                "Health"
+            case .lifestyle:
+                "Lifestyle"
+            case .other:
+                "Other"
+            case .politics:
+                "Politics"
+            case .science:
+                "Science"
+            case .sports:
+                "Sports"
+            case .technology:
+                "Technology"
+            case .top:
+                "Top"
+            case .world:
+                "World"
+            }
+        }
+    }
+}
