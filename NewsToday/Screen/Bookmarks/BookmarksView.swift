@@ -15,7 +15,7 @@ struct BookmarksView: View {
             EmptyBookmarks()
         } else {
             FilledBookmarks()
-                .padding(.bottom, 98)
+                .padding(.bottom, 88)
         }
     }
 }

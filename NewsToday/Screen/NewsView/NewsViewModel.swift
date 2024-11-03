@@ -47,7 +47,7 @@ class NewsViewModel: ObservableObject {
             }).store(in: &cancellables)
     }
     
-     func loadLatestNews() {
+    func loadLatestNews() {
         Task {
             await fetchArticles(endpoint: .latest)
         }

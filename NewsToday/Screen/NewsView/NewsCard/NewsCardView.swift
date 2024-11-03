@@ -82,7 +82,7 @@ extension NewsCardView {
                        label:  { Image("whiteLeftArrow") })
                 
                 Spacer()
-    
+                
                 Button(action: {
                     if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
                         authViewModel.deleteBookmark(articleId: article.id)

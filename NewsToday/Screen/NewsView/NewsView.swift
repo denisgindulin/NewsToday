@@ -23,7 +23,7 @@ struct NewsView: View {
                 VStack(alignment: .leading) {
                     HeaderTitle(title: Resources.Text.browseTitle.localized(localizationService.language),
                                 subtitle: Resources.Text.browseText.localized(localizationService.language))
-
+                    
                     ScrollView(.vertical, showsIndicators: false ){
                         VStack(spacing: 48) {
                             VStack(alignment: .leading, spacing: 24) {
@@ -66,26 +66,31 @@ struct NewsView: View {
                             VStack(alignment: .leading, spacing: 24) {
                                 recomendTitles
                                 
-                                ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
-                                    NewsPreviewCardView(fromBookmark: false, articles: recomendArticle, sourceScreen: true)
-                                }
-                                
-                                if viewModel.articles.isEmpty {
-                                    ForEach(0..<10) { _ in
-                                        EmptyNewsView()
+                                VStack {
+                                    ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
+                                        NewsPreviewCardView(articles: recomendArticle)
+                                            .padding(.horizontal, 20)
+                                    }
+                                    
+                                    if viewModel.articles.isEmpty {
+                                        ForEach(0..<10) { _ in
+                                            EmptyNewsView()
+                                        }
                                     }
                                 }
+                                
                             }
                         }
                         .padding(.top, 32)
-                        .padding(.bottom, 98)
+                        .padding(.bottom, 88)
                     }
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
                 ScrollView {
                     ForEach(viewModel.articles, id: \.self) { articles in
-                        NewsPreviewCardView(articles: articles)
+                        NewsPreviewCardView(articles: articles, sourceScreen: false)
+                            .padding(.horizontal, 20)
                     }
                 }
             }
@@ -133,7 +138,6 @@ extension NewsView {
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.gray)
             }
-            .disabled(!viewModel.articles.isEmpty)
         }
         .padding(.horizontal, 20)
     }

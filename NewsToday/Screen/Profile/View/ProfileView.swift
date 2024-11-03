@@ -84,8 +84,9 @@ struct ProfileView: View {
                         }
                     )
                 }
-                .padding(.top, 32)
+//                .padding(.top, 32)
             }
+            .padding(.top, 32)
             .padding(.bottom, 88)
             .navigationBarTitleDisplayMode(.inline)
         }
