@@ -5,7 +5,7 @@
 
 Привет, друзья! / Hello friends!
 
-В этом репозитории хранится приложение, которое позволяет первым узнавать новости из 82000+ источников по всему миру. / This repository contains an application that allows you to be the first to learn news from 82,000+ sources around the world.
+В этом репозитории хранится приложение, которое позволяет первым узнавать новости из 82000+ источников по всему миру. / This repository contains an application that allows you to be the first to know news from 82,000+ sources around the world.
 
 ## Авторы (iOS-разработчики) / Authors (iOS-developers)
 
