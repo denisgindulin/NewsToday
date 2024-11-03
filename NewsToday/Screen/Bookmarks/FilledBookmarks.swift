@@ -19,47 +19,22 @@ struct FilledBookmarks: View {
             VStack(alignment: .leading) {
                 HeaderTitle(title: Resources.Text.bookmarksTitle.localized(localizationService.language),
                             subtitle: Resources.Text.bookmarksText.localized(localizationService.language))
+                
                 List {
                     ForEach(authViewModel.bookmarks) { bookmark in
                         NavigationLink {
                             NewsCardView(article: bookmark)
                                 .navigationBarBackButtonHidden()
                         } label: {
-                            HStack {
-                                if bookmark.imageURL != nil {
-                                    WebImage(url: URL(string: bookmark.imageURL ?? ""))
-                                        .resizable()
-                                        .cornerRadius(12)
-                                        .frame(width: 96, height: 96)
-                                } else {
-                                    Image(.empty)
-                                        .resizable()
-                                        .cornerRadius(12)
-                                        .frame(width: 96, height: 96)
-                                }
-                                
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text(bookmark.category?.first ?? "")
-                                        .textCase(.uppercase)
-                                        .interFont(type: .regular, size: 14)
-                                        .foregroundStyle(.greyPrimary)
-                                    
-                                    Text(bookmark.title ?? "")
-                                        .interFont()
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(3)
-                                        .foregroundStyle(.blackPrimary)
-                                }
-                            }
+                            NewsPreviewCardView(articles: bookmark)
                         }
-                        
+                        .buttonStyle(PlainButtonStyle())
+                        .listRowSeparator(.hidden)
                     }
                     .onDelete(perform: deleteBookmark)
                     .onMove(perform: move)
-                    .listRowSeparator(.hidden)
                 }
-                .padding(.top, 20)
-                .padding(.bottom, 88)
+                .padding(.top, 25)
                 .listStyle(.plain)
             }
         }

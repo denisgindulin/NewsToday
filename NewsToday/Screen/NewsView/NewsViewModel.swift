@@ -10,9 +10,7 @@ import Combine
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    
     private let networkManager = NetworkManager()
-    private let localizationService = LocalizationService()
     
     @Published var articles: [Article] = []
     @Published var recomendedarticles: [Article] = []
@@ -49,7 +47,7 @@ class NewsViewModel: ObservableObject {
             }).store(in: &cancellables)
     }
     
-     func loadLatestNews() {
+    func loadLatestNews() {
         Task {
             await fetchArticles(endpoint: .latest)
         }

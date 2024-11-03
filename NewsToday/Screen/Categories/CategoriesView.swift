@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CategoriesView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-    @StateObject private var viewModel = CategoriesViewModel()
     
     let title: String
     let subtitle: String
@@ -25,7 +24,7 @@ struct CategoriesView: View {
             
             ScrollView {
                 VStack(alignment: .center, spacing: 16) {
-                    CategoryItems(viewModel: viewModel, selectedCategories: $authViewModel.selectedCategories)
+                    CategoryItems()
                     if showButton {
                         Button {
                             authViewModel.hasSelectedCategories = true
@@ -34,16 +33,12 @@ struct CategoriesView: View {
                                 .authButton()
                         }
                     }
-                    Rectangle()
-                        .frame(height: 100)
-                        .foregroundColor(.white)
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 32)
                 .padding(.bottom, padding)
             }
         }
-        
     }
 }
 

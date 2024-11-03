@@ -19,6 +19,7 @@ struct TermsAndConditionsView: View {
                 .padding()
             Spacer()
         }
+        .padding(.bottom, 50)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {

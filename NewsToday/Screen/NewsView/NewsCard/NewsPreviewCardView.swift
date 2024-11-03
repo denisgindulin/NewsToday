@@ -10,16 +10,14 @@ import SDWebImageSwiftUI
 
 struct NewsPreviewCardView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: NewsViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var isFullScreen = false
     
-    let fromBookmark: Bool
     var articles: Article
-    var sourceScreen: Bool = false
+    var sourceScreen: Bool = true
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            
+        VStack(alignment: .leading, spacing: 8) {
             ZStack {
                 Button {
                     isFullScreen = true
@@ -31,9 +29,7 @@ struct NewsPreviewCardView: View {
                     )
                 }
             }
-            .padding(.bottom, 8)
         }
-        .padding(.horizontal, 20)
         .fullScreenCover(isPresented: $isFullScreen) {
             NewsCardView(article: articles)
         }
@@ -71,6 +67,8 @@ struct NewsMiniCard: View {
                     .lineLimit(3)
                     .foregroundStyle(.blackPrimary)
             }
+            
+            Spacer()
         }
     }
 }

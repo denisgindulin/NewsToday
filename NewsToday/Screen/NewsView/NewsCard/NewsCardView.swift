@@ -16,7 +16,6 @@ struct ShareText: Identifiable {
 struct NewsCardView: View {
     @EnvironmentObject var localizationService: LocalizationService
     @EnvironmentObject var authViewModel: AuthViewModel
-    @EnvironmentObject var viewModel: NewsViewModel
     @Environment(\.dismiss) var dismiss
     @State var shareText: ShareText?
     
@@ -83,7 +82,7 @@ extension NewsCardView {
                        label:  { Image("whiteLeftArrow") })
                 
                 Spacer()
-    
+                
                 Button(action: {
                     if authViewModel.bookmarks.contains(where: { $0.id == article.id }) {
                         authViewModel.deleteBookmark(articleId: article.id)

@@ -26,7 +26,7 @@ struct RootView: View {
                 VStack {
                     switch selectedTab {
                     case .home:
-                        NewsView() // заглушка для экрана HomeView
+                        NewsView()
                     case .categories:
                         CategoriesView(
                             title: Resources.Text.categoriesTitle.localized(localizationService.language),
@@ -45,8 +45,7 @@ struct RootView: View {
                 }
                 .overlay(
                     CustomTabBarView(selectedTab: $selectedTab)
-                        .ignoresSafeArea(.keyboard),
-                    alignment: .bottom
+                        .ignoresSafeArea(.keyboard), alignment: .bottom
                 )
                 .ignoresSafeArea(edges: .bottom)
             }

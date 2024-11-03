@@ -21,94 +21,77 @@ struct NewsView: View {
         NavigationView {
             ZStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    
-                    headerTitle
+                    HeaderTitle(title: Resources.Text.browseTitle.localized(localizationService.language),
+                                subtitle: Resources.Text.browseText.localized(localizationService.language))
                     
                     ScrollView(.vertical, showsIndicators: false ){
-                        LazyVStack(alignment: .leading, spacing: 24) {
-                            AppTextField(textFieldText: $viewModel.searchText,
-                                         placeholder: (Resources.Text.search.localized(localizationService.language)),
-                                         imageName: "magnifyingglass")
-                            .frame(height: 100)
-                            .padding(.horizontal, 20)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 16) {
-                                    ForEach(Category.allCases, id: \.self) { category in
-                                        Button {
-                                            viewModel.selectedCategory = category
-                                            viewModel.loadCategory(category: category)
-                                        } label: {
-                                            Text(Resources.Text.localeCategories(category: category).localized(localizationService.language))
-                                                .textCase(.uppercase)
-                                                .interFont(size: 12)
-                                                .foregroundStyle(viewModel.selectedCategory != category ? .greyPrimary : .white)
-                                                .padding(.horizontal, 16)
-                                                .padding([.top, .bottom], 8)
+                        VStack(spacing: 48) {
+                            VStack(alignment: .leading, spacing: 24) {
+                                AppTextField(textFieldText: $viewModel.searchText,
+                                             placeholder: (Resources.Text.search.localized(localizationService.language)),
+                                             imageName: "magnifyingglass")
+                                .padding(.horizontal, 20)
+                                
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 16) {
+                                        ForEach(Category.allCases, id: \.self) { category in
+                                            Button {
+                                                viewModel.selectedCategory = category
+                                                viewModel.loadCategory(category: category)
+                                            } label: {
+                                                Text(Resources.Text.localeCategories(category: category).localized(localizationService.language))
+                                                    .textCase(.uppercase)
+                                                    .interFont(size: 12)
+                                                    .foregroundStyle(viewModel.selectedCategory != category ? .greyPrimary : .white)
+                                                    .padding(.horizontal, 16)
+                                                    .padding([.top, .bottom], 8)
+                                            }
+                                            .background(viewModel.selectedCategory != category ? .greyLighter : .purplePrimary)
+                                            .cornerRadius(16)
                                         }
-                                        .background(viewModel.selectedCategory != category ? .greyLighter : .purplePrimary)
-                                        .cornerRadius(16)
                                     }
-                                    
-                                    Rectangle()
-                                        .frame(width: 20)
-                                        .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
                                 }
-                                .padding(.leading, 20)
+                                
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 20) {
+                                        ForEach(viewModel.articles, id: \.self) { news in
+                                            NewsPresentCardView(article: news, action: {})
+                                        }
+                                    }
+                                    .padding(.horizontal, 20)
+                                }
                             }
                             
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 20) {
-                                    ForEach(viewModel.articles, id: \.self) { news in
-                                        NewsPresentCardView(article: news, action: {})
+                            VStack(alignment: .leading, spacing: 24) {
+                                recomendTitles
+                                
+                                VStack {
+                                    ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
+                                        NewsPreviewCardView(articles: recomendArticle)
+                                            .padding(.horizontal, 20)
                                     }
                                     
                                     if viewModel.articles.isEmpty {
                                         ForEach(0..<10) { _ in
-                                            Rectangle()
-                                                .foregroundColor(.gray)
-                                                .frame(width: 256, height: 256)
-                                                .cornerRadius(12)
-                                                .shimmer(configuration: .default)
+                                            EmptyNewsView()
                                         }
                                     }
-                                    
-                                    
-                                    Rectangle()
-                                        .frame(width: 20)
-                                        .foregroundColor(.white)
                                 }
-                                .padding(.leading, 20)
+                                
                             }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading, spacing: 0) {
-                                
-                                recomendTitles
-                                
-                                ForEach(viewModel.recomendedarticles, id: \.self) { recomendArticle in
-                                    NewsPreviewCardView(fromBookmark: false, articles: recomendArticle, sourceScreen: true)
-                                }
-                                
-                                if viewModel.articles.isEmpty {
-                                    ForEach(0..<10) { _ in
-                                        EmptyNewsView()
-                                    }
-                                }
-                                
-                                Rectangle()
-                                    .frame(height: 100)
-                                    .foregroundColor(.white)
-                            }
-                            .padding(.bottom, 16)
                         }
+                        .padding(.top, 32)
+                        .padding(.bottom, 88)
                     }
                 }
             }
             .fullScreenCover(isPresented: $isFullScreen) {
-                ForEach(viewModel.articles, id: \.self) { articles in
-                    NewsPreviewCardView(fromBookmark: false, articles: articles)
+                ScrollView {
+                    ForEach(viewModel.articles, id: \.self) { articles in
+                        NewsPreviewCardView(articles: articles, sourceScreen: false)
+                            .padding(.horizontal, 20)
+                    }
                 }
             }
         }
@@ -155,9 +138,7 @@ extension NewsView {
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.gray)
             }
-            .disabled(!viewModel.articles.isEmpty)
         }
         .padding(.horizontal, 20)
-        .padding(.bottom, 24)
     }
 }

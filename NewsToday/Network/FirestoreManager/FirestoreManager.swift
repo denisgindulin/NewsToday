@@ -32,8 +32,6 @@ class FirestoreManager: ObservableObject {
             throw FirestoreError.fieldNotFound(fieldName: "email")
         }
         
-//        let avatarUrl = data["avatarUrl"] as? String
-        
         return UserData(id: userId,
                         name: name,
                         email: email)
@@ -66,7 +64,9 @@ class FirestoreManager: ObservableObject {
             ])
     }
     
-    func saveFavoriteCategory(userId: String, categories: [Category]) {
+    func saveFavoriteCategory(categories: [Category]) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
         let categoriesRawValues = categories.map { $0.rawValue }
         
         Firestore.firestore()
