@@ -12,7 +12,7 @@
 ### Над приложением трудились / We have been working on the application
 <p align="left"> 
 <a href="https://github.com/denisgindulin">
-<img src="https://img.shields.io/badge/denisgindulin-Teamleader-purple"/></a>
+<img src="https://img.shields.io/badge/denisgindulin-(teamleader)-purple"/></a>
 <a href="https://github.com/DaNiIlaIoS">
 <img src="https://img.shields.io/badge/DaNiIlaIoS-blue"/></a>
 <a href="https://github.com/KateKashko">
